@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Marmar</div>;
+  return <div className="h-screen w-screen bg-orange-300">Marmar</div>;
 }
