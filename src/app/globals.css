@@ -144,3 +144,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.font-handlee {
+  font-family: var(--font-handlee), cursive;
+} 
