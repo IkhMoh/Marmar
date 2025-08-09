@@ -4,6 +4,7 @@ import {
   Film,
   Heart,
   House,
+  Instagram,
   MessageCircleMore,
   Search,
   SquarePlus,
@@ -11,82 +12,94 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-
-const NavBar = () => {
+import { Badge } from "./ui/badge";
+const ji = <div>hi</div>;
+const SideBar = () => {
   return (
-    <div className="flex min-h-screen w-[300px] border-r-1 border-gray-400 ">
-      <div className="flex flex-col my-6 w-full">
+    <div className="bg-amber-50 fixed bottom-0 left-0 md:static h-[73px] w-full md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
+      <div className="flex md:flex-col md:my-6 w-full">
         {" "}
         {/* logo */}
         <Link href={"/"}>
-          <div className="font-bold text-3xl mx-6.5 mt-2 font-handlee">
+          <div className="font-bold text-3xl md:mx-6.5 md:mt-2 font-handlee hidden lg:block">
             Marmar
+          </div>
+          <div className="font-bold text-3xl md:mx-6.5 md:mt-5 font-handlee lg:hidden md:block hidden">
+            <Instagram />
           </div>
         </Link>
         {/* logo == */}
-        <div className=" flex flex-col space-y-2 w-full font-medium mt-10 ">
+        <div className="flex md:flex-col space-y-2 w-full font-medium md:mt-10 ">
           <Link href={"/"} className="">
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <House size={25} />
-              <p>Home</p>
+              <p className="hidden lg:block">Home</p>
             </div>
           </Link>
 
           <Link href={"#"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <Search size={25} />
-              <p>Search</p>
+              <p className="hidden lg:block">Search</p>
             </div>
           </Link>
           <Link href={"/explore"}>
             {" "}
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <Compass size={25} />
-              <p>Explore</p>
+              <p className="hidden lg:block">Explore</p>
             </div>
           </Link>
           <Link href={"/reels"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <Film size={25} />
-              <p>Reels</p>
+              <p className="hidden lg:block">Reels</p>
             </div>
           </Link>
+
           <Link href={"/direct"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
-              <MessageCircleMore size={25} />
-              <p>Messages</p>
-            </div>
-          </Link>
-          <Link href={"/#"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
-              <Heart size={25} />
-              <p>Notifications</p>
+            <div className="flex items-center space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+              <div className="relative">
+                <MessageCircleMore size={25} />
+                <Badge className="absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs px-1 py-0">
+                  9+
+                </Badge>
+              </div>
+
+              <p className="hidden lg:block">Messages</p>
             </div>
           </Link>
 
           <Link href={"/#"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+              <Heart size={25} />
+              <p className="hidden lg:block">Notifications</p>
+            </div>
+          </Link>
+
+          <Link href={"/#"}>
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <SquarePlus size={25} />
-              <p>Create</p>
+              <p className="hidden lg:block">Create</p>
             </div>
           </Link>
           <Link href={"/profile"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <User size={25} />
-              <p>Profile</p>
+              <p className="hidden lg:block">Profile</p>
             </div>
           </Link>
         </div>
         {/* settings */}
-        <div className="space-y-2   font-medium fixed bottom-0 mb-5">
+        <div className="md:space-y-2   font-medium  md:fixed bottom-0 md:mb-5">
           <Link href={"/#"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <AlignJustify size={25} />
-              <p>Home</p>
+              <p className="hidden lg:block">Home</p>
             </div>
           </Link>{" "}
-          <Link href={"/#"}>
-            <div className="flex space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+          <Link href={"/#"} className="hidden lg:block">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
               <svg
                 width="25"
                 height="25"
@@ -108,7 +121,7 @@ const NavBar = () => {
                 />
               </svg>
 
-              <p>Home</p>
+              <p className="">Home</p>
             </div>
           </Link>
         </div>
@@ -118,4 +131,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default SideBar;
