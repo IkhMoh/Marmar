@@ -16,11 +16,10 @@ import { Badge } from "./ui/badge";
 const ji = <div>hi</div>;
 const SideBar = () => {
   return (
-    <div className="bg-amber-50 fixed bottom-0 left-0 md:static h-[73px] w-full md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
-      <div className="flex md:flex-col md:my-6 w-full">
-        {" "}
+    <div className="bg-amber-50 fixed left-0 bottom-0 h-[48px] w-full md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
+      <div className="flex  md:flex-col md:my-6 w-full ">
         {/* logo */}
-        <Link href={"/"}>
+        <Link href={"/"} className="">
           <div className="font-bold text-3xl md:mx-6.5 md:mt-2 font-handlee hidden lg:block">
             Marmar
           </div>
@@ -29,7 +28,7 @@ const SideBar = () => {
           </div>
         </Link>
         {/* logo == */}
-        <div className="flex md:flex-col space-y-2 w-full font-medium md:mt-10 ">
+        <div className="flex justify-evenly md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-10">
           <Link href={"/"} className="">
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <House size={25} />
@@ -37,8 +36,8 @@ const SideBar = () => {
             </div>
           </Link>
 
-          <Link href={"#"}>
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+          <Link href={"#"} className="md:block hidden">
+            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
               <Search size={25} />
               <p className="hidden lg:block">Search</p>
             </div>
@@ -70,7 +69,7 @@ const SideBar = () => {
             </div>
           </Link>
 
-          <Link href={"/#"}>
+          <Link href={"/#"} className="md:block hidden">
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <Heart size={25} />
               <p className="hidden lg:block">Notifications</p>
@@ -92,7 +91,7 @@ const SideBar = () => {
         </div>
         {/* settings */}
         <div className="md:space-y-2   font-medium  md:fixed bottom-0 md:mb-5">
-          <Link href={"/#"}>
+          <Link href={"/#"} className="md:block hidden">
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <AlignJustify size={25} />
               <p className="hidden lg:block">Home</p>
