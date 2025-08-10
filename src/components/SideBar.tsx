@@ -16,7 +16,7 @@ import { Badge } from "./ui/badge";
 
 const SideBar = () => {
   return (
-    <div className="bg-amber-50 fixed left-0 bottom-0 h-[48px] w-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
+    <div className="bg-amber-50 fixed left-0 bottom-0 h-[48px] w-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen md:w-[73px] lg:w-[248px] md:border-r-1 md:border-gray-400 ">
       <div className="flex justify-around md:flex-col  w-full ">
         {/* logo */}
         <Link href={"/"} className="">

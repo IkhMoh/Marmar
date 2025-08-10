@@ -2,7 +2,7 @@ import React from "react";
 
 const DynamicFeed = () => {
   return (
-    <div className="h-full w-full max-[650px] bg-red-200">
+    <div className="h-full ml-[248px] max-w-[650px] w-full  bg-red-200">
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
         dignissimos perferendis praesentium temporibus excepturi nostrum sit
