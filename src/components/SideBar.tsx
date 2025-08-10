@@ -13,14 +13,14 @@ import {
 import Link from "next/link";
 import React from "react";
 import { Badge } from "./ui/badge";
-const ji = <div>hi</div>;
+
 const SideBar = () => {
   return (
-    <div className="bg-amber-50 fixed left-0 bottom-0 h-[48px] w-full md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
-      <div className="flex  md:flex-col md:my-6 w-full ">
+    <div className="bg-amber-50 fixed left-0 bottom-0 h-[48px] w-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen md:w-[73px] lg:w-[300px] md:border-r-1 md:border-gray-400 ">
+      <div className="flex justify-around md:flex-col  w-full ">
         {/* logo */}
         <Link href={"/"} className="">
-          <div className="font-bold text-3xl md:mx-6.5 md:mt-2 font-handlee hidden lg:block">
+          <div className="font-bold text-3xl md:mx-6.5 md:pt-8 font-handlee hidden lg:block">
             Marmar
           </div>
           <div className="font-bold text-3xl md:mx-6.5 md:mt-5 font-handlee lg:hidden md:block hidden">
@@ -28,7 +28,7 @@ const SideBar = () => {
           </div>
         </Link>
         {/* logo == */}
-        <div className="flex justify-evenly md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-10">
+        <div className="flex justify-evenly h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-10">
           <Link href={"/"} className="">
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <House size={25} />
@@ -90,7 +90,7 @@ const SideBar = () => {
           </Link>
         </div>
         {/* settings */}
-        <div className="md:space-y-2   font-medium  md:fixed bottom-0 md:mb-5">
+        <div className="md:space-y-2   font-medium   ">
           <Link href={"/#"} className="md:block hidden">
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <AlignJustify size={25} />
