@@ -12,8 +12,8 @@ const UserCard = () => {
         </Avatar>
 
         <div className="  w-full px-3 -space-y-1">
-          <h2 className="font-semibold">Username</h2>
-          <h4 className="text-gray-500">Sub-info</h4>
+          <h2 className="font-semibold">ikhlef_mohamed_lamine</h2>
+          <h4 className="text-gray-500">ikhlef_mohamed</h4>
         </div>
         <div className="flex items-center">
           <Button variant="ghost" className="text-blue-600 hover:text-blue-800">
