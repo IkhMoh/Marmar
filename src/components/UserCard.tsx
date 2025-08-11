@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 const UserCard = () => {
   return (
     <div className="w-[319px] h-[44px] ">
-      <div className="flex justify-between  px-2">
+      <div className="flex justify-between  px-1">
         <Avatar className="w-11 h-11  ">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
@@ -16,7 +16,7 @@ const UserCard = () => {
           <h4 className="text-gray-500">ikhlef_mohamed</h4>
         </div>
         <div className="flex items-center">
-          <Button variant="ghost" className="text-blue-600 hover:text-blue-800">
+          <Button variant="link" className="text-blue-600 hover:text-blue-800">
             Follow
           </Button>
         </div>
