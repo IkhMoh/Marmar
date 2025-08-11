@@ -1,8 +1,10 @@
 import React from "react";
+import Stories from "./Stories";
 
 const DynamicFeed = () => {
   return (
     <div className="h-full ml-[248px] max-w-[650px] w-full   ">
+      <Stories/>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
         dignissimos perferendis praesentium temporibus excepturi nostrum sit
