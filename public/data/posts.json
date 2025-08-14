@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Nature",
+    "body": "Beautiful mountain view!",
+    "author": {
+      "id": 101,
+      "username": "amine_bouzid",
+      "name": "Amine Bouzid",
+      "profile_image": "amine_bouzid.jpg"
+    },
+    "images": [
+      "post_amine_1.jpg"
+    ],
+    "created_at": "2025-08-10T12:00:00Z",
+    "comments_count": 3
+  },
+  {
+    "id": 2,
+    "title": "Food",
+    "body": "Homemade pizza night 🍕",
+    "author": {
+      "id": 102,
+      "username": "sarah_ali",
+      "name": "Sarah Ali",
+      "profile_image": "sarah_ali.jpg"
+    },
+    "images": [
+      "post_sarah_1.jpg",
+      "post_sarah_2.jpg"
+    ],
+    "created_at": "2025-08-11T15:30:00Z",
+    "comments_count": 5
+  },
+  {
+    "id": 3,
+    "title": "Travel",
+    "body": "Exploring the desert dunes 🏜️",
+    "author": {
+      "id": 103,
+      "username": "oussama_lahkdari",
+      "name": "Oussama Lahkdari",
+      "profile_image": "oussama_lahkdari.jpg"
+    },
+    "images": [
+      "post_oussama_1.jpg",
+      "post_oussama_2.jpg",
+      "post_oussama_3.jpg"
+    ],
+    "created_at": "2025-08-12T09:15:00Z",
+    "comments_count": 8
+  },
+  {
+    "from_api": true
+  }
+]

@@ -1,0 +1,91 @@
+[
+    {
+      "id": 1,
+      "username": "amine_bouzid",
+      "profile_image": "amine_bouzid.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_amine_1.jpg" },
+        { "id": 2, "image": "story_amine_2.jpg" }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "sarah_ali",
+      "profile_image": "sarah_ali.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_sarah_1.jpg" }
+      ]
+    },
+    {
+      "id": 3,
+      "username": "oussama_lahkdari",
+      "profile_image": "oussama_lahkdari.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_oussama_1.jpg" },
+        { "id": 2, "image": "story_oussama_2.jpg" },
+        { "id": 3, "image": "story_oussama_3.jpg" }
+      ]
+    },
+    {
+      "id": 4,
+      "username": "fatima_zohra",
+      "profile_image": "fatima_zohra.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_fatima_1.jpg" }
+      ]
+    },
+    {
+      "id": 5,
+      "username": "mohamed_slim",
+      "profile_image": "mohamed_slim.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_mohamed_1.jpg" },
+        { "id": 2, "image": "story_mohamed_2.jpg" }
+      ]
+    },
+    {
+      "id": 6,
+      "username": "nadia_cherif",
+      "profile_image": "nadia_cherif.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_nadia_1.jpg" }
+      ]
+    },
+    {
+      "id": 7,
+      "username": "khaled_ben",
+      "profile_image": "khaled_ben.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_khaled_1.jpg" },
+        { "id": 2, "image": "story_khaled_2.jpg" }
+      ]
+    },
+    {
+      "id": 8,
+      "username": "yasmine_bela",
+      "profile_image": "yasmine_bela.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_yasmine_1.jpg" },
+        { "id": 2, "image": "story_yasmine_2.jpg" },
+        { "id": 3, "image": "story_yasmine_3.jpg" }
+      ]
+    },
+    {
+      "id": 9,
+      "username": "ahmed_k",
+      "profile_image": "ahmed_k.jpg",
+      "isRead": false,
+      "stories": [
+        { "id": 1, "image": "story_ahmed_1.jpg" }
+      ]
+    }
+  ]
+  
