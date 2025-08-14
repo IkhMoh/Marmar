@@ -1,5 +1,5 @@
-import DynamicFeed from "@/components/DynamicFeed";
-import DynamicSuggestionsPanel from "@/components/DynamicSuggestionsPanel";
+import DynamicFeed from "@/components/server/DynamicFeed";
+import DynamicSuggestionsPanel from "@/components/server/DynamicSuggestionsPanel";
 
 export default function Home() {
   return (

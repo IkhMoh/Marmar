@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Handlee } from "next/font/google";
 import "./globals.css";
-import SideBar from "@/components/SideBar";
-import NavBar from "@/components/NavBar";
+import SideBar from "@/components/server/SideBar";
+import NavBar from "@/components/server/NavBar";
 
 const handlee = Handlee({
   subsets: ["latin"],

@@ -1,7 +1,7 @@
 import { Heart, Instagram } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 
 const NavBar = () => {
   return (
