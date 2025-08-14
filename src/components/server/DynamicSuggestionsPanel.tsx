@@ -1,13 +1,17 @@
 import React from "react";
 import UserCard from "./UserCard";
 import { Button } from "../ui/button";
-
-const DynamicSuggestionsPanel = () => {
+import { getUsers } from "@/services/Users/getUsers";
+import AccountCard from "./AccountCard";
+import { MinimalUser } from "@/types/user";
+const DynamicSuggestionsPanel = async () => {
+  const users: MinimalUser[] = await getUsers();
+  console.log(users);
   return (
     <div className="w-[383px] h-screen  hidden lg:block">
       <div className="pl-16 h-full w-full pt-9">
         <div className="">
-          <UserCard />
+          <AccountCard />
         </div>
         <div className="pt-3 h-full w-full">
           <div className="flex justify-between w-full px-1">
@@ -19,11 +23,14 @@ const DynamicSuggestionsPanel = () => {
             </div>
           </div>
           <div className="pt-2 h-full w-full space-y-3 px-1">
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
+            {users.map((user: MinimalUser, index: number) => (
+              <UserCard
+                key={index}
+                username={user.username}
+                profileImage={user.profileImage}
+                fullName={user.fullName}
+              />
+            ))}
           </div>
         </div>
       </div>

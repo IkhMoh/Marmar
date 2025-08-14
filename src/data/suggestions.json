@@ -1,38 +1,80 @@
-{
-    "accounts": [
-      {
-        "username": "oussama_lahkdari",
-        "profileImage": "oussama_lahkdari.jpg",
-        "fullName": "Oussama Lakhdari",
-        "bio": "💙.🤍",
-        "followers": 192,
-        "following": 1646,
-        "followersInfo": ["amine_bouzid", "sarah_ali", "khaled_mansour"],
-        "stories": [],
-        "posts": []
-      },
-      {
-        "username": "ahmed_salem",
-        "profileImage": "ahmed_salem.jpg",
-        "fullName": "Ahmed Salem",
-        "bio": "Coffee addict ☕",
-        "followers": 290,
-        "following": 100,
-        "followersInfo": ["khaled_mansour", "amine_bouzid"],
-        "stories": [],
-        "posts": []
-      },
-      {
-        "username": "samir_khalil",
-        "profileImage": "samir_khalil.jpg",
-        "fullName": "Samir Khalil",
-        "bio": "Entrepreneur 🚀",
-        "followers": 320,
-        "following": 230,
-        "followersInfo": ["oussama_lahkdari", "amine_bouzid"],
-        "stories": [],
-        "posts": []
-      }
-    ]
+[
+  {
+    "username": "sebastian_laverde",
+    "profileImage": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
+    "fullName": "Sebastian Laverde",
+    "bio": "Nature lover 🌿",
+    "followers": 180,
+    "following": 220,
+    "followersInfo": [],
+    "stories": [],
+    "posts": []
+  },
+  {
+    "username": "oussama_lahkdari",
+    "profileImage": "2150697292.jpg",
+    "fullName": "Oussama Lakhdari",
+    "bio": "💙.🤍",
+    "followers": 192,
+    "following": 1646,
+    "followersInfo": ["amine_bouzid", "sarah_ali", "khaled_mansour"],
+    "stories": [],
+    "posts": []
+  },
+  {
+    "username": "ahmed_salem",
+    "profileImage": "5938.jpg",
+    "fullName": "Ahmed Salem",
+    "bio": "Coffee addict ☕",
+    "followers": 290,
+    "following": 100,
+    "followersInfo": ["khaled_mansour", "amine_bouzid"],
+    "stories": [],
+    "posts": []
+  },
+  {
+    "username": "samir_khalil",
+    "profileImage": "2151478203.jpg",
+    "fullName": "Samir Khalil",
+    "bio": "Entrepreneur 🚀",
+    "followers": 320,
+    "following": 230,
+    "followersInfo": ["oussama_lahkdari", "amine_bouzid"],
+    "stories": [],
+    "posts": []
+  },
+
+  {
+    "username": "lukasz_konieczka",
+    "profileImage": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
+    "fullName": "Lukasz Konieczka",
+    "bio": "Traveler ✈️",
+    "followers": 210,
+    "following": 195,
+    "followersInfo": [],
+    "stories": [],
+    "posts": []
+  },
+  {
+    "username": "jonathan_cooper",
+    "profileImage": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
+    "fullName": "Jonathan Cooper",
+    "bio": "Coffee addict ☕",
+    "followers": 250,
+    "following": 230,
+    "followersInfo": [],
+    "stories": [],
+    "posts": []
+  },
+  {
+    "username": "alisha_limbu",
+    "profileImage": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
+    "fullName": "Alisha Limbu",
+    "bio": "Photographer 📸",
+    "followers": 150,
+    "following": 200,
+    "followersInfo": [],
+    "stories": [],
+    "posts": []
   }
-  
+]

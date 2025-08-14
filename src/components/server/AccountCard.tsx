@@ -1,30 +1,18 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
-import { MinimalUser } from "@/types/user";
-
-const UserCard: React.FC<MinimalUser> = ({
-  username,
-  profileImage,
-  fullName,
-}) => {
-  console.log(profileImage);
+const AccountCard = () => {
   return (
     <div className="w-[319px] h-[44px] ">
       <div className="flex justify-between  px-1">
         <Avatar className="w-11 h-11  ">
-          <AvatarImage
-            src={"/images/avatars/" + profileImage}
-            alt={username}
-            className="object-cover object-center rounded-full"
-          />
-
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
 
         <div className="  w-full px-3 -space-y-1">
-          <h2 className="font-semibold">{fullName}</h2>
-          <h4 className="text-gray-500">{username}</h4>
+          <h2 className="font-semibold">ikhlef_mohamed_lamine</h2>
+          <h4 className="text-gray-500">ikhlef_mohamed</h4>
         </div>
         <div className="flex items-center">
           <Button variant="link" className="text-blue-600 hover:text-blue-800">
@@ -36,4 +24,4 @@ const UserCard: React.FC<MinimalUser> = ({
   );
 };
 
-export default UserCard;
+export default AccountCard;
