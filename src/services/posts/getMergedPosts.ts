@@ -1,7 +1,7 @@
-import fs from "fs";
-import path from "path";
 import { api } from "@/lib/axios";
-import type { Post } from "@/types/post";
+import { Post } from "@/types/post";
+import path from "path";
+import fs from "fs";
 
 export async function getMergedPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), "src/data/posts.json");
