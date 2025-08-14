@@ -1,7 +1,11 @@
 import React from "react";
 import Stories from "./Stories";
+import { getMergedPosts } from "@/services/posts/getMergedPosts";
 
-const DynamicFeed = () => {
+const DynamicFeed = async () => {
+  const MergedPosts = await getMergedPosts();
+
+  
   return (
     <div className="h-full ml-[248px] max-w-[650px] w-full   ">
       <Stories />
