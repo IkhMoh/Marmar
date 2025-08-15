@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Handlee } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/components/server/SideBar";
 import NavBar from "@/components/server/NavBar";
+import Providers from "@/components/client/Provider";
 
 const handlee = Handlee({
   subsets: ["latin"],
@@ -36,7 +37,8 @@ export default function RootLayout({
       >
         <div className="md:flex flex-row-reverse">
           <NavBar />
-          {children}
+          <Providers>{children}</Providers>
+
           <SideBar />
         </div>
       </body>

@@ -1,7 +1,7 @@
 import React from "react";
 import UserCard from "./UserCard";
 import { Button } from "../ui/button";
-import { getUsers } from "@/services/Users/getUsers";
+import { getUsers } from "@/lib/Users/getUsers";
 import AccountCard from "./AccountCard";
 import { MinimalUser } from "@/types/user";
 const DynamicSuggestionsPanel = async () => {
@@ -27,7 +27,7 @@ const DynamicSuggestionsPanel = async () => {
               <UserCard
                 key={index}
                 username={user.username}
-                profileImage={user.profileImage}
+                profile_image={user.profile_image}
                 fullName={user.fullName}
               />
             ))}

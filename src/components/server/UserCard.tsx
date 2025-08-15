@@ -5,16 +5,15 @@ import { MinimalUser } from "@/types/user";
 
 const UserCard: React.FC<MinimalUser> = ({
   username,
-  profileImage,
+  profile_image,
   fullName,
 }) => {
-  console.log(profileImage);
   return (
     <div className="w-[319px] h-[44px] ">
       <div className="flex justify-between  px-1">
         <Avatar className="w-11 h-11  ">
           <AvatarImage
-            src={"/images/avatars/" + profileImage}
+            src={"/images/avatars/" + profile_image}
             alt={username}
             className="object-cover object-center rounded-full"
           />

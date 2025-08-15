@@ -8,6 +8,6 @@ export type User = {
 
 export type MinimalUser = {
   username: string;
-  profileImage: string;
+  profile_image: string;
   fullName: string;
 };
