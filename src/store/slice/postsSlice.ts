@@ -1,0 +1,11 @@
+// store/postsSlice.ts
+import { createSlice } from "@reduxjs/toolkit";
+
+const postsSlice = createSlice({
+  name: "",
+  initialState: [],
+  reducers: {},
+});
+
+export const {  } = postsSlice.actions;
+export default postsSlice.reducer;
