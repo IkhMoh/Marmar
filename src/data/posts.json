@@ -9,7 +9,10 @@
       "name": "Amine Bouzid",
       "profile_image": "amine_bouzid.jpg"
     },
-    "images": ["post_amine_1.jpg"],
+    "image": [
+      "mm.mp4"
+    ],
+    "type": "video",
     "created_at": "2025-08-10T12:00:00Z",
     "comments_count": 3
   },
@@ -23,7 +26,8 @@
       "name": "Sarah Ali",
       "profile_image": "sarah_ali.jpg"
     },
-    "images": ["post_sarah_1.jpg", "post_sarah_2.jpg"],
+    "image": ["2151682966.jpg", "2151682966.jpg"],
+    "type": "image",
     "created_at": "2025-08-11T15:30:00Z",
     "comments_count": 5
   },
@@ -37,15 +41,9 @@
       "name": "Oussama Lahkdari",
       "profile_image": "oussama_lahkdari.jpg"
     },
-    "images": [
-      "post_oussama_1.jpg",
-      "post_oussama_2.jpg",
-      "post_oussama_3.jpg"
-    ],
+    "image": ["2151917945.jpg", "post_oussama_2.jpg", "post_oussama_3.jpg"],
+    "type": "image",
     "created_at": "2025-08-12T09:15:00Z",
     "comments_count": 8
-  },
-  {
-    "from_api": true
   }
 ]
