@@ -1,28 +1,23 @@
 "use client";
-import { fetchPosts } from "@/store/slice/postsSlice";
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 import { Post } from "@/types/post";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store/store"; // تأكد من تعريف RootState في الستورد
+import { useHydratePosts } from "@/store/hydrate";
 import PostCard from "../server/PostCard";
 
-interface FeedProps {
-  initialPosts: Post[];
-}
+const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
+  useHydratePosts(initialPosts);
 
-export default function Feed({ initialPosts }: FeedProps) {
-  const dispatch = useDispatch();
   const posts = useSelector((state: RootState) => state.posts.items);
-
-  useEffect(() => {
-    dispatch(fetchPosts(initialPosts));
-  }, [initialPosts, dispatch]);
-  console.log(posts);
+console.log(posts)
   return (
     <div>
-      {posts.map((post, key) => (
-        <PostCard key={key} post={post} />
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} />
       ))}
     </div>
   );
-}
+};
+
+export default Feed;
