@@ -1,8 +1,9 @@
 import React from "react";
 import Stories from "./Stories";
+
+import Feed from "../client/Feed";
 import { getMergedPosts } from "@/lib/posts/getMergedPosts";
 import { Post } from "@/types/post";
-import Feed from "../client/Feed";
 
 const DynamicFeed = async () => {
   const posts: Post[] = await getMergedPosts();

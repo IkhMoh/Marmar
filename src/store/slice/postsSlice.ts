@@ -1,3 +1,4 @@
+// postsSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Post } from "@/types/post";
 
@@ -6,7 +7,7 @@ interface PostsState {
 }
 
 const initialState: PostsState = {
-  items: [],
+  items: [], 
 };
 
 const postsSlice = createSlice({
