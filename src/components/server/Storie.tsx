@@ -1,13 +1,41 @@
 import React from "react";
+import Image from "next/image";
+import { Story } from "@/types/stories";
+import Link from "next/link";
 
-const Storie = () => {
+type StorieProps = {
+  data: Story;
+};
+
+const Storie = ({ data }: StorieProps) => {
+  const { profile_image, username, isRead, stories } = data;
+
+  
+  const hasStoryBorder = stories && stories.length > 0 && !isRead;
+
   return (
-    <div className="">
-      <div
-        className={`w-24 h-24  rounded-full cursor-pointer bg-red-400`}
-      />
-      <h1 className="text-center text-sm">ikhlef</h1>
-    </div>
+    <Link href={`/stories/${data.username}`}>
+      <div className="flex flex-col items-center">
+        <div
+          className={`w-[89px] h-[89px] rounded-full cursor-pointer p-1 ${
+            hasStoryBorder
+              ? "border-4 border-orange-500" // ستايل لو ما تقراتش
+              : "border border-gray-300" // ستايل عادي
+          }`}
+        >
+          <div className="w-full h-full rounded-full overflow-hidden">
+            <Image
+              src={`/images/avatars/${profile_image}`}
+              height={96}
+              width={96}
+              alt={`profile image of ${username}`}
+              className="object-cover h-full w-full rounded-full"
+            />
+          </div>
+        </div>
+        <h1 className="text-center text-sm mt-1">{username}</h1>
+      </div>
+    </Link>
   );
 };
 
