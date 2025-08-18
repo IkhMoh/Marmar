@@ -1,9 +1,9 @@
 import React from "react";
-import StoriesCarousel from "../client/StoriesCarousel";
+import StoriesCarousel from "./StoriesCarousel";
 
 const Stories = () => {
   return (
-    <div className="h-[124px] mb-6 w-full bg-sky-300 ">
+    <div className="h-[124px] mb-6 w-full">
       <StoriesCarousel />
     </div>
   );

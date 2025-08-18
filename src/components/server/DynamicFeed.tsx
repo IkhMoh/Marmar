@@ -9,7 +9,7 @@ const DynamicFeed = async () => {
   const posts: Post[] = await getMergedPosts();
 
   return (
-    <div className="h-full ml-[248px] max-w-[650px] w-full   ">
+    <div className="h-full ml-[248px] max-w-[650px] w-full  pt-3 ">
       <Stories />
       <Feed initialPosts={posts} />
     </div>

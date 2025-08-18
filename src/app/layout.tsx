@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Handlee } from "next/font/google";
 import "./globals.css";
-import SideBar from "@/components/server/SideBar";
-import NavBar from "@/components/server/NavBar";
-import Providers from "@/components/client/Provider";
-
+ 
 const handlee = Handlee({
   subsets: ["latin"],
   weight: ["400"],
@@ -35,12 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${handlee.variable} antialiased`}
       >
-        <div className="md:flex flex-row-reverse">
-          <NavBar />
-          <Providers>{children}</Providers>
-
-          <SideBar />
-        </div>
+         {children}
       </body>
     </html>
   );
