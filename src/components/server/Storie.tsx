@@ -17,7 +17,7 @@ const Storie = ({ data }: StorieProps) => {
     <Link href={`/stories/${data.username}`}>
       <div className="flex flex-col items-center">
         <div
-          className={`w-[89px] h-[89px] rounded-full cursor-pointer p-1 ${
+          className={`w-[89px] h-[89px] rounded-full cursor-pointer p-[3px] ${
             hasStoryBorder
               ? "border-4 border-orange-500" // ستايل لو ما تقراتش
               : "border border-gray-300" // ستايل عادي

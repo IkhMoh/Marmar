@@ -9,9 +9,7 @@
       "name": "Amine Bouzid",
       "profile_image": "amine_bouzid.jpg"
     },
-    "image": [
-      "mm.mp4"
-    ],
+    "image": ["mm.mp4"],
     "type": "video",
     "created_at": "2025-08-10T12:00:00Z",
     "comments_count": 3
@@ -43,6 +41,36 @@
     },
     "image": ["2151917945.jpg", "post_oussama_2.jpg", "post_oussama_3.jpg"],
     "type": "image",
+    "created_at": "2025-08-12T09:15:00Z",
+    "comments_count": 8
+  },
+  {
+    "id": 4,
+    "title": "Travel",
+    "body": "Exploring the desert dunes 🏜️",
+    "author": {
+      "id": 103,
+      "username": "oussama_lahkdari",
+      "name": "Oussama Lahkdari",
+      "profile_image": "oussama_lahkdari.jpg"
+    },
+    "image": ["desk_setup.jpg"],
+    "type": "image",
+    "created_at": "2025-08-12T09:15:00Z",
+    "comments_count": 8
+  },
+  {
+    "id": 5,
+    "title": "Travel",
+    "body": "Exploring the desert dunes 🏜️",
+    "author": {
+      "id": 103,
+      "username": "oussama_lahkdari",
+      "name": "Oussama Lahkdari",
+      "profile_image": "oussama_lahkdari.jpg"
+    },
+    "image": ["Volando.mp4"],
+    "type": "video",
     "created_at": "2025-08-12T09:15:00Z",
     "comments_count": 8
   }

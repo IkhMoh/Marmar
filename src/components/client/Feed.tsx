@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { Post } from "@/types/post";
 import { useHydratePosts } from "@/store/hydrate";
-import PostCard from "../server/PostCard";
+import PostCard from "./PostCard";
 
 const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
   useHydratePosts(initialPosts);
@@ -12,7 +12,7 @@ const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
   const posts = useSelector((state: RootState) => state.posts.items);
 console.log(posts)
   return (
-    <div>
+    <div className="flex flex-col items-center">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}

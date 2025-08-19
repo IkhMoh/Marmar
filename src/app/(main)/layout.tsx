@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="md:flex flex-row-reverse">
+    <div className="md:flex flex-row-reverse ml-[248px]">
       <NavBar />
       <Providers>{children}</Providers>
 
