@@ -26,7 +26,7 @@ export function CarouselPlugin() {
     }
   };
   return (
-    <div className=" h-lvh w-screen flex items-center justify-center bg-gray-600 ">
+    <div className=" h-screen w-screen flex items-center justify-center bg-gray-600 ">
       <div className="h-[770px] w-[394px] ">
         <div className=" w-full bg-amber-400">
           <Carousel

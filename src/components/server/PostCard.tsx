@@ -1,11 +1,10 @@
-"use client";
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Post } from "@/types/post";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Volume2, VolumeOff } from "lucide-react";
+import { Heart, MessageCircle, Send, Volume2, VolumeOff } from "lucide-react";
+import { MenuDialog } from "./MenuDialog";
+import { SaveDialog } from "./SaveDialog";
 
 interface PostCardProps {
   post: Post;
@@ -24,8 +23,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       setMuted(!muted);
     }
   };
-
-  // toggle play/pause by click
+ 
   const handleTogglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -81,22 +79,26 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   //   : `/image/posts/${mediaSrc}`;
 
   return (
-    <div className="border rounded-lg mb-6  dark:bg-gray-800 shadow-sm w-[468px] h-[878px]">
+    <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-[878px]">
       {/* Header: User info */}
-      <div className="flex items-center p-3">
-        <Avatar className="w-10 h-10">
-          <AvatarImage
-            src={`public/images/avatars/profile_image`}
-            alt={post.author.username}
-          />
-          <AvatarFallback>
-            {post.author.username[0].toUpperCase()}
-          </AvatarFallback>
-        </Avatar>
-        <div className="ml-3">
-          <p className="font-semibold text-sm">{post.author.username}</p>
-          <p className="text-xs text-gray-500">{post.author.name}</p>
+      <div className="flex justify-between p-0.5 pb-3">
+        <div className="flex items-center ">
+          <Avatar className="w-9 h-9">
+            <AvatarImage
+              src={`public/images/avatars/profile_image`}
+              alt={post.author.username}
+              className=""
+            />
+            <AvatarFallback>
+              {post.author.username[0].toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+          <div className="ml-3">
+            <p className="font-bold text-sm">{post.author.username}</p>
+          </div>
+          <div className="ml-3 text-sm">{post.time_ago}</div>
         </div>
+        <MenuDialog />
       </div>
 
       {/* Content */}
@@ -106,10 +108,10 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </div> */}
 
       {post.image.length > 0 && (
-        <div className="w-full  relative h-[600px]">
+        <div className="w-full  relative h-[600px] ">
           {post.type === "video" ? (
             <div
-              className="relative w-full h-[600px] bg-black overflow-hidden"
+              className="relative w-full h-[600px] bg-black overflow-hidden rounded-[3px]"
               onClick={handleTogglePlay}
             >
               <video
@@ -122,7 +124,6 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 loop
                 playsInline
                 muted={muted}
-                
                 className="w-full h-full object-contain bg-black"
                 onPause={() => setPaused(true)}
                 onPlay={() => setPaused(false)}
@@ -170,6 +171,16 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           )}
         </div>
       )}
+      <div className="flex justify-between pt-2">
+        <div className="flex space-x-4">
+          <Heart size={26} />
+          <MessageCircle size={26} />
+          <Send size={26} />
+        </div>
+        <div>
+          <SaveDialog />
+        </div>
+      </div>
     </div>
   );
 };

@@ -12,52 +12,8 @@
     "image": ["mm.mp4"],
     "type": "video",
     "created_at": "2025-08-10T12:00:00Z",
-    "comments_count": 3
-  },
-  {
-    "id": 2,
-    "title": "Food",
-    "body": "Homemade pizza night 🍕",
-    "author": {
-      "id": 102,
-      "username": "sarah_ali",
-      "name": "Sarah Ali",
-      "profile_image": "sarah_ali.jpg"
-    },
-    "image": ["2151682966.jpg", "2151682966.jpg"],
-    "type": "image",
-    "created_at": "2025-08-11T15:30:00Z",
-    "comments_count": 5
-  },
-  {
-    "id": 3,
-    "title": "Travel",
-    "body": "Exploring the desert dunes 🏜️",
-    "author": {
-      "id": 103,
-      "username": "oussama_lahkdari",
-      "name": "Oussama Lahkdari",
-      "profile_image": "oussama_lahkdari.jpg"
-    },
-    "image": ["2151917945.jpg", "post_oussama_2.jpg", "post_oussama_3.jpg"],
-    "type": "image",
-    "created_at": "2025-08-12T09:15:00Z",
-    "comments_count": 8
-  },
-  {
-    "id": 4,
-    "title": "Travel",
-    "body": "Exploring the desert dunes 🏜️",
-    "author": {
-      "id": 103,
-      "username": "oussama_lahkdari",
-      "name": "Oussama Lahkdari",
-      "profile_image": "oussama_lahkdari.jpg"
-    },
-    "image": ["desk_setup.jpg"],
-    "type": "image",
-    "created_at": "2025-08-12T09:15:00Z",
-    "comments_count": 8
+    "comments_count": 3,
+    "time_ago": "48m"
   },
   {
     "id": 5,
@@ -72,6 +28,55 @@
     "image": ["Volando.mp4"],
     "type": "video",
     "created_at": "2025-08-12T09:15:00Z",
-    "comments_count": 8
+    "comments_count": 8,
+    "time_ago": "7h"
+  },
+  {
+    "id": 2,
+    "title": "Food",
+    "body": "Homemade pizza night 🍕",
+    "author": {
+      "id": 102,
+      "username": "sarah_ali",
+      "name": "Sarah Ali",
+      "profile_image": "sarah_ali.jpg"
+    },
+    "image": ["2151682966.jpg", "2151682966.jpg"],
+    "type": "image",
+    "created_at": "2025-08-11T15:30:00Z",
+    "comments_count": 5,
+    "time_ago": "8m"
+  },
+  {
+    "id": 3,
+    "title": "Travel",
+    "body": "Exploring the desert dunes 🏜️",
+    "author": {
+      "id": 103,
+      "username": "oussama_lahkdari",
+      "name": "Oussama Lahkdari",
+      "profile_image": "oussama_lahkdari.jpg"
+    },
+    "image": ["2151917945.jpg", "post_oussama_2.jpg", "post_oussama_3.jpg"],
+    "type": "image",
+    "created_at": "2025-08-12T09:15:00Z",
+    "comments_count": 8,
+    "time_ago": "7d"
+  },
+  {
+    "id": 4,
+    "title": "Travel",
+    "body": "Exploring the desert dunes 🏜️",
+    "author": {
+      "id": 103,
+      "username": "oussama_lahkdari",
+      "name": "Oussama Lahkdari",
+      "profile_image": "oussama_lahkdari.jpg"
+    },
+    "image": ["desk_setup.jpg"],
+    "type": "image",
+    "created_at": "2025-08-12T09:15:00Z",
+    "comments_count": 8,
+    "time_ago": "3h"
   }
 ]
