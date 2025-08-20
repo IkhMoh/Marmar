@@ -43,7 +43,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
     // observer: auto play/pause when visible
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries) => { 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             v.play().catch(() => {});
