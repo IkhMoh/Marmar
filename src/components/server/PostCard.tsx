@@ -12,18 +12,32 @@ interface PostCardProps {
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState<boolean>(() => {
+    const saved = localStorage.getItem("videoMuted");
+    return saved ? saved === "false" : false; // default: muted
+  });
   const [paused, setPaused] = useState(false);
 
   // mute/unmute
   const toggleMute = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (videoRef.current) {
-      videoRef.current.muted = !muted;
-      setMuted(!muted);
+      const newValue = !muted;
+      videoRef.current.muted = newValue;
+      setMuted(newValue);
+      localStorage.setItem("videoMuted", String(newValue));
     }
   };
- 
+  // useEffect(() => {
+  //   const savedMuted = localStorage.getItem("videoMuted");
+  //   const isMuted = savedMuted ? savedMuted === "true" : true; // default muted
+  //   setMuted(isMuted);
+  //   if (videoRef.current) {
+  //     videoRef.current.muted = isMuted;
+  //   }
+  // }, []);
+
+  // Auto play/pause when visible
   const handleTogglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -34,7 +48,6 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     }
   };
 
-  // Auto play/pause when visible
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -58,6 +71,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       observer.disconnect();
     };
   }, []);
+
   // const author: Author = post.author ?? {
   //   id: 0,
   //   username: "Unknown",
