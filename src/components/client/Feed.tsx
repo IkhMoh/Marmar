@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { Post } from "@/types/post";
 import { useHydratePosts } from "@/store/hydrate";
-import PostCard from "../server/PostCard";
+import PostCard from "./PostCard";
 
 const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
   useHydratePosts(initialPosts);
