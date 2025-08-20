@@ -1,11 +1,15 @@
 "use client";
-"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Post } from "@/types/post";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Volume2, VolumeOff } from "lucide-react";
+import { Heart, MessageCircle, Send, Volume2, VolumeOff } from "lucide-react";
+import { MenuDialog } from "../server/MenuDialog";
+import { SaveDialog } from "../server/SaveDialog";
+
+import { toggleMute } from "@/store/slice/videoSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 interface PostCardProps {
   post: Post;
@@ -13,39 +17,36 @@ interface PostCardProps {
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
 
+  const muted = useAppSelector((state) => state.video.muted);
+  const dispatch = useAppDispatch();
+
   // mute/unmute
-  const toggleMute = (e?: React.MouseEvent) => {
+  const handleToggleMute = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (videoRef.current) {
       videoRef.current.muted = !muted;
-      setMuted(!muted);
+      dispatch(toggleMute());
     }
   };
 
-  // toggle play/pause by click
-  const handleTogglePlay = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-    } else {
-      v.pause();
-    }
-  };
+  // play/pause by click
+  const handleTogglePlay = () =>
+    videoRef.current?.paused
+      ? videoRef.current.play()
+      : videoRef.current?.pause();
 
-  // Auto play/pause when visible
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
 
+    // observer: auto play/pause when visible
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries) => { 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            v.play();
+            v.play().catch(() => {});
           } else {
             v.pause();
           }
@@ -53,63 +54,52 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       },
       { threshold: 0.3 }
     );
-
     observer.observe(v);
+
+    // pause when tab not visible
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        v.pause();
+      } else if (!v.paused) {
+        v.play().catch(() => {});
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
-  // const author: Author = post.author ?? {
-  //   id: 0,
-  //   username: "Unknown",
-  //   name: "",
-  //   profile_image: "default.jpg",
-  // };
-
-  // let mediaSrc = "";
-  // if (Array.isArray(post.image) && post.image.length > 0) {
-  //   mediaSrc = post.image[0];
-  // } else if (typeof post.image === "string") {
-  //   mediaSrc = post.image;
-  // } else {
-  //   mediaSrc = "/default.jpg";
-  // }
-
-  // const finalSrc = mediaSrc.startsWith("http")
-  //   ? mediaSrc
-  //   : `/image/posts/${mediaSrc}`;
 
   return (
-    <div className="border rounded-lg mb-6  dark:bg-gray-800 shadow-sm w-[468px] h-[878px]">
-      {/* Header: User info */}
-      <div className="flex items-center p-3">
-        <Avatar className="w-10 h-10">
-          <AvatarImage
-            src={`public/images/avatars/profile_image`}
-            alt={post.author.username}
-          />
-          <AvatarFallback>
-            {post.author.username[0].toUpperCase()}
-          </AvatarFallback>
-        </Avatar>
-        <div className="ml-3">
-          <p className="font-semibold text-sm">{post.author.username}</p>
-          <p className="text-xs text-gray-500">{post.author.name}</p>
+    <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-[878px]">
+      {/* Header */}
+      <div className="flex justify-between p-0.5 pb-3">
+        <div className="flex items-center ">
+          <Avatar className="w-9 h-9">
+            <AvatarImage
+              src={`public/images/avatars/profile_image`}
+              alt={post.author.username}
+            />
+            <AvatarFallback>
+              {post.author.username[0].toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+          <div className="ml-3">
+            <p className="font-bold text-sm">{post.author.username}</p>
+          </div>
+          <div className="ml-3 text-sm">{post.time_ago}</div>
         </div>
+        <MenuDialog />
       </div>
 
       {/* Content */}
-      {/* <div className="px-3 pb-3">
-        <h3 className="font-semibold">{post.title}</h3>
-        <p className="text-sm mt-1">{post.body}</p>
-      </div> */}
-
       {post.image.length > 0 && (
-        <div className="w-full  relative h-[600px]">
+        <div className="w-full relative h-[600px]">
           {post.type === "video" ? (
             <div
-              className="relative w-full h-[600px] bg-black overflow-hidden"
+              className="relative w-full h-[600px] bg-black overflow-hidden rounded-[3px]"
               onClick={handleTogglePlay}
             >
               <video
@@ -122,19 +112,20 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 loop
                 playsInline
                 muted={muted}
-                
                 className="w-full h-full object-contain bg-black"
                 onPause={() => setPaused(true)}
                 onPlay={() => setPaused(false)}
               />
 
+              {/* mute/unmute button */}
               <button
-                onClick={toggleMute}
+                onClick={handleToggleMute}
                 className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full"
               >
                 {muted ? <VolumeOff size={20} /> : <Volume2 size={20} />}
               </button>
 
+              {/* play icon overlay */}
               {paused && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <svg
@@ -170,32 +161,18 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           )}
         </div>
       )}
+
+      {/* Actions */}
+      <div className="flex justify-between pt-2">
+        <div className="flex space-x-4">
+          <Heart size={26} />
+          <MessageCircle size={26} />
+          <Send size={26} />
+        </div>
+        <SaveDialog />
+      </div>
     </div>
   );
 };
 
 export default PostCard;
-//  <div className="w-full relative h-[400px]">
-//           {post.type === "video" ? (
-//             <video
-//               src={
-//                 post.image[0].startsWith("http")
-//                   ? post.image[0]
-//                   : `/images/posts/${post.image[0]}`
-//               }
-//               controls
-//               className="w-full h-full object-cover rounded-md"
-//             />
-//           ) : (
-//             <Image
-//               src={
-//                 post.image[0].startsWith("http")
-//                   ? post.image[0]
-//                   : `/images/posts/${post.image[0]}`
-//               }
-//               alt={post.title || "Post image"}
-//               fill
-//               className="object-cover rounded-md"
-//             />
-//           )}
-//         </div>

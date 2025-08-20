@@ -10,7 +10,7 @@ const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
   useHydratePosts(initialPosts);
 
   const posts = useSelector((state: RootState) => state.posts.items);
-console.log(posts)
+  console.log(posts);
   return (
     <div className="flex flex-col items-center">
       {posts.map((post) => (
