@@ -29,5 +29,6 @@ export type Post = {
   comments_count?: number;
   created_at?: string;
   from_api: boolean;
-  time_ago:string;
+  time_ago: string;
+  likes: number;
 };
