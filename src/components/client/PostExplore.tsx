@@ -54,14 +54,14 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
         {isVideo ? <Film size={22} /> : <Images size={22} />}
       </div>
 
-      {/* أيقونة التعليقات في الوسط وتظهر فقط مع hover */}
+      
       <div
         className="absolute inset-0 flex items-center justify-center 
              bg-black/0 group-hover:bg-black/50
              opacity-0 group-hover:opacity-100 
              transition-all duration-300"
       >
-        <div className="flex items-center gap-2 text-white text-lg font-semibold">
+        <div className="flex items-center gap-2 bg-white text-white text-lg font-semibold">
           <MessageCircle size={28} />
           <span>{post.comments_count ?? 0}</span>
         </div>
