@@ -17,14 +17,12 @@ const Page = async () => {
   const groups = chunkArray(posts, 5);
 
   return (
-    <div className="h-full w-full flex justify-center ">
+    <div className="h-full w-full flex justify-center mt-6">
       {" "}
       <div className="flex flex-col justify-center mx-[63.5px] px-5">
         {groups.map((group, gi) => {
-          // نبحث على أول فيديو في الـ group
           const tallPost = group.find((p) => p.type === "video");
 
-          // إذا ماكانش فيديو → نرندر 5 مربعات فقط
           if (!tallPost) {
             return (
               <div
@@ -49,7 +47,6 @@ const Page = async () => {
               style={{ gridAutoRows: "319px" }}
             >
               {gi % 2 === 0 ? (
-                // النمط الأول: الطويل على اليمين
                 <>
                   <div className="w-[319px] h-[319px]">
                     <PostExplore post={group[0]} variant="square" />
@@ -68,7 +65,6 @@ const Page = async () => {
                   </div>
                 </>
               ) : (
-                // النمط الثاني: الطويل على اليسار
                 <>
                   <div className="col-span-1 row-span-2 w-[319px] h-[638px]">
                     <PostExplore post={tallPost} variant="tall" />
