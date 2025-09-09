@@ -30,10 +30,11 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
   const muted = useAppSelector((state) => state.video.muted);
   const dispatch = useAppDispatch();
 
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const plugin = useRef(
+    Autoplay({ delay: 8000, stopOnInteraction: true }) // 4 ثواني
+  );
   // mute/unmute
   const handleToggleMute = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -91,12 +92,30 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
   return (
     <div className="h-screen w-screen flex justify-center">
       <div className="w-[394px] mt-2">
+        {/*  Progress bar  */}
+        <div className="flex gap-1 px-2 mb-2">
+          {user.stories?.map((_, idx) => (
+            <div
+              key={idx}
+              className={`h-[3px] flex-1 rounded-full ${
+                idx === currentIndex ? "bg-white" : "bg-white/30"
+              }`}
+            ></div>
+          ))}
+        </div>
         <div className="w-full bg-amber-400">
           <Carousel
             plugins={[plugin.current]}
             className="bg-sky-600 rounded-xl h-[630px]"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
+            setApi={(api) => {
+              if (api) {
+                api.on("select", () => {
+                  setCurrentIndex(api.selectedScrollSnap());
+                });
+              }
+            }}
           >
             <CarouselContent>
               {user.stories?.map((story, index) => (
@@ -108,7 +127,7 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
                       <div
                         className="relative w-full h-full bg-black overflow-hidden rounded-[3px]"
                         // onClick={handleTogglePlay}
-                        onClick={()=>handleTogglePlay(index)}
+                        onClick={() => handleTogglePlay(index)}
                       >
                         <video
                           ref={(el) => {
