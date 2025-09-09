@@ -1,6 +1,7 @@
 type StoryItem = {
   id: number;
-  image: string;
+  image?: string;
+  title?: string;
 };
 
 export type Story = {
@@ -9,5 +10,5 @@ export type Story = {
   profile_image?: string;
   isRead?: boolean;
   stories?: StoryItem[];
-  src?: string; 
+  src?: string;
 };

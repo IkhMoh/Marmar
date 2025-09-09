@@ -1,92 +1,85 @@
 [
-    {
-      "id": 1,
-      "username": "amine_bouzid",
-      "profile_image": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_amine_1.jpg" },
-        { "id": 2, "image": "story_amine_2.jpg" }
-      ]
-    },
-    {
-      "id": 2,
-      "username": "sarah_ali",
-      "profile_image": "2150697292.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_sarah_1.jpg" }
-      ]
-    },
-    {
-      "id": 3,
-      "username": "oussama_lahkdari",
-      "profile_image": "5938.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_oussama_1.jpg" },
-        { "id": 2, "image": "story_oussama_2.jpg" },
-        { "id": 3, "image": "story_oussama_3.jpg" }
-      ]
-    },
-    {
-      "id": 4,
-      "username": "fatima_zohra",
-      "profile_image": "2151478203.jpg",
-      "isRead": true,
-      "stories": [
-        { "id": 1, "image": "story_fatima_1.jpg" }
-      ]
-    },
-    {
-      "id": 5,
-      "username": "mohamed_slim",
-      "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_mohamed_1.jpg" },
-        { "id": 2, "image": "story_mohamed_2.jpg" }
-      ]
-    },
-    {
-      "id": 6,
-      "username": "nadia_cherif",
-      "profile_image": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_nadia_1.jpg" }
-      ]
-    },
-    {
-      "id": 7,
-      "username": "khaled_ben",
-      "profile_image": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_khaled_1.jpg" },
-        { "id": 2, "image": "story_khaled_2.jpg" }
-      ]
-    },
-    {
-      "id": 8,
-      "username": "yasmine_bela",
-      "profile_image": "yasmine_bela.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_yasmine_1.jpg" },
-        { "id": 2, "image": "story_yasmine_2.jpg" },
-        { "id": 3, "image": "story_yasmine_3.jpg" }
-      ]
-    },
-    {
-      "id": 9,
-      "username": "ahmed_k",
-      "profile_image": "ahmed_k.jpg",
-      "isRead": false,
-      "stories": [
-        { "id": 1, "image": "story_ahmed_1.jpg" }
-      ]
-    }
-
-  ]
-  
+  {
+    "id": 1,
+    "username": "amine_bouzid",
+    "profile_image": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
+    "isRead": false,
+    "stories": [
+      { "id": 2, "image": "Volando.mp4" },
+      { "id": 1, "image": "mm.mp4" },
+      { "id": 2, "image": "Volando.mp4" },
+      { "id": 1, "image": "mm.mp4" }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "sarah_ali",
+    "profile_image": "2150697292.jpg",
+    "isRead": false,
+    "stories": [{ "id": 1, "image": "Volando.mp4" }]
+  },
+  {
+    "id": 3,
+    "username": "oussama_lahkdari",
+    "profile_image": "5938.jpg",
+    "isRead": false,
+    "stories": [
+      { "id": 2, "image": "Volando.mp4" },
+      { "id": 1, "image": "2151682966.jpg" },
+      { "id": 2, "image": "Volando.mp4" },
+      { "id": 3, "image": "2151682966.jpg" }
+    ]
+  },
+  {
+    "id": 4,
+    "username": "fatima_zohra",
+    "profile_image": "2151478203.jpg",
+    "isRead": true,
+    "stories": [{ "id": 1, "image": "story_fatima_1.jpg" }]
+  },
+  {
+    "id": 5,
+    "username": "mohamed_slim",
+    "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
+    "isRead": false,
+    "stories": [
+      { "id": 1, "image": "2151917945.jpg" },
+      { "id": 2, "image": "2151917945.jpg" }
+    ]
+  },
+  {
+    "id": 6,
+    "username": "nadia_cherif",
+    "profile_image": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
+    "isRead": false,
+    "stories": [{ "id": 1, "image": "2151917945.jpg" }]
+  },
+  {
+    "id": 7,
+    "username": "khaled_ben",
+    "profile_image": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
+    "isRead": false,
+    "stories": [
+      { "id": 1, "image": "2151917945.jpg" },
+      { "id": 2, "image": "2151917945.jpg" }
+    ]
+  },
+  {
+    "id": 8,
+    "username": "yasmine_bela",
+    "profile_image": "yasmine_bela.jpg",
+    "isRead": false,
+    "stories": [
+      { "id": 1, "image": "2151917945.jpg" },
+      { "id": 2, "image": "2151917945.jpg" },
+      { "id": 3, "image": "2151917945.jpg" }
+    ]
+  },
+  {
+    "id": 9,
+    "username": "ahmed_k",
+    "profile_image": "ahmed_k.jpg",
+    "isRead": false,
+    "stories": [{ "id": 1, "image": "2151917945.jpg" }]
+  }
+]

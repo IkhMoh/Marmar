@@ -50,19 +50,22 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
       )}
 
       {/* أيقونة النوع فوق يمين */}
-      <div className="absolute top-2 right-2  p-1 text-white">
-        {isVideo ? <Film size={22} /> : <Images size={22} />}
+      <div className="absolute top-2 right-2  p-1  ">
+        {isVideo ? (
+          <Film size={26} stroke="white"/>
+        ) : (
+          <Images size={26} stroke="white"/>
+        )}
       </div>
 
-      
       <div
         className="absolute inset-0 flex items-center justify-center 
              bg-black/0 group-hover:bg-black/50
              opacity-0 group-hover:opacity-100 
              transition-all duration-300"
       >
-        <div className="flex items-center gap-2 bg-white text-white text-lg font-semibold">
-          <MessageCircle size={28} />
+        <div className="flex items-center gap-2   text-lg font-semibold">
+          <MessageCircle size={28} stroke="white" fill="white" />
           <span>{post.comments_count ?? 0}</span>
         </div>
       </div>
