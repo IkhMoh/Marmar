@@ -102,7 +102,7 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
               }`}
             ></div>
           ))}
-        </div>
+        </div> 
         <div className="w-full bg-amber-400">
           <Carousel
             plugins={[plugin.current]}
