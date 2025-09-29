@@ -1,4 +1,3 @@
-// postsSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Post } from "@/types/post";
 
@@ -17,11 +16,11 @@ const postsSlice = createSlice({
     fetchPosts: (state, action: PayloadAction<Post[]>) => {
       state.items = action.payload;
     },
-    addPost: (state, action: PayloadAction<Post>) => {
-      state.items.unshift(action.payload);
-    },
+    // addPost: (state, action: PayloadAction<Post>) => {
+    //   state.items.unshift(action.payload);
+    // },
   },
 });
 
-export const { fetchPosts, addPost } = postsSlice.actions;
+export const { fetchPosts } = postsSlice.actions;
 export default postsSlice.reducer;

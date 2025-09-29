@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -21,6 +20,7 @@ interface StoriesProps {
 }
 
 export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
+  
   const videoRefs = useRef<HTMLVideoElement[]>([]);
 
   const [videoPaused, setVideoPaused] = useState<{ [key: number]: boolean }>(
