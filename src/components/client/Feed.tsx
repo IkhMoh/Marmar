@@ -7,6 +7,7 @@ import { useHydratePosts } from "@/store/hydrate";
 import PostCard from "./PostCard";
 
 const Feed = ({ initialPosts }: { initialPosts: Post[] }) => {
+  
   useHydratePosts(initialPosts);
 
   const posts = useSelector((state: RootState) => state.posts.items);

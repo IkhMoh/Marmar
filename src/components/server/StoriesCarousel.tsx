@@ -12,8 +12,7 @@ import { getStories } from "@/lib/stories/getStories";
 
 export async function StoriesCarousel() {
   const data: Story[] = await getStories();
-  console.log(data);
-  return (
+   return (
     <Carousel className="w-full h-full  flex items-center ">
       <CarouselContent className="gap-4 h-full w-full px-4">
         {data.map((story) => (
