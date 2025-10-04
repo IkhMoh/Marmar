@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api } from "./tarmeezacademyApi";
 
 export interface Post {
   id: number;
