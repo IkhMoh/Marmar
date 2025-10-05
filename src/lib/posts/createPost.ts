@@ -1,7 +1,7 @@
-import { api } from "@/lib/axios";
-import { Post } from "@/types/post";
+// import { api } from "@/lib/axios";
+// import { Post } from "@/types/post";
 
-export async function createPost(post: Partial<Post>) {
-  const res = await api.post("/posts", post);
-  return res.data;
-}
+// export async function createPost(post: Partial<Post>) {
+//   const res = await api.post("/posts", post);
+//   return res.data;
+// }

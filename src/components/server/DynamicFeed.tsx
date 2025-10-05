@@ -1,17 +1,14 @@
 import React from "react";
 import Stories from "./Stories";
 
-import Feed from "../client/Feed";
-import { getMergedPosts } from "@/lib/posts/getMergedPosts";
-import { Post } from "@/types/post";
+import FeedClient from "../client/FeedClient";
 
-const DynamicFeed = async () => {
-  const posts: Post[] = await getMergedPosts();
-
+const DynamicFeed = () => {
+  // console.log(posts)
   return (
     <div className="h-full  max-w-[650px] w-full  pt-3 ">
       <Stories />
-      <Feed initialPosts={posts} />
+      <FeedClient />
     </div>
   );
 };
