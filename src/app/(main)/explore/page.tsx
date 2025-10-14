@@ -1,5 +1,5 @@
 import React from "react";
-import { getMergedPosts } from "@/lib/posts/getMergedPosts";
+// import { getMergedPosts } from "@/lib/posts/getMergedPosts";
 import { Post } from "@/types/post";
 import PostExplore from "@/components/client/PostExplore";
 
