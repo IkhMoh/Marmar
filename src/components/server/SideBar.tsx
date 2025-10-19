@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { Badge } from "../ui/badge";
+import CreateDialog from "./CreateDialog";
 
 const SideBar = () => {
   return (
@@ -76,12 +77,7 @@ const SideBar = () => {
             </div>
           </Link>
 
-          <Link href={"/#"}>
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
-              <SquarePlus size={25} />
-              <p className="hidden lg:block">Create</p>
-            </div>
-          </Link>
+          <CreateDialog />
           <Link href={"/profile"}>
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <User size={25} />
