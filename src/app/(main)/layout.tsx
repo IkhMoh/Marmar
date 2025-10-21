@@ -1,5 +1,7 @@
 import SideBar from "@/components/server/SideBar";
 import NavBar from "@/components/server/NavBar";
+import { MessageCircleMore } from "lucide-react";
+import MessagesIcon from "@/components/client/MessagesIcon";
 
 export default function RootLayout({
   children,
@@ -12,6 +14,7 @@ export default function RootLayout({
       {children}
 
       <SideBar />
+      <MessagesIcon />
     </div>
   );
 }
