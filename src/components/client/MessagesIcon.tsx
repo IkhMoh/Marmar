@@ -5,7 +5,6 @@ import { MessageCircleMore } from "lucide-react";
 export default function MessageButton() {
   const pathname = usePathname();
 
-  // نخفي الزر في صفحة "/direct"
   if (pathname === "/direct") return null;
 
   return (
