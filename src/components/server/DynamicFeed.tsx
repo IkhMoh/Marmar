@@ -6,7 +6,7 @@ import FeedClient from "../client/FeedClient";
 const DynamicFeed = () => {
   // console.log(posts)
   return (
-    <div className="h-full  max-w-[650px] w-full  pt-3 ">
+    <div className="h-full w-[650px] pt-3 ">
       <Stories />
       <FeedClient />
     </div>
