@@ -17,17 +17,18 @@ import CreateDialog from "./CreateDialog";
 
 const SideBar = () => {
   return (
-    <div className="bg-amber-50 fixed left-0 bottom-0 h-fit w-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen md:w-[73px] lg:w-[248px] md:border-r-1 md:border-gray-400 ">
-      <div className="flex justify-around md:flex-col  w-full h-screen">
+    <div className=" fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen lg:w-[73px] xl:w-[248px] md:border-r-1 md:border-gray-400 ">
+      <div className="flex justify-around md:flex-col  w-full h-full">
         {/* logo */}
         <Link href={"/"}>
-          <div className="font-bold text-3xl md:mx-6.5 md:pt-8 font-handlee hidden lg:block">
+          <div className="font-bold text-3xl md:mx-6.5 md:pt-8 font-handlee hidden xl:block">
             Marmar
           </div>
-          <div className="font-bold text-3xl md:mx-6.5 md:mt-5 font-handlee lg:hidden md:block hidden">
+          <div className="font-bold text-3xl lg:mx-6.5 lg:mt-5 font-handlee xl:hidden lg:block hidden">
             <Instagram />
           </div>
         </Link>
+        {/* todoui md=lg .. lg=xl */}
         {/* logo == */}
         <div className="flex justify-evenly h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-10">
           <Link href={"/"} className="">

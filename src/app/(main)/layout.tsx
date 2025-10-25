@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="md:flex flex-row-reverse ml-[248px]">
+    <div className="md:flex flex-row-reverse ml-[248px] ">
       <NavBar />
       {children}
 
