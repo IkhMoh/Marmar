@@ -6,14 +6,14 @@ import {
   House,
   Instagram,
   MessageCircleMore,
-  Search,
-  SquarePlus,
+  
   User,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Badge } from "../ui/badge";
 import CreateDialog from "./CreateDialog";
+import { SheetDemo } from "./SearchSheet";
 
 const SideBar = () => {
   return (
@@ -38,12 +38,8 @@ const SideBar = () => {
             </div>
           </Link>
 
-          <Link href={"#"} className="md:block hidden">
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
-              <Search size={25} />
-              <p className="hidden lg:block">Search</p>
-            </div>
-          </Link>
+          <SheetDemo/>
+
           <Link href={"/explore"}>
             {" "}
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
