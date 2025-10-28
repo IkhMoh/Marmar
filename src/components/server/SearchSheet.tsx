@@ -2,12 +2,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Search } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function SheetDemo() {
   return (
@@ -28,11 +31,16 @@ export function SheetDemo() {
         </div>
         <div className="h-full">
           <hr className="mt-2" />
-          <h1 className="text-gray-500 p-6 pl-4 font-bold">Resent</h1>
-          <div className="h-full w-full  flex justify-center">
+          <h1 className="pt-6 pl-4 font-bold">Resent</h1>
+          <div className="h-full w-full  flex justify-center pt-20">
             <h1>No recent searches.</h1>
           </div>
         </div>
+        <SheetFooter>
+          <SheetClose asChild>
+            <Button variant="outline">Close</Button>
+          </SheetClose>{" "}
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

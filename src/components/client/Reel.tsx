@@ -54,7 +54,7 @@ export default function Reel() {
 
   return (
     <div
-      className="relative w-fit h-[600px] bg-black overflow-hidden"
+      className="relative w-fit h-[730] bg-black overflow-hidden"
       onClick={handleTogglePlay}
     >
       <video
@@ -95,6 +95,10 @@ export default function Reel() {
           </svg>
         </div>
       )}
+      {/* 
+      todo
+      */}
+      <div></div>
     </div>
   );
 }
