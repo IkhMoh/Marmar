@@ -99,6 +99,6 @@ export default function Reel() {
       todo
       */}
       <div className="w-20 bg-red-400">ff</div>
-    </div>
+    </div> 
   );
 }
