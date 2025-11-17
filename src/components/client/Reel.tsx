@@ -57,17 +57,17 @@ export default function Reel() {
   }, []);
 
   return (
-    <div className=" flex  w-fit h-[730px]  overflow-hidden">
+    <div className=" flex  w-fit h-[730px]  ">
       <div className="relative bg-black">
         {" "}
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="/images/posts/mm.mp4"
+          src="/images/posts/Volando.mp4"
           loop
           playsInline
           muted={muted}
-          className="w-[390px] h-full object-contain bg-black"
+          className="w-full h-full object-contain bg-black"
           onPause={() => setPaused(true)}
           onPlay={() => setPaused(false)}
         />
