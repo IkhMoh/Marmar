@@ -11,7 +11,7 @@ export function SaveDialog() {
     <HoverCard>
       <HoverCardTrigger asChild>
         <button className="">
-          <Bookmark size={26} />
+          <Bookmark size={25} />
         </button>
       </HoverCardTrigger>
       <HoverCardContent className="w-52">

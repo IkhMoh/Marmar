@@ -1,7 +1,11 @@
 "use client";
-import { Volume2, VolumeOff } from "lucide-react";
+import { Heart, MessageCircle, Volume2, VolumeOff } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
+import { SendDialog } from "../server/SendDialog";
+import { SaveDialog } from "../server/SaveDialog";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { MenuDialog } from "../server/MenuDialog";
 export default function Reel() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -53,52 +57,84 @@ export default function Reel() {
   }, []);
 
   return (
-    <div
-      className="relative w-fit h-[730px] bg-black overflow-hidden"
-      onClick={handleTogglePlay}
-    >
-      <video
-        ref={videoRef}
-        src="/images/posts/mm.mp4"
-        loop
-        playsInline
-        muted={muted}
-        className="w-full h-full object-contain bg-black"
-        onPause={() => setPaused(true)}
-        onPlay={() => setPaused(false)}
-      />
-
-      <button
-        onClick={toggleMute}
-        className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full"
-      >
-        {muted ? <VolumeOff size={20} /> : <Volume2 size={20} />}
-      </button>
-
-      {paused && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <svg
-            width="120"
-            height="120"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="opacity-70"
-          >
-            <path
-              d="M20 15 L45 30 L20 45 Z"
-              fill="white"
-              stroke="white"
-              strokeWidth="6"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      )}
-      {/* 
+    <div className=" flex  w-fit h-[730px]  overflow-hidden">
+      <div className="relative bg-black">
+        {" "}
+        <video
+          onClick={handleTogglePlay}
+          ref={videoRef}
+          src="/images/posts/mm.mp4"
+          loop
+          playsInline
+          muted={muted}
+          className="w-[390px] h-full object-contain bg-black"
+          onPause={() => setPaused(true)}
+          onPlay={() => setPaused(false)}
+        />
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full"
+        >
+          {muted ? <VolumeOff size={20} /> : <Volume2 size={20} />}
+        </button>
+        {paused && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg
+              width="120"
+              height="120"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="opacity-70"
+            >
+              <path
+                d="M20 15 L45 30 L20 45 Z"
+                fill="white"
+                stroke="white"
+                strokeWidth="6"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        )}
+        {/* 
       todo
       */}
-      <div className="w-20 bg-red-400">ff</div>
-    </div> 
+      </div>
+
+      <div className="w-20  h-full">
+        <div className="w-full  h-full  flex  justify-end items-center">
+          {" "}
+          <div className="w-full  h-full flex flex-col items-center justify-end space-y-6 pb-2 ">
+            <div className=" flex flex-col space-y-8">
+              <div className=" flex flex-col items-center space-y-8">
+                {" "}
+                <div className="flex flex-col items-center space-y1">
+                  <Heart size={25} />
+                  <p className="text-xs">23.7k</p>
+                </div>
+                <Link href="#" className="cursor-pointer flex flex-col items-center space-y1">
+                  <MessageCircle size={25} />
+                  <p className="text-xs">300</p>
+                </Link>
+                <SendDialog />
+                <SaveDialog />
+                <MenuDialog />
+              </div>
+
+              <Avatar className="w-7 h-7 rounded-md bg-red-700">
+                <AvatarImage
+                  src={`public/images/avatars/profile_image`}
+                  // alt={post.author.username}
+                />
+                <AvatarFallback>
+                  {/* {post.author.username[0].toUpperCase()} */}
+                </AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

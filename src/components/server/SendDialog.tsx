@@ -17,7 +17,7 @@ export function SendDialog() {
   return (
     <Dialog >
       <DialogTrigger asChild>
-        <Send size={26} className="cursor-pointer" />
+        <Send size={25} className="cursor-pointer" />
       </DialogTrigger>
       <DialogContent className="sm:max-w-md ">
         <DialogHeader>
