@@ -237,7 +237,6 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 <Smile size={16} />
               </button>
 
-              {/* البوب أب */}
               {showEmojiPicker && (
                 <div className="absolute bottom-8 right-0 z-50">
                   <EmojiPicker

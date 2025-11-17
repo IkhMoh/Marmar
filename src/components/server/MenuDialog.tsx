@@ -10,8 +10,8 @@ export function MenuDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="flex items-center p-2">
-          <Ellipsis size={20} />
+        <button className="flex items-center  cursor-pointer">
+          <Ellipsis size={22} />
         </button>
       </DialogTrigger>
 
