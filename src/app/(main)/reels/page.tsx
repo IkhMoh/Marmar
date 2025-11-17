@@ -23,12 +23,7 @@ const Page = () => {
       <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
         <Reel />
       </section>
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
-        <Reel />
-      </section>
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
-        <Reel />
-      </section>
+     
     </div>
   );
 };
