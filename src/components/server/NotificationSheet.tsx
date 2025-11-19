@@ -13,7 +13,7 @@ import { Heart } from "lucide-react";
 import { Button } from "../ui/button";
 
 export function NotificationSheet() {
-  return (
+  return ( 
     <Sheet>
       <SheetTrigger className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
         <Heart size={25} />
