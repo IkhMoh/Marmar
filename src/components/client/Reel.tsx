@@ -57,8 +57,8 @@ export default function Reel() {
   }, []);
 
   return (
-    <div className=" flex  w-fit h-[730px]  ">
-      <div className="relative bg-black">
+    <div className=" flex  w-fit h-[710px]">
+      <div className="relative w-[386px] h-[710px]">
         {" "}
         <video
           onClick={handleTogglePlay}
@@ -67,15 +67,15 @@ export default function Reel() {
           loop
           playsInline
           muted={muted}
-          className="w-full h-full object-contain bg-black"
+          className="h-full w-full "
           onPause={() => setPaused(true)}
           onPlay={() => setPaused(false)}
         />
         <button
           onClick={toggleMute}
-          className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full"
+          className="absolute bottom-3 right-3 bg-black/50 text-white p-2 rounded-full"
         >
-          {muted ? <VolumeOff size={20} /> : <Volume2 size={20} />}
+          {muted ? <VolumeOff size={18} /> : <Volume2 size={18} />}
         </button>
         {paused && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

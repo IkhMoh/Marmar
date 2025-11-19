@@ -11,18 +11,20 @@ const Page = () => {
       ))} */}
 
       {/* Example: multiple reels */}
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
+      <section className="snap-center  h-screen flex items-start pt-1 justify-center overflow-hidden  -mb-8">
         <Reel />
       </section>
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
+      <section className="snap-center  h-screen flex items-start pt-1 justify-center overflow-hidden  -mb-8">
         <Reel />
       </section>
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
+      <section className="snap-center  h-screen flex items-start pt-1 justify-center overflow-hidden  -mb-8">
         <Reel />
       </section>
-      <section className="snap-center  h-screen flex items-center justify-center overflow-hidden -mt-[3vh]  ">
+      <section className="snap-center  h-screen flex items-start pt-1 justify-center overflow-hidden  -mb-8">
         <Reel />
       </section>
+    
+      
      
     </div>
   );
