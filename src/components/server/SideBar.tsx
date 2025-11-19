@@ -2,18 +2,17 @@ import {
   AlignJustify,
   Compass,
   Film,
-  Heart,
   House,
   Instagram,
   MessageCircleMore,
-  
   User,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Badge } from "../ui/badge";
 import CreateDialog from "./CreateDialog";
-import { SheetDemo } from "./SearchSheet";
+import {  SheetDemo } from "./SearchSheet";
+import { NotificationSheet } from "./NotificationSheet";
 
 const SideBar = () => {
   return (
@@ -38,7 +37,7 @@ const SideBar = () => {
             </div>
           </Link>
 
-          <SheetDemo/>
+          <SheetDemo />
 
           <Link href={"/explore"}>
             {" "}
@@ -66,14 +65,12 @@ const SideBar = () => {
               <p className="hidden lg:block">Messages</p>
             </div>
           </Link>
-
-          <Link href={"/#"} className="md:block hidden">
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
-              <Heart size={25} />
-              <p className="hidden lg:block">Notifications</p>
-            </div>
-          </Link>
-
+          {/* <div className=" md:block hidden">
+             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+              
+             </div>
+          </div> */}
+          <NotificationSheet />
           <CreateDialog />
           <Link href={"/profile"}>
             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
