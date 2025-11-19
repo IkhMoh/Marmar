@@ -21,7 +21,7 @@ export function SheetDemo() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-md font-bold pl-3">Search</SheetTitle>
+          <SheetTitle className="text-2xl font-bold pl-3">Search</SheetTitle>
         </SheetHeader>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
