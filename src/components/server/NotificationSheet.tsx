@@ -11,9 +11,10 @@ import {
 } from "@/components/ui/sheet";
 import { Heart } from "lucide-react";
 import { Button } from "../ui/button";
+import AccountCard from "./AccountCard";
 
 export function NotificationSheet() {
-  return ( 
+  return (
     <Sheet>
       <SheetTrigger className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
         <Heart size={25} />
@@ -21,20 +22,23 @@ export function NotificationSheet() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-md font-bold pl-3">Search</SheetTitle>
+          <SheetTitle className="text-2xl font-bold pl-3">
+            Notifications
+          </SheetTitle>
         </SheetHeader>
-        <div className="grid flex-1 auto-rows-min gap-6 px-4">
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Name</Label>
-            <Input id="sheet-demo-name" defaultValue="" />
-          </div>
-        </div>
-        <div className="h-full">
+
+        <div className="h-full space-y-5 mx-2">
+          <div className="text-md font-bold pl-3">This week</div>
+          <span className=" flex flex-col items-center">
+            <AccountCard />
+          </span>
           <hr className="mt-2" />
-          <h1 className="pt-6 pl-4 font-bold">Resent</h1>
-          <div className="h-full w-full  flex justify-center pt-20">
-            <h1>No recent searches.</h1>
-          </div>
+          <div className="text-md font-bold pl-3">This month</div>
+          <span className=" flex flex-col items-center">
+            <AccountCard />
+          </span>
+          <hr className="mt-2" />
+
         </div>
         <SheetFooter>
           <SheetClose asChild>
