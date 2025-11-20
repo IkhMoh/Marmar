@@ -18,7 +18,7 @@ const Profile = () => {
           </Avatar>
         </div>
         <div className="w-2/3">
-          <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm ">
+          {/* <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm ">
             <div className="flex flex-col gap-1">
               <h2 className="text-2xl font-semibold">eternel_audiovisuel</h2>
 
@@ -40,6 +40,49 @@ const Profile = () => {
                 </p>
                 <p>Vente matérielle informatique et audiovisuel</p>
 
+                <div className="space-y-1 text-sm">
+                  <p>📍 Bab Ezzouar Alger</p>
+                  <p>📞 0670288883</p>
+                  <p>📞 0676722551</p>
+                  <p>eternel store, Bab Ezzouar 16024</p>
+                </div>
+              </div>
+            </div>
+          </section> */}
+          <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm bg-white dark:bg-neutral-900 dark:border-neutral-700">
+            <div className="flex flex-col gap-1">
+              <div className="flex justify-between">
+                <h2 className="text-2xl font-semibold">eternel_audiovisuel</h2>
+                <div className="flex  items-center gap-2 mt-2">
+                  <button className="px-4 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
+                    Following
+                  </button>
+                  <button className="px-4 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
+                    Message
+                  </button>
+                  <button className="px-3 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
+                    ⋯
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-sm mt-1">
+                <div>
+                  <span className="font-bold">12,224</span> posts
+                </div>
+                <div>
+                  <span className="font-bold">252K</span> followers
+                </div>
+                <div>
+                  <span className="font-bold">37</span> following
+                </div>
+              </div>
+
+              <div className="mt-3 text-sm leading-5 space-y-1">
+                <p className="font-semibold">
+                  ETERNEL STORE | Taqieddine bendrihem
+                </p>
+                <p>Vente matérielle informatique et audiovisuel</p>
                 <div className="space-y-1 text-sm">
                   <p>📍 Bab Ezzouar Alger</p>
                   <p>📞 0670288883</p>
