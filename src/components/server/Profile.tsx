@@ -5,7 +5,7 @@ import ProfileTabs from "../client/ProfileTabs";
 
 const Profile = ({ username }: { username: string }) => {
   return (
-    <div className="w-full px-24 pt-8 space-y-10">
+    <div className="w-full px-24 pt-6 space-y-10">
       {/* the top */}
       <div className="h-72 w-full flex justify-between  px-12 pt-1">
         <div className="w-1/3 flex justify-center items-center pr-2">
@@ -55,13 +55,13 @@ const Profile = ({ username }: { username: string }) => {
               <div className="flex justify-between">
                 <h2 className="text-2xl font-semibold">eternel_audiovisuel</h2>
                 <div className="flex  items-center gap-2 mt-2">
-                  <button className="px-4 py-1 rounded-lg text-sm font-medium">
+                  <button className="px-4 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
                     Following
                   </button>
-                  <button className="px-4 py-1 rounded-lg text-sm font-medium">
+                  <button className="px-4 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
                     Message
                   </button>
-                  <button className="px-3 py-1 rounded-lg text-sm font-medium">
+                  <button className="px-3 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
                     ⋯
                   </button>
                 </div>
