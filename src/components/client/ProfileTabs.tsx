@@ -8,45 +8,42 @@ interface ProfileTabsProps {
 }
 export default function ProfileTabs({ username }: ProfileTabsProps) {
   const pathname = usePathname();
-   const isActive = (path: string) => {
-    if (path === "") {
-      return pathname === `/${username}` || pathname === `/${username}/`;
-    }
 
-    return pathname === `/${username}/${path}`;
+  const isActive = (path: string) => {
+    const base = `/${username}`;
+    if (path === "") return pathname === base || pathname === `${base}/`;
+    return pathname === `${base}${path}`;
   };
 
   return (
     <div className="h-fit w-full flex justify-center space-x-56">
       <Link
         href={`/${username}`}
-        className={
-          isActive("")
-            ? "border-b-2 border-black dark:border-white pb-2 px-5"
-            : ""
-        }
+        className={`pb-2 px-5 h-10 flex items-center justify-center border-b-2 ${
+          isActive("") ? "border-black dark:border-white" : "border-transparent"
+        }`}
       >
         <Grid3x3 size={26} strokeWidth={isActive("") ? 2 : 1.5} />
       </Link>
 
       <Link
         href={`/${username}/reels`}
-        className={
+        className={`pb-2 px-5 h-10 flex items-center justify-center border-b-2 ${
           isActive("/reels")
-            ? "border-b-2 border-black dark:border-white pb-2 px-5"
-            : ""
-        }
+            ? "border-black dark:border-white"
+            : "border-transparent"
+        }`}
       >
         <Film size={26} strokeWidth={isActive("/reels") ? 2 : 1.5} />
       </Link>
 
       <Link
         href={`/${username}/tagged`}
-        className={
+        className={`pb-2 px-5 h-10 flex items-center justify-center border-b-2 ${
           isActive("/tagged")
-            ? "border-b-2 border-black dark:border-white pb-2 px-5"
-            : ""
-        }
+            ? "border-black dark:border-white"
+            : "border-transparent"
+        }`}
       >
         <SquareUserRound
           size={26}
