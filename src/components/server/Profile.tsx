@@ -18,7 +18,7 @@ const Profile = ({ username }: { username: string }) => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div> 
-        <div className="w-2/3"> 
+        <div className="w-2/3">  
           <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm">
             <div className="flex flex-col gap-1">
               <div className="flex justify-between">
