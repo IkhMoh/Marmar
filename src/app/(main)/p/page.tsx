@@ -1,7 +1,9 @@
-import React from "react";
 
 const page = () => {
-  return <div className="bg-red-600 w-full h-full">ditelse of the post</div>;
+  return (
+    <div className="bg-red-100 w-full h-full">
+    </div>
+  );
 };
 
 export default page;

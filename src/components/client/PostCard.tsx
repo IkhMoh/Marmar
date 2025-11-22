@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Post } from "@/types/post";
 import EmojiPicker from "emoji-picker-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Heart, MessageCircle, Smile, Volume2, VolumeOff } from "lucide-react";
 import { SaveDialog } from "../server/SaveDialog";
 import { SendDialog } from "../server/SendDialog";
@@ -14,6 +13,7 @@ import { toggleMute } from "@/store/slice/videoSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import Link from "next/link";
 import { MenuDialog } from "../server/MenuDialog";
+import HoverPost from "../server/HoverPost";
 
 interface PostCardProps {
   post: Post;
@@ -85,21 +85,17 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-fit pb-4">
       {/* Header */}
       <div className="flex justify-between p-0.5 pb-3">
-        <Link  href={"/" + post.author.username}  className="flex items-center ">
-          <Avatar className="w-9 h-9">
-            <AvatarImage
-              src={`public/images/avatars/profile_image`}
-              alt={post.author.username}
-            />
-            <AvatarFallback>
-              {post.author.username[0].toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          <div className="ml-3">
-            <p className="font-bold text-sm">{post.author.username}</p>
-          </div>
-          <div className="ml-3 text-sm">{post.time_ago}</div>
-        </Link>
+        <HoverPost
+          username={post.author.username}
+          profile_image={post.author.profile_image}
+          fullName={post.author.name}
+        />
+        <div
+          className="flex items-center justify-start  w-full
+         "
+        >
+          <div className="text-sm">{post.time_ago}</div>
+        </div>
         <MenuDialog />
       </div>
 
