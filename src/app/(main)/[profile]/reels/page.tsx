@@ -1,5 +1,4 @@
-import React from "react";
-const page = () => {
+export default function Page() {
   return (
     <div className="grid grid-cols-3 gap-1 mt-1">
     {Array.from({ length: 9 }).map((_, i) => (
@@ -7,6 +6,4 @@ const page = () => {
     ))}
   </div>
   );
-};
-
-export default page;
+}
