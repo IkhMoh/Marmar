@@ -19,37 +19,6 @@ const Profile = ({ username }: { username: string }) => {
           </Avatar>
         </div>
         <div className="w-2/3">
-          {/* <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm ">
-            <div className="flex flex-col gap-1">
-              <h2 className="text-2xl font-semibold">eternel_audiovisuel</h2>
-
-              <div className="flex gap-6 text-sm mt-1">
-                <div>
-                  <span className="font-bold">12,224</span> posts
-                </div>
-                <div>
-                  <span className="font-bold">252K</span> followers
-                </div>
-                <div>
-                  <span className="font-bold">37</span> following
-                </div>
-              </div>
-
-              <div className="mt-3 text-sm leading-5 space-y-1">
-                <p className="font-semibold">
-                  ETERNEL STORE | Taqieddine bendrihem
-                </p>
-                <p>Vente matérielle informatique et audiovisuel</p>
-
-                <div className="space-y-1 text-sm">
-                  <p>📍 Bab Ezzouar Alger</p>
-                  <p>📞 0670288883</p>
-                  <p>📞 0676722551</p>
-                  <p>eternel store, Bab Ezzouar 16024</p>
-                </div>
-              </div>
-            </div>
-          </section> */}
           <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm">
             <div className="flex flex-col gap-1">
               <div className="flex justify-between">
@@ -99,10 +68,9 @@ const Profile = ({ username }: { username: string }) => {
         <Highlights />
       </div>
       {/* ====the top==== */}
+      
       {/* bottom */}
-      <div className="">
-        <ProfileTabs username={username} />
-      </div>
+      <ProfileTabs username={username} />
       {/* ====bottom==== */}
     </div>
   );
