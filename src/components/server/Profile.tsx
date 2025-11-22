@@ -17,12 +17,14 @@ const Profile = ({ username }: { username: string }) => {
             />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-        </div> 
-        <div className="w-2/3">  
+        </div>
+        <div className="w-2/3">
           <section className="w-full max-w-xl mx-auto mt-6 p-4 rounded-2xl border shadow-sm">
             <div className="flex flex-col gap-1">
               <div className="flex justify-between">
-                <h2 className="text-2xl font-semibold">eternel_audiovisuel</h2>
+                <h2 className="text-2xl font-semibold">
+                  eternel_audiovisuel <p>m,{username},m</p>
+                </h2>
                 <div className="flex  items-center gap-2 mt-2">
                   <button className="px-4 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 text-sm font-medium">
                     Following

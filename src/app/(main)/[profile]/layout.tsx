@@ -1,14 +1,17 @@
 import React from "react";
 import Profile from "@/components/server/Profile";
 
-export default function ProfileLayout({
-  children,
-}: {
+interface LayoutProps {
   children: React.ReactNode;
-}) {
+  params: { profile: string };
+}
+
+export default function ProfileLayout({ children, params }: LayoutProps) {
+  const { profile } = params;
+
   return (
     <div className="min-h-screen w-full">
-      <Profile username="jj" />
+      <Profile username={profile} />
       <div className="px-24">{children}</div>
     </div>
   );
