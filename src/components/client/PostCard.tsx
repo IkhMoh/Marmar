@@ -85,7 +85,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
     <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-fit pb-4">
       {/* Header */}
       <div className="flex justify-between p-0.5 pb-3">
-        <div className="flex items-center ">
+        <Link  href={"/" + post.author.username}  className="flex items-center ">
           <Avatar className="w-9 h-9">
             <AvatarImage
               src={`public/images/avatars/profile_image`}
@@ -99,7 +99,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             <p className="font-bold text-sm">{post.author.username}</p>
           </div>
           <div className="ml-3 text-sm">{post.time_ago}</div>
-        </div>
+        </Link>
         <MenuDialog />
       </div>
 

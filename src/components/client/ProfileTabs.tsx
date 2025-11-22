@@ -1,16 +1,23 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Grid3x3, Film, SquareUserRound } from "lucide-react";
 
-export default function ProfileTabs({ username }: { username: string }) {
+interface ProfileTabsProps {
+  username: string;
+}
+export default function ProfileTabs({ username }: ProfileTabsProps) {
   const pathname = usePathname();
+   const isActive = (path: string) => {
+    if (path === "") {
+      return pathname === `/${username}` || pathname === `/${username}/`;
+    }
 
-  const isActive = (path: string) => pathname === `/${username}${path}`;
+    return pathname === `/${username}/${path}`;
+  };
 
   return (
-    <div className="h-fit w-full  flex justify-center space-x-56">
+    <div className="h-fit w-full flex justify-center space-x-56">
       <Link
         href={`/${username}`}
         className={
@@ -21,6 +28,7 @@ export default function ProfileTabs({ username }: { username: string }) {
       >
         <Grid3x3 size={26} strokeWidth={isActive("") ? 2 : 1.5} />
       </Link>
+
       <Link
         href={`/${username}/reels`}
         className={
@@ -31,6 +39,7 @@ export default function ProfileTabs({ username }: { username: string }) {
       >
         <Film size={26} strokeWidth={isActive("/reels") ? 2 : 1.5} />
       </Link>
+
       <Link
         href={`/${username}/tagged`}
         className={
