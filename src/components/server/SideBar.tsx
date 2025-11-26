@@ -65,11 +65,7 @@ const SideBar = () => {
               <p className="hidden lg:block">Messages</p>
             </div>
           </Link>
-          {/* <div className=" md:block hidden">
-             <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
-              
-             </div>
-          </div> */}
+
           <NotificationSheet />
           <CreateDialog />
           <Link href={"/profile"}>
