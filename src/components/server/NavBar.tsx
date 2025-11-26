@@ -5,8 +5,8 @@ import { Input } from "../ui/input";
 
 const NavBar = () => {
   return (
-    <div className="md:hidden block">
-      <div className="flex justify-between px-5 h-[60px] w-full bg-white fixed top-0 items-center">
+    <div className="md:hidden block  fixed left-0 right-0 top-0 bg-red-500 h-[60px] w-full ">
+      <div className="flex justify-between px-5 h-[60px] w-full items-center">
         {/* logo */}
         <Link href={"/"} className="">
           <div className="font-bold text-3xl font-handlee hidden sm:block">
