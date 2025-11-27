@@ -18,9 +18,12 @@ const CreateDialog = ({ isCollapsed }: CreateDialogProps) => {
       closeDelay={0}
     >
       <HoverCardTrigger asChild>
-        <div className="flex lg:space-x-4 py-3 px-3  hover:bg-[#efefef] rounded-md cursor-pointer">
-          <SquarePlus size={25} />
-          <p className={`${isCollapsed ? "hidden" : "hidden lg:block"}`}>
+        <div
+              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >          <SquarePlus size={25} />
+          <p className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}>
             Create
           </p>
         </div>
