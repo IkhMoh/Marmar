@@ -1,16 +1,12 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
 import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Search } from "lucide-react";
-import { Button } from "../ui/button";
 
 type SheetDemoProps = {
   onOpen?: () => void;
@@ -27,17 +23,20 @@ export function SheetDemo({ onOpen, onClose, isCollapsed }: SheetDemoProps) {
     onClose?.();
   }
   return (
-    <Sheet onOpenChange={handleOpenChange} >
-      <SheetTrigger className=" z-40 flex w-fit py-3 px-3  hover:bg-[#efefef] rounded-md cursor-pointer ">
+    <Popover onOpenChange={handleOpenChange}>
+      <PopoverTrigger
+        className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+          isCollapsed ? "w-fit" : "w-full"
+        }`}
+      >
+        {" "}
         <Search size={25} />
         <p className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}>
           Search
         </p>
-      </SheetTrigger>
-      <SheetContent side="left" className="!left-20">
-        <SheetHeader>
-          <SheetTitle className="text-2xl font-bold pl-3">Search</SheetTitle>
-        </SheetHeader>
+      </PopoverTrigger>
+      <PopoverContent side="left" className="w-80 h-screen left-12">
+        <div className="text-2xl font-bold pl-3">Search</div>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Name</Label>
@@ -51,13 +50,7 @@ export function SheetDemo({ onOpen, onClose, isCollapsed }: SheetDemoProps) {
             <h1>No recent searches.</h1>
           </div>
         </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button variant="outline">Close</Button>
-          </SheetClose>{" "}
-        </SheetFooter>
-      </SheetContent>
-      
-    </Sheet>
+      </PopoverContent>
+    </Popover>
   );
 }

@@ -1,4 +1,4 @@
-import SideBar from "@/components/server/SideBar";
+import SideBar from "@/components/client/SideBar";
 import NavBar from "@/components/server/NavBar";
 import MessagesIcon from "@/components/client/MessagesIcon";
 

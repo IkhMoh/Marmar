@@ -12,9 +12,9 @@ import {
 import Link from "next/link";
 import React from "react";
 import { Badge } from "../ui/badge";
-import CreateDialog from "./CreateDialog";
-import { SheetDemo } from "./SearchSheet";
-import { NotificationSheet } from "./NotificationSheet";
+import CreateDialog from "../server/CreateDialog";
+import { SheetDemo } from "../server/SearchSheet";
+import { NotificationSheet } from "../server/NotificationSheet";
 
 const SideBar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -27,10 +27,10 @@ const SideBar = () => {
   }
   console.log(isCollapsed);
   return (
-    <div className="z-50 fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen w-fit md:border-r-1 md:border-gray-400">
+    <div className="z-50 fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen w-64 md:border-r-1 md:border-gray-400 ">
       <div
-        className={`flex justify-around md:flex-col  w-full h-full pr-0 ${
-          isCollapsed ? "" : "pr-12"
+        className={`flex justify-around md:flex-col w-full  h-full pr-0 transition-all duration-500 ease-in-out${
+          isCollapsed ? "" : ""
         }`}
       >
         {/* logo */}
@@ -38,7 +38,7 @@ const SideBar = () => {
           {/* Brand Name */}
           <div
             className={`
-      font-bold text-3xl lg:mx-3 lg:mt-6 font-handlee
+      font-bold text-3xl lg:mx-3 lg:mt-6 font-handlee 
       ${isCollapsed ? "hidden" : "hidden xl:block"}
     `}
           >
@@ -47,9 +47,8 @@ const SideBar = () => {
 
           {/* Icon When Collapsed */}
           <div
-            className={`
-      font-bold text-3xl lg:mx-3 lg:mt-6 font-handlee pb-3 
-      ${isCollapsed ? "block" : "xl:hidden lg:block hidden"}
+            className={`flex items-center w-fit p-3   hover:bg-[#efefef] rounded-md cursor-pointer
+       ${isCollapsed ? "block" : "xl:hidden lg:block hidden"}
     `}
           >
             <Instagram />
@@ -60,7 +59,12 @@ const SideBar = () => {
 
         <div className="flex justify-evenly h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-9">
           <Link href={"/"}>
-            <div className="flex  w-fit p-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <House size={25} />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
@@ -78,7 +82,12 @@ const SideBar = () => {
 
           <Link href={"/explore"}>
             {" "}
-            <div className="flex  w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <Compass size={25} />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
@@ -88,7 +97,12 @@ const SideBar = () => {
             </div>
           </Link>
           <Link href={"/reels"}>
-            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <Film size={25} />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
@@ -99,14 +113,18 @@ const SideBar = () => {
           </Link>
 
           <Link href={"/direct"}>
-            <div className="flex items-center w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <div className="relative">
                 <MessageCircleMore size={25} />
                 <Badge className="absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs px-1 py-0">
                   9+
                 </Badge>
               </div>
-
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
               >
@@ -122,10 +140,16 @@ const SideBar = () => {
           />
           <CreateDialog isCollapsed={isCollapsed} />
           <Link href={"/profile"}>
-            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
               <User size={25} />
               <p
-                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+                className={`${
+                  isCollapsed ? "hidden" : "hidden lg:block"
+                } pl-4 w-full`}
               >
                 Profile
               </p>
@@ -135,7 +159,12 @@ const SideBar = () => {
         {/* settings */}
         <div className="md:space-y-2   font-medium">
           <Link href={"/#"} className="md:block hidden">
-            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div
+              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <AlignJustify size={25} />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
@@ -145,7 +174,12 @@ const SideBar = () => {
             </div>
           </Link>{" "}
           <Link href={"/#"} className="hidden lg:block">
-            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer ">
+            <div
+              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+                isCollapsed ? "w-fit" : "w-full"
+              }`}
+            >
+              {" "}
               <svg
                 width="25"
                 height="25"
@@ -166,7 +200,6 @@ const SideBar = () => {
                   fill="#141414"
                 />
               </svg>
-
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
               >
