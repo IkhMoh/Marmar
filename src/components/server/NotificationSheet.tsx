@@ -1,4 +1,3 @@
-
 import {
   Sheet,
   SheetClose,
@@ -12,12 +11,31 @@ import { Heart } from "lucide-react";
 import { Button } from "../ui/button";
 import AccountCard from "./AccountCard";
 
-export function NotificationSheet() {
+type NotificationSheetProps = {
+  onOpen?: () => void;
+  onClose?: () => void;
+  isCollapsed?: boolean;
+};
+
+export function NotificationSheet({
+  onOpen,
+  onClose,
+  isCollapsed,
+}: NotificationSheetProps) {
+  function handleOpenChange(isOpen: boolean) {
+    if (isOpen) {
+      onOpen?.();
+      return;
+    }
+    onClose?.();
+  }
   return (
-    <Sheet>
-      <SheetTrigger className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
+    <Sheet onOpenChange={handleOpenChange}>
+      <SheetTrigger className="flex w-fit py-3 px-3  hover:bg-[#efefef] rounded-md cursor-pointer">
         <Heart size={25} />
-        <p className="hidden lg:block">Notifications</p>
+        <p className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}>
+          Notifications
+        </p>
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
@@ -37,7 +55,6 @@ export function NotificationSheet() {
             <AccountCard />
           </span>
           <hr className="mt-2" />
-
         </div>
         <SheetFooter>
           <SheetClose asChild>
