@@ -12,14 +12,29 @@ import {
 import { Search } from "lucide-react";
 import { Button } from "../ui/button";
 
-export function SheetDemo() {
+type SheetDemoProps = {
+  onOpen?: () => void;
+  onClose?: () => void;
+  isCollapsed?: boolean;
+};
+
+export function SheetDemo({ onOpen, onClose, isCollapsed }: SheetDemoProps) {
+  function handleOpenChange(isOpen: boolean) {
+    if (isOpen) {
+      onOpen?.();
+      return;
+    }
+    onClose?.();
+  }
   return (
-    <Sheet>
-      <SheetTrigger className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
+    <Sheet onOpenChange={handleOpenChange} >
+      <SheetTrigger className=" z-40 flex w-fit py-3 px-3  hover:bg-[#efefef] rounded-md cursor-pointer ">
         <Search size={25} />
-        <p className="hidden lg:block">Search</p>
+        <p className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}>
+          Search
+        </p>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="!left-20">
         <SheetHeader>
           <SheetTitle className="text-2xl font-bold pl-3">Search</SheetTitle>
         </SheetHeader>
@@ -42,6 +57,7 @@ export function SheetDemo() {
           </SheetClose>{" "}
         </SheetFooter>
       </SheetContent>
+      
     </Sheet>
   );
 }

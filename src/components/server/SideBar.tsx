@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import {
   AlignJustify,
   Compass,
@@ -11,50 +13,93 @@ import Link from "next/link";
 import React from "react";
 import { Badge } from "../ui/badge";
 import CreateDialog from "./CreateDialog";
-import {  SheetDemo } from "./SearchSheet";
+import { SheetDemo } from "./SearchSheet";
 import { NotificationSheet } from "./NotificationSheet";
 
 const SideBar = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  function closeSearchPanel() {
+    setIsCollapsed(false);
+  }
+
+  function openSearchPanel() {
+    setIsCollapsed(true);
+  }
+  console.log(isCollapsed);
   return (
-    <div className=" fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen lg:w-[73px] xl:w-[248px] md:border-r-1 md:border-gray-400 ">
-      <div className="flex justify-around md:flex-col  w-full h-full">
+    <div className="z-50 fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen w-fit md:border-r-1 md:border-gray-400">
+      <div
+        className={`flex justify-around md:flex-col  w-full h-full pr-0 ${
+          isCollapsed ? "" : "pr-12"
+        }`}
+      >
         {/* logo */}
         <Link href={"/"}>
-          <div className="font-bold text-3xl md:mx-6.5 md:pt-8 font-handlee hidden xl:block">
+          {/* Brand Name */}
+          <div
+            className={`
+      font-bold text-3xl lg:mx-3 lg:mt-6 font-handlee
+      ${isCollapsed ? "hidden" : "hidden xl:block"}
+    `}
+          >
             Marmar
           </div>
-          <div className="font-bold text-3xl lg:mx-6.5 lg:mt-5 font-handlee xl:hidden lg:block hidden">
+
+          {/* Icon When Collapsed */}
+          <div
+            className={`
+      font-bold text-3xl lg:mx-3 lg:mt-6 font-handlee pb-3 
+      ${isCollapsed ? "block" : "xl:hidden lg:block hidden"}
+    `}
+          >
             <Instagram />
           </div>
         </Link>
-        {/* todoui md=lg .. lg=xl */}
+
         {/* logo == */}
-        <div className="flex justify-evenly h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-10">
-          <Link href={"/"} className="">
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+
+        <div className="flex justify-evenly h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium md:mt-9">
+          <Link href={"/"}>
+            <div className="flex  w-fit p-3 hover:bg-[#efefef] rounded-md cursor-pointer">
               <House size={25} />
-              <p className="hidden lg:block">Home</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Home
+              </p>
             </div>
           </Link>
 
-          <SheetDemo />
+          <SheetDemo
+            isCollapsed={isCollapsed}
+            onOpen={openSearchPanel}
+            onClose={closeSearchPanel}
+          />
 
           <Link href={"/explore"}>
             {" "}
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex  w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
               <Compass size={25} />
-              <p className="hidden lg:block">Explore</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Explore
+              </p>
             </div>
           </Link>
           <Link href={"/reels"}>
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
               <Film size={25} />
-              <p className="hidden lg:block">Reels</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Reels
+              </p>
             </div>
           </Link>
 
           <Link href={"/direct"}>
-            <div className="flex items-center space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex items-center w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
               <div className="relative">
                 <MessageCircleMore size={25} />
                 <Badge className="absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs px-1 py-0">
@@ -62,29 +107,45 @@ const SideBar = () => {
                 </Badge>
               </div>
 
-              <p className="hidden lg:block">Messages</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Messages
+              </p>
             </div>
           </Link>
 
-          <NotificationSheet />
-          <CreateDialog />
+          <NotificationSheet
+            isCollapsed={isCollapsed}
+            onOpen={openSearchPanel}
+            onClose={closeSearchPanel}
+          />
+          <CreateDialog isCollapsed={isCollapsed} />
           <Link href={"/profile"}>
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
               <User size={25} />
-              <p className="hidden lg:block">Profile</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Profile
+              </p>
             </div>
           </Link>
         </div>
         {/* settings */}
-        <div className="md:space-y-2   font-medium   ">
+        <div className="md:space-y-2   font-medium">
           <Link href={"/#"} className="md:block hidden">
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer">
+            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer">
               <AlignJustify size={25} />
-              <p className="hidden lg:block">Home</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Home
+              </p>
             </div>
           </Link>{" "}
           <Link href={"/#"} className="hidden lg:block">
-            <div className="flex lg:space-x-4 py-3 px-3 mx-3 hover:bg-[#efefef] rounded-md cursor-pointer ">
+            <div className="flex w-fit py-3 px-3   hover:bg-[#efefef] rounded-md cursor-pointer ">
               <svg
                 width="25"
                 height="25"
@@ -106,7 +167,11 @@ const SideBar = () => {
                 />
               </svg>
 
-              <p className="">Home</p>
+              <p
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+              >
+                Home
+              </p>
             </div>
           </Link>
         </div>
