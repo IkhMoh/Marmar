@@ -6,7 +6,7 @@ const page = async () => {
   const stories: Story[] = await getStories();
   console.log(stories);
   return (
-    <div className="flex max-h-lvh bg-gray-600 overflow-y-hidden">
+    <div className="flex max-h-lvh bg-transparent overflow-y-hidden">
       {/* <StorieDitilse stories={stories} /> */}
       {stories.map((user) => (
         <div key={user.id}>

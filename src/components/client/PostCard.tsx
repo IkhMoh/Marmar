@@ -175,7 +175,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <div className="flex justify-between my-1 py-2">
           <div className="flex space-x-4">
             <Heart size={26} />
-            <Link href={`/post/${post.id}`}>
+            <Link href={`/p/${post.id}`}>
               <MessageCircle size={26} />
             </Link>
             <SendDialog />
