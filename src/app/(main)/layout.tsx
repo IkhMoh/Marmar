@@ -8,11 +8,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="md:flex flex-row-reverse ml-[255px] ">
-      <NavBar />
-      {children}
+    <div className="flex w-screen h-screen overflow-hidden">
+      <div className="w-[244px]">
+        {" "}
+        <SideBar />
+      </div>
 
-      <SideBar />
+      <div className="flex-1 overflow-y-auto">
+        <NavBar />
+        {children}
+      </div>
       <MessagesIcon />
     </div>
   );
