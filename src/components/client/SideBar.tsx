@@ -27,7 +27,11 @@ const SideBar = () => {
   }
   console.log(isCollapsed);
   return (
-    <div className="z-50 fixed left-0 bottom-0 h-full lg:px-3 lg:pt-2 lg:pb-5 md:min-h-screen w-64 md:border-r-1 md:border-gray-400 ">
+    <div
+      className={`z-50 h-full transition-all duration-300 ${
+        isCollapsed ? "w-fit px-2" : "w-[244px]"
+      } border-r border-gray-400`}
+    >
       <div
         className={`flex justify-around md:flex-col w-full  h-full pr-0 transition-all duration-500 ease-in-out${
           isCollapsed ? "" : ""
