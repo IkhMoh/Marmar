@@ -1,7 +1,11 @@
-const page = () => {
+export default function PostPage({ params }: { params: { id: string } }) {
   return (
-    <div className="bg-red-300 w-screen h-screen flex justify-center items-center mx-40 "></div>
-  );
-};
+    <div className="w-full max-w-3xl mx-auto p-6">
+      <h1 className="text-xl font-bold">Post {params.id}</h1>
 
-export default page;
+      <div className="mt-4 h-[500px] bg-gray-200 rounded-xl flex items-center justify-center">
+        <p>Full page post content</p>
+      </div>
+    </div>
+  );
+}
