@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex w-screen h-screen overflow-hidden">
-      <div className="w-[244px]">
+      <div className=" ">
         {" "}
         <SideBar />
       </div>
