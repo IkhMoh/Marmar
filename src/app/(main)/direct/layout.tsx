@@ -6,11 +6,9 @@ export default function DirectLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen w-full pl-[72px]">
-      <div className="flex flex-row h-full w-full">
-        {children}
-        <div>hello world</div>
-      </div>
+    <div className="h-screen w-full pl-[72px] flex flex-row">
+      <div className="h-full w-[400px] bg-red-200">fr</div>
+      {children}
     </div>
   );
 }
