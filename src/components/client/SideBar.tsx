@@ -28,7 +28,7 @@ const SideBar = () => {
   console.log(isCollapsed);
   return (
     <div
-      className={`z-50 h-full transition-all duration-300 
+      className={`z-50 fixed left-0 top-0 bottom-0 h-full transition-all duration-300 
       ${isCollapsed ? "w-[72px]" : "w-[244px]"} 
        border-r border-gray-400`}
     >

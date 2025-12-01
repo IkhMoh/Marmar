@@ -3,7 +3,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory pt-4">
+    <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory pt-4 pl-[244px]">
       {/* {reels.map((item) => (
         <section key={item.id} className="h-screen snap-start">
           <Reel data={item} />

@@ -17,7 +17,7 @@ const Page = async () => {
   const groups = chunkArray(posts, 5);
 
   return (
-    <div className="h-full w-full flex justify-center mt-6">
+    <div className="h-full w-full flex justify-center mt-6 pl-[244px]">
       {" "}
       <div className="flex flex-col justify-center mx-[63.5px] px-5">
         {groups.map((group, gi) => {
