@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AlignJustify,
   Compass,
@@ -15,8 +15,11 @@ import { Badge } from "../ui/badge";
 import CreateDialog from "../server/CreateDialog";
 import { SheetDemo } from "../server/SearchSheet";
 import { NotificationSheet } from "../server/NotificationSheet";
+import { usePathname } from "next/navigation";
 
 const SideBar = () => {
+  const pathname = usePathname();
+
   const [isCollapsed, setIsCollapsed] = useState(false);
   function closeSearchPanel() {
     setIsCollapsed(false);
@@ -25,6 +28,12 @@ const SideBar = () => {
   function openSearchPanel() {
     setIsCollapsed(true);
   }
+
+  useEffect(() => {
+    const directRegex = /^\/direct(\/|$)/;
+    const isDirect = directRegex.test(pathname);
+    setIsCollapsed(isDirect);
+  }, [pathname]);
   console.log(isCollapsed);
   return (
     <div
