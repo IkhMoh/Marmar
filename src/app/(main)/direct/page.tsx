@@ -3,7 +3,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="h-full w-full bg-green-200 flex flex-col justify-center items-center">
+    <div className="h-screen w-full flex flex-col justify-center items-center">
       <div className="px-6 py-3 flex flex-col justify-center items-center space-y-4">
         <div className="flex flex-col justify-center items-center">
           <h1 className="font-bold text-2xl">Profile isn&apos;t available</h1>
