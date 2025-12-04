@@ -140,7 +140,7 @@ export default function ChatSidebar() {
   ];
 
   return (
-    <div className="w-full h-screen border-r  overflow-y-auto scroll-smooth scrollbar scrollbar-thumb-gray-500 scrollbar-track-transparent hover:scrollbar-thumb-gray-500">
+    <div className="w-full h-screen border-r custom-scroll overflow-y-auto scroll-smooth scrollbar scrollbar-thumb-gray-500 scrollbar-track-transparent hover:scrollbar-thumb-gray-500">
       {directUsers.map((item) => (
         <ChatUserItem key={item.username} {...item} />
       ))}
