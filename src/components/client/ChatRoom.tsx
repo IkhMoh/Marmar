@@ -8,6 +8,7 @@ import {
   Mic,
   Send,
   Smile,
+  Sticker,
 } from "lucide-react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -44,7 +45,7 @@ export default function ChatRoom() {
 
   return (
     <div className="flex flex-col h-screen w-full bg-white">
-      {/* ======== HEADER ثابت ======== */}
+      {/* ======== HEADER  ======== */}
       <div className="p-3 border-b flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Avatar className="w-10 h-10">
@@ -59,8 +60,6 @@ export default function ChatRoom() {
           <Phone className="cursor-pointer" />
         </div>
       </div>
-
-      
 
       {/* ======== CHAT MESSAGES SCROLLABLE ======== */}
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
@@ -104,9 +103,8 @@ export default function ChatRoom() {
         ))}
       </div>
 
-      {/* ======== INPUT BAR ثابت ======== */}
+      {/* ======== INPUT BAR  ======== */}
       <div className="p-3 border-t flex items-center gap-2">
-        {/* Left side emoji */}
         <Smile className="cursor-pointer" />
 
         <input
@@ -118,12 +116,11 @@ export default function ChatRoom() {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
 
-        {/* Right side icons */}
         {!input && (
           <>
-            <Smile className="cursor-pointer" />
-            <ImageIcon className="cursor-pointer" />
             <Mic className="cursor-pointer" />
+            <ImageIcon className="cursor-pointer" />
+            <Sticker className="cursor-pointer" />
           </>
         )}
 

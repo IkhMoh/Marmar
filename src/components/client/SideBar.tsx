@@ -34,7 +34,6 @@ const SideBar = () => {
     const isDirect = directRegex.test(pathname);
     setIsCollapsed(isDirect);
   }, [pathname]);
-  console.log(isCollapsed);
   return (
     <div
       className={`z-50 fixed left-0 top-0 bottom-0 h-full transition-all duration-300 
