@@ -45,7 +45,7 @@ export default function ChatRoom() {
 
   return (
     <div className="flex flex-col h-screen w-full bg-white">
-      {/* ======== HEADER ثابت ======== */}
+      {/* ======== HEADER  ======== */}
       <div className="p-3 border-b flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Avatar className="w-10 h-10">
@@ -103,9 +103,8 @@ export default function ChatRoom() {
         ))}
       </div>
 
-      {/* ======== INPUT BAR ثابت ======== */}
+      {/* ======== INPUT BAR  ======== */}
       <div className="p-3 border-t flex items-center gap-2">
-        {/* Left side emoji */}
         <Smile className="cursor-pointer" />
 
         <input
@@ -117,7 +116,6 @@ export default function ChatRoom() {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
 
-        {/* Right side icons */}
         {!input && (
           <>
             <Mic className="cursor-pointer" />
