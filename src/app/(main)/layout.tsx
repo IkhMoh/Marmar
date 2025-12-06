@@ -1,6 +1,6 @@
+import MessagesIcon from "@/components/client/MessagesIcon";
 import SideBar from "@/components/client/SideBar";
 import NavBar from "@/components/server/NavBar";
-import MessagesIcon from "@/components/client/MessagesIcon";
 
 export default function RootLayout({
   children,
