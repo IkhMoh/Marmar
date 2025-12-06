@@ -35,7 +35,7 @@ export function SheetDemo({ onOpen, onClose, isCollapsed }: SheetDemoProps) {
           Search
         </p>
       </PopoverTrigger>
-      <PopoverContent side="left" className="w-80 h-screen ml-[7px]  bg-transparent">
+      <PopoverContent side="left" className="w-80 h-screen ml-[7px]  bg-white">
         <div className="text-2xl font-bold pl-3">Search</div>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">

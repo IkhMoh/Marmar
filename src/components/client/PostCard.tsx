@@ -207,7 +207,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           )}
         </div>
 
-        <Link href={`/post/${post.id}`}>
+        <Link href={`/p/${post.id}`}>
           <div className="text-sm text-gray-700 mt-2">
             View all <span className="font-bold">{post.comments_count}</span>{" "}
             comments
