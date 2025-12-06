@@ -150,7 +150,6 @@ const MainMessagePanel = ({ onNewMessage, onClose }: MainMessagePanelProps) => {
   return (
     // todo : real data user
     <div>
-      (
       <Card className="p-0 w-[360px] h-[521px] fixed bottom-6 right-8 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
         <CardContent className="p-0 relative h-full">
           {/* HEADER */}
@@ -200,7 +199,6 @@ const MainMessagePanel = ({ onNewMessage, onClose }: MainMessagePanelProps) => {
           </button>
         </CardContent>
       </Card>
-      )
     </div>
   );
 };

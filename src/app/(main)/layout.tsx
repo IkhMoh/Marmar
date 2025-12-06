@@ -10,12 +10,10 @@ export default function RootLayout({
   return (
     <div className="flex flex-row-reverse w-screen h-screen overflow-hidden">
       <div className="">
-        {" "}
         <SideBar />
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {" "}
         <NavBar />
         {children}
       </div>

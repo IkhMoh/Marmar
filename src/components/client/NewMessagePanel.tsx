@@ -4,7 +4,7 @@ import { Card, CardContent } from "../ui/card";
 
 interface NewMessagePanelProps {
   onClose: () => void;
-  onBack: () => void; 
+  onBack: () => void;
 }
 const NewMessagePanel = ({ onClose, onBack }: NewMessagePanelProps) => {
   const users = Array.from({ length: 10 }, (_, i) => ({
@@ -17,7 +17,6 @@ const NewMessagePanel = ({ onClose, onBack }: NewMessagePanelProps) => {
     // todo : real data user
 
     <div>
-      (
       <Card className="p-0 w-[360px] h-[521px] fixed bottom-6 right-8 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
         <CardContent className="p-0 relative h-full">
           {/* Header */}
@@ -77,7 +76,6 @@ const NewMessagePanel = ({ onClose, onBack }: NewMessagePanelProps) => {
           </div>
         </CardContent>
       </Card>
-      )
     </div>
   );
 };
