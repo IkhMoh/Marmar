@@ -90,10 +90,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           profile_image={post.author.profile_image}
           fullName={post.author.name}
         />
-        <div
-          className="flex items-center justify-start  w-full
-         "
-        >
+        <div className="flex items-center justify-start  w-full">
           <div className="text-sm">{post.time_ago}</div>
         </div>
         <MenuDialog />
@@ -207,7 +204,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           )}
         </div>
 
-        <Link href={`/post/${post.id}`}>
+        <Link href={`/p/${post.id}`}>
           <div className="text-sm text-gray-700 mt-2">
             View all <span className="font-bold">{post.comments_count}</span>{" "}
             comments

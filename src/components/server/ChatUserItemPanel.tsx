@@ -9,8 +9,7 @@ type ChatUserItemProps = {
   lastMessageText: string;
   isRead: boolean;
 };
-
-export default function ChatUserItem({
+export default function ChatUserItemPanel({
   username,
   profile_image,
   href,
@@ -21,11 +20,11 @@ export default function ChatUserItem({
   return (
     <Link
       href={href}
-      className="flex justify-between items-center h-[72px] gap-3 px-6 py-2 hover:bg-neutral-100 transition"
+      className="flex items-center justify-between h-[72px] w-full px-4 py-2 hover:bg-neutral-100 transition"
     >
       {/* LEFT SIDE */}
       <div className="flex items-center gap-3 min-w-0">
-        <Avatar className="w-14 h-14">
+        <Avatar className="w-14 h-14 p-0">
           <AvatarImage
             src={"/images/avatars/" + profile_image}
             alt={username}
