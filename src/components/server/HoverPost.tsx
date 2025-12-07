@@ -86,7 +86,10 @@ const HoverPost = ({ fullName, username, profile_image }: MinimalUser) => {
               variant="secondary"
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold w-full h-fit"
             >
-              <UserPlus strokeWidth={2} />
+              <UserPlus
+                strokeWidth={2}
+                className="transition-transform duration-200 hover:scale-110"
+              />
               Follow
             </Button>{" "}
           </div>

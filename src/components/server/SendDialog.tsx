@@ -17,7 +17,8 @@ export function SendDialog() {
   return (
     <Dialog >
       <DialogTrigger asChild>
-        <Send size={25} className="cursor-pointer" />
+        <Send size={25}                   className="transition-transform duration-200 hover:scale-110"
+ />
       </DialogTrigger>
       <DialogContent className="sm:max-w-md ">
         <DialogHeader>

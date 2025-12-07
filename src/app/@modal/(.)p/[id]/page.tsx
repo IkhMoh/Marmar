@@ -7,8 +7,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Heart, MessageCircle } from "lucide-react";
 import { SendDialog } from "@/components/server/SendDialog";
 import { SaveDialog } from "@/components/server/SaveDialog";
-import Link from "next/link";
- 
+import UserCardComment from "@/components/server/UserCardComment";
+
 export default function PostModal({
   params,
 }: {
@@ -21,9 +21,6 @@ export default function PostModal({
   const close = () => router.back();
   const username = "ikhlef_mohamed";
   const profile_image = "ikhlef";
-  const post = {
-    id: 12,
-  };
 
   return (
     <div
@@ -50,7 +47,6 @@ export default function PostModal({
 
           {/* POST CONTENT SCROLL */}
           <section className="flex-1 overflow-y-auto px-3 py-4 space-y-2">
-            {/* Example description */}
             <div className="flex gap-2">
               <Avatar className="w-10 h-10  ">
                 <AvatarImage
@@ -74,23 +70,28 @@ export default function PostModal({
                 </div>
               </div>
             </div>
+            <UserCardComment />
+            <UserCardComment />
+            <UserCardComment />
           </section>
 
-          {/* ACTION FOOTER (EMPTY FOR YOU) */}
           <section className="border-t border-gray-200 px-3 py-3">
-            {/* place your heart, comment, send, save icons here */}
             <div className="flex justify-between my-1 py-2">
               <div className="flex space-x-4">
-                <Heart size={26} />
-                <Link href={`/p/${post.id}`}>
-                  <MessageCircle size={26} />
-                </Link>
+                <Heart
+                  size={26}
+                  className="transition-transform duration-200 hover:scale-110"
+                />
+                <MessageCircle
+                  size={26}
+                  className="transition-transform duration-200 hover:scale-110"
+                />
                 <SendDialog />
               </div>
               <SaveDialog />
             </div>
 
-            {/* likes / views */}
+            {/* likes and views */}
             <p className="text-sm font-semibold mt-2">3 likes</p>
             <p className="text-[11px] text-gray-500 mt-1">4 hours ago</p>
           </section>
