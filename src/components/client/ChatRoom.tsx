@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Phone,
   Video,
@@ -12,8 +12,27 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import EmojiPicker from "emoji-picker-react";
 
 export default function ChatRoom() {
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const emojiRef = useRef<HTMLDivElement>(null);
+
+  // ==== CLICK OUTSIDE HANDLER ====
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (emojiRef.current && !emojiRef.current.contains(e.target as Node)) {
+        setShowEmojiPicker(false);
+      }
+    }
+
+    if (showEmojiPicker) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showEmojiPicker]);
+
   const [messages, setMessages] = useState([
     { fromMe: false, text: "Hello", date: new Date() },
     { fromMe: true, text: "Hi there!", date: new Date() },
@@ -105,8 +124,10 @@ export default function ChatRoom() {
 
       {/* ======== INPUT BAR  ======== */}
       <div className="p-3 border-t flex items-center gap-2">
-        <Smile className="cursor-pointer" />
-
+        <Smile
+          onClick={() => setShowEmojiPicker((prev) => !prev)}
+          className="cursor-pointer"
+        />
         <input
           type="text"
           placeholder="Message..."
@@ -115,7 +136,6 @@ export default function ChatRoom() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-
         {!input && (
           <>
             <Mic className="cursor-pointer" />
@@ -123,12 +143,21 @@ export default function ChatRoom() {
             <Sticker className="cursor-pointer" />
           </>
         )}
-
         {input && (
           <Send
             onClick={sendMessage}
             className="cursor-pointer text-blue-600"
           />
+        )}{" "}
+        {showEmojiPicker && (
+          <div ref={emojiRef} className="absolute bottom-12 z-50">
+            <EmojiPicker
+              className="transition-transform duration-200"
+              onEmojiClick={(emojiData) => {
+                setInput((prev) => prev + emojiData.emoji);
+              }}
+            />
+          </div>
         )}
       </div>
     </div>
