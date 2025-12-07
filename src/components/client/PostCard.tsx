@@ -29,7 +29,22 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const dispatch = useAppDispatch();
 
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const emojiRef = useRef<HTMLDivElement>(null);
   const [comment, setComment] = useState("");
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (emojiRef.current && !emojiRef.current.contains(e.target as Node)) {
+        setShowEmojiPicker(false);
+      }
+    }
+
+    if (showEmojiPicker) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showEmojiPicker]);
 
   // mute/unmute
   const handleToggleMute = (e?: React.MouseEvent) => {
@@ -240,12 +255,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               </button>
 
               {showEmojiPicker && (
-                <div className="absolute bottom-8 right-0 z-50">
+                <div ref={emojiRef} className="absolute bottom-8 right-0 z-50">
                   <EmojiPicker
-                    className="transition-transform duration-200 hover:scale-110"
+                    className="transition-transform duration-200"
                     onEmojiClick={(emojiData) => {
                       setComment((prev) => prev + emojiData.emoji);
-                      setShowEmojiPicker(false);
                     }}
                   />
                 </div>

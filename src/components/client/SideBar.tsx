@@ -16,8 +16,12 @@ import CreateDialog from "../server/CreateDialog";
 import { SheetDemo } from "../server/SearchSheet";
 import { NotificationSheet } from "../server/NotificationSheet";
 import { usePathname } from "next/navigation";
+import MoreSettingsPanel from "../server/MoreSettingsPanel";
 
 const SideBar = () => {
+  const [openMoreSettingsPanel, setOpenMoreSettingsPanel] = useState(false);
+  const [openMetaPanel, setOpenMetaPanel] = useState("");
+
   const pathname = usePathname();
 
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -170,19 +174,20 @@ const SideBar = () => {
         {/* settings */}
         <div className="md:space-y-2 w-full  font-medium">
           <Link href={"/#"} className="md:block hidden w-full">
-            <div
+            <button
               className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
+              onClick={() =>setOpenMoreSettingsPanel(true)}
             >
               {" "}
               <AlignJustify size={25} />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
               >
-                Home
+                More
               </p>
-            </div>
+            </button>
           </Link>{" "}
           <Link href={"/#"} className="hidden lg:block w-full">
             <div
@@ -214,11 +219,17 @@ const SideBar = () => {
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
               >
-                Home
+                Also from Meta
               </p>
             </div>
           </Link>
         </div>
+        {openMoreSettingsPanel && (
+          <MoreSettingsPanel onClose={() => setOpenMoreSettingsPanel(false)} />
+        )}
+        {/* {openMetaPanel && (
+          <NewMessagePanel onClose={() => setOpenMetaPanel(null)} />
+        )} */}
         {/* settings ==*/}
       </div>
     </div>
