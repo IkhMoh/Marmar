@@ -171,9 +171,15 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       <div className="max-h-[505px]">
         <div className="flex justify-between my-1 py-2">
           <div className="flex space-x-4">
-            <Heart size={26} />
+            <Heart
+              size={26}
+              className="transition-transform duration-200 hover:scale-110"
+            />
             <Link href={`/p/${post.id}`}>
-              <MessageCircle size={26} />
+              <MessageCircle
+                size={26}
+                className="transition-transform duration-200 hover:scale-110"
+              />
             </Link>
             <SendDialog />
           </div>
@@ -227,12 +233,16 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 type="button"
                 onClick={() => setShowEmojiPicker((prev) => !prev)}
               >
-                <Smile size={16} />
+                <Smile
+                  size={16}
+                  className="transition-transform duration-200 hover:scale-110"
+                />
               </button>
 
               {showEmojiPicker && (
                 <div className="absolute bottom-8 right-0 z-50">
                   <EmojiPicker
+                    className="transition-transform duration-200 hover:scale-110"
                     onEmojiClick={(emojiData) => {
                       setComment((prev) => prev + emojiData.emoji);
                       setShowEmojiPicker(false);

@@ -11,7 +11,10 @@ export function MenuDialog() {
     <Dialog>
       <DialogTrigger asChild>
         <button className="flex items-center  cursor-pointer">
-          <Ellipsis size={22} />
+          <Ellipsis
+            className="transition-transform duration-200 hover:scale-110"
+            size={22}
+          />
         </button>
       </DialogTrigger>
 
