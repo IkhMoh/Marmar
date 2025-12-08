@@ -1,34 +1,35 @@
 import React from "react";
 import { Card, CardContent } from "../ui/card";
-import { X } from "lucide-react";
 
-interface MoreSettingsPanelProps {
-  onClose: () => void;
-}
-const MoreSettingsPanel = ({ onClose }: MoreSettingsPanelProps) => {
+const MoreSettingsPanel = () => {
   return (
-    <Card className="p-0 w-[360px] fit fixed bottom-29 left-8 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
-      <CardContent className="p-0 relative h-full">
-        {/* HEADER */}
-        <div className="flex justify-between items-center px-4 py-3 border-b">
-          <button onClick={onClose} className="flex cursor-pointer">
-            <X
-              strokeWidth={1}
-              size={32}
-              className="transition-transform duration-200 hover:scale-110"
-            />
-          </button>
+    <Card className="p-0 w-[266px] h-fit fixed  bottom-30 left-2 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
+      <CardContent className="bg-gray-100 p-0">
+        <div className="w-full h-full bg-white">
+          <div className="hover:bg-gray-100 text-md px-5 py-3 rounded-lg ">
+            Settings
+          </div>
+          <div className="hover:bg-gray-100 text-md px-5 py-3 rounded-lg ">
+            Settings
+          </div>
+          <div className="hover:bg-gray-100 text-md px-5 py-3 rounded-lg ">
+            Settings
+          </div>
+          <div className="hover:bg-gray-100 text-md px-5 py-3 rounded-lg ">
+            Settings
+          </div>
+          <div className="hover:bg-gray-100 text-md px-5 py-3 rounded-lg ">
+            Settings
+          </div>
         </div>
-        <div className="bg-red-500">
-          <div>vfdsf</div>
-          <div>vsdafff</div>
-          <div>vfdfsd</div>
-          <div>vfdfsd</div>
-          <div>vfdfsd</div>
-          <div>vfdfsd</div>
-          <div>vfdfsd</div>
+        <div className="mt-1.5 bg-white">
+          <div className="hover:bg-gray-100 text-md px-5 py-4 rounded-lg ">
+            Settings
+          </div>
+          <div className="hover:bg-gray-100 text-md px-5 py-4 rounded-lg ">
+            Settings
+          </div>
         </div>
-        {/* LIST */}
       </CardContent>
     </Card>
   );
