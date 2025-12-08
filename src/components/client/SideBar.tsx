@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AlignJustify,
   Compass,
@@ -17,10 +17,29 @@ import { SheetDemo } from "../server/SearchSheet";
 import { NotificationSheet } from "../server/NotificationSheet";
 import { usePathname } from "next/navigation";
 import MoreSettingsPanel from "../server/MoreSettingsPanel";
+import MetaPanel from "../server/MetaPanel";
 
 const SideBar = () => {
   const [openMoreSettingsPanel, setOpenMoreSettingsPanel] = useState(false);
-  const [openMetaPanel, setOpenMetaPanel] = useState("");
+  const [openMetaPanel, setOpenMetaPanel] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+        setOpenMetaPanel(false);
+        setOpenMoreSettingsPanel(false);
+      }
+    }
+
+    if (openMetaPanel || openMoreSettingsPanel) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openMetaPanel, openMoreSettingsPanel]);
 
   const pathname = usePathname();
 
@@ -173,27 +192,33 @@ const SideBar = () => {
         </div>
         {/* settings */}
         <div className="md:space-y-2 w-full  font-medium">
-          <Link href={"/#"} className="md:block hidden w-full">
+          <div className="md:block hidden ">
             <button
-              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer w-full ${
                 isCollapsed ? " justify-center" : ""
               }`}
-              onClick={() =>setOpenMoreSettingsPanel(true)}
+              onClick={() => setOpenMoreSettingsPanel(true)}
             >
               {" "}
-              <AlignJustify size={25} />
+              <AlignJustify
+                size={25}
+                strokeWidth={openMoreSettingsPanel ? 3 : 2}
+              />
               <p
-                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} ${
+                  openMoreSettingsPanel ? "font-extrabold" : ""
+                } pl-4`}
               >
                 More
               </p>
             </button>
-          </Link>{" "}
-          <Link href={"/#"} className="hidden lg:block w-full">
+          </div>{" "}
+          <div className="hidden lg:block w-full">
             <div
               className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
+              onClick={() => setOpenMetaPanel(true)}
             >
               {" "}
               <svg
@@ -217,19 +242,26 @@ const SideBar = () => {
                 />
               </svg>
               <p
-                className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}
+                className={`${isCollapsed ? "hidden" : "hidden lg:block"} ${
+                  openMetaPanel ? "font-extrabold" : ""
+                } pl-4`}
               >
                 Also from Meta
               </p>
             </div>
-          </Link>
+          </div>
         </div>
         {openMoreSettingsPanel && (
-          <MoreSettingsPanel onClose={() => setOpenMoreSettingsPanel(false)} />
+          <div ref={panelRef}>
+            {" "}
+            <MoreSettingsPanel />
+          </div>
         )}
-        {/* {openMetaPanel && (
-          <NewMessagePanel onClose={() => setOpenMetaPanel(null)} />
-        )} */}
+        {openMetaPanel && (
+          <div ref={panelRef}>
+            <MetaPanel />
+          </div>
+        )}
         {/* settings ==*/}
       </div>
     </div>
