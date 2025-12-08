@@ -17,10 +17,11 @@ import { SheetDemo } from "../server/SearchSheet";
 import { NotificationSheet } from "../server/NotificationSheet";
 import { usePathname } from "next/navigation";
 import MoreSettingsPanel from "../server/MoreSettingsPanel";
+import MetaPanel from "../server/MetaPanel";
 
 const SideBar = () => {
   const [openMoreSettingsPanel, setOpenMoreSettingsPanel] = useState(false);
-  const [openMetaPanel, setOpenMetaPanel] = useState("");
+  const [openMetaPanel, setOpenMetaPanel] = useState(false);
 
   const pathname = usePathname();
 
@@ -173,12 +174,12 @@ const SideBar = () => {
         </div>
         {/* settings */}
         <div className="md:space-y-2 w-full  font-medium">
-          <Link href={"/#"} className="md:block hidden w-full">
+          <Link href={"/#"} className="md:block hidden ">
             <button
-              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer w-full ${
                 isCollapsed ? " justify-center" : ""
               }`}
-              onClick={() =>setOpenMoreSettingsPanel(true)}
+              onClick={() => setOpenMoreSettingsPanel(true)}
             >
               {" "}
               <AlignJustify size={25} />
@@ -194,6 +195,7 @@ const SideBar = () => {
               className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
+              onClick={() => setOpenMetaPanel(true)}
             >
               {" "}
               <svg
@@ -227,9 +229,7 @@ const SideBar = () => {
         {openMoreSettingsPanel && (
           <MoreSettingsPanel onClose={() => setOpenMoreSettingsPanel(false)} />
         )}
-        {/* {openMetaPanel && (
-          <NewMessagePanel onClose={() => setOpenMetaPanel(null)} />
-        )} */}
+        {openMetaPanel && <MetaPanel onClose={() => setOpenMetaPanel(false)} />}
         {/* settings ==*/}
       </div>
     </div>
