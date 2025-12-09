@@ -1,7 +1,13 @@
 "use client";
-import { Heart, MessageCircle, Volume2, VolumeOff } from "lucide-react";
+import {
+  
+  Heart,
+  MessageCircle,
+  Volume2,
+  VolumeOff,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { SendDialog } from "../server/SendDialog";
+import { SendDialog } from "./SendDialog";
 import { SaveDialog } from "../server/SaveDialog";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
@@ -103,7 +109,6 @@ export default function Reel() {
       todo
       */}
       </div>
-
       <div className="w-20  h-full">
         <div className="w-full  h-full  flex  justify-end items-center">
           {" "}
@@ -137,13 +142,13 @@ export default function Reel() {
                   {/* {post.author.username[0].toUpperCase()} */}
                 </AvatarFallback>
               </Avatar>
-            
             </div>
           </div>
         </div>
-      </div>  {openCommentPanel && (
-                <CommentPanel onClose={() => setOpenCommentPanel(false)} />
-              )}
+      </div>
+      {openCommentPanel && (
+        <CommentPanel onClose={() => setOpenCommentPanel(false)} />
+      )}
     </div>
   );
 }

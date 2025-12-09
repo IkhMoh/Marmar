@@ -7,7 +7,7 @@ import EmojiPicker from "emoji-picker-react";
 
 import { Heart, MessageCircle, Smile, Volume2, VolumeOff } from "lucide-react";
 import { SaveDialog } from "../server/SaveDialog";
-import { SendDialog } from "../server/SendDialog";
+import { SendDialog } from "./SendDialog";
 
 import { toggleMute } from "@/store/slice/videoSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
