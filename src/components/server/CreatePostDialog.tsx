@@ -1,58 +1,69 @@
 import React from "react";
-import { Button } from "@/components/ui/button"
 
-import {
-    Dialog,
-    DialogClose,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
-import { ImageDown } from "lucide-react";
-const CreatePostDialog = () => {
+type CreatePostDialogProps = {
+  setOpenCreatePostDialog: (value: boolean) => void;
+  dialogRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const CreatePostDialog = ({
+  setOpenCreatePostDialog,
+  dialogRef,
+}: CreatePostDialogProps) => {
   return (
-    <Dialog>
-      <form>      <DialogTrigger className="w-full h-full">
-        <div className="flex justify-between px-2 ">
-          <div>Posts</div>
-          <div>
-            <ImageDown />
-          </div>
+    <div>
+    {/* Dialog */}
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      className="sm:max-w-[425px] w-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-50 p-6 rounded-xl shadow-xl"
+    >
+      <h2 className="text-lg font-semibold text-gray-800">Edit Profile</h2>
+  
+      <div className="grid gap-4 mt-5">
+        <div className="grid gap-2">
+          <Label htmlFor="name-1">Name</Label>
+          <Input
+            id="name-1"
+            name="name"
+            defaultValue="Pedro Duarte"
+            className="bg-gray-50 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          />
         </div>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4">
-            <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
-            </div>
-            <div className="grid gap-3">
-              <Label htmlFor="username-1">Username</Label>
-              <Input id="username-1" name="username" defaultValue="@peduarte" />
-            </div>
-          </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button type="submit">Save changes</Button>
-          </DialogFooter>
-        </DialogContent>
-        </form> 
-    </Dialog>
+  
+        <div className="grid gap-2">
+          <Label htmlFor="username-1">Username</Label>
+          <Input
+            id="username-1"
+            name="username"
+            defaultValue="@peduarte"
+            className="bg-gray-50 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          />
+        </div>
+      </div>
+  
+      <div className="mt-6 flex justify-end gap-3">
+        <Button
+          variant="outline"
+          onClick={() => setOpenCreatePostDialog(false)}
+        >
+          Cancel
+        </Button>
+        <Button type="submit">Save changes</Button>
+      </div>
+    </div>
+  
+    {/* Backdrop */}
+    <div
+      className="fixed inset-0 bg-black/50 z-40"
+      onClick={() => setOpenCreatePostDialog(false)}
+    />
+  </div>
+  
   );
 };
 
