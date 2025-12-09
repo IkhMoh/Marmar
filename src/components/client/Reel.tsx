@@ -6,10 +6,12 @@ import { SaveDialog } from "../server/SaveDialog";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { MenuDialog } from "../server/MenuDialog";
+import CommentPanel from "./CommentPanel";
 export default function Reel() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
+  const [openCommentPanel, setOpenCommentPanel] = useState(false);
 
   // mute/unmute
   const toggleMute = (e?: React.MouseEvent) => {
@@ -113,7 +115,11 @@ export default function Reel() {
                   <Heart size={25} />
                   <p className="text-xs">23.7k</p>
                 </div>
-                <Link href="#" className="cursor-pointer flex flex-col items-center space-y1">
+                <Link
+                  href="#"
+                  className="cursor-pointer flex flex-col items-center space-y1"
+                  onClick={() => setOpenCommentPanel(true)}
+                >
                   <MessageCircle size={25} />
                   <p className="text-xs">300</p>
                 </Link>
@@ -131,10 +137,13 @@ export default function Reel() {
                   {/* {post.author.username[0].toUpperCase()} */}
                 </AvatarFallback>
               </Avatar>
+            
             </div>
           </div>
         </div>
-      </div>
+      </div>  {openCommentPanel && (
+                <CommentPanel onClose={() => setOpenCommentPanel(false)} />
+              )}
     </div>
   );
 }
