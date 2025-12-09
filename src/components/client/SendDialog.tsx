@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,10 +17,12 @@ import { Send } from "lucide-react";
 
 export function SendDialog() {
   return (
-    <Dialog >
+    <Dialog>
       <DialogTrigger asChild>
-        <Send size={25}                   className="transition-transform duration-200 hover:scale-110"
- />
+        <Send
+          size={25}
+          className="transition-transform duration-200 hover:scale-110"
+        />
       </DialogTrigger>
       <DialogContent className="sm:max-w-md ">
         <DialogHeader>
@@ -32,11 +36,7 @@ export function SendDialog() {
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input
-              id="link"
-              defaultValue={window.location.href}
-              readOnly
-            />
+            <Input id="link" defaultValue={window.location.href} readOnly />
           </div>
         </div>
         <DialogFooter className="sm:justify-start">

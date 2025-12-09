@@ -1,15 +1,23 @@
 "use client";
-import { Heart, MessageCircle, Volume2, VolumeOff } from "lucide-react";
+import {
+  
+  Heart,
+  MessageCircle,
+  Volume2,
+  VolumeOff,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { SendDialog } from "../server/SendDialog";
+import { SendDialog } from "./SendDialog";
 import { SaveDialog } from "../server/SaveDialog";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { MenuDialog } from "../server/MenuDialog";
+import CommentPanel from "./CommentPanel";
 export default function Reel() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
+  const [openCommentPanel, setOpenCommentPanel] = useState(false);
 
   // mute/unmute
   const toggleMute = (e?: React.MouseEvent) => {
@@ -101,7 +109,6 @@ export default function Reel() {
       todo
       */}
       </div>
-
       <div className="w-20  h-full">
         <div className="w-full  h-full  flex  justify-end items-center">
           {" "}
@@ -113,7 +120,11 @@ export default function Reel() {
                   <Heart size={25} />
                   <p className="text-xs">23.7k</p>
                 </div>
-                <Link href="#" className="cursor-pointer flex flex-col items-center space-y1">
+                <Link
+                  href="#"
+                  className="cursor-pointer flex flex-col items-center space-y1"
+                  onClick={() => setOpenCommentPanel(true)}
+                >
                   <MessageCircle size={25} />
                   <p className="text-xs">300</p>
                 </Link>
@@ -135,6 +146,9 @@ export default function Reel() {
           </div>
         </div>
       </div>
+      {openCommentPanel && (
+        <CommentPanel onClose={() => setOpenCommentPanel(false)} />
+      )}
     </div>
   );
 }

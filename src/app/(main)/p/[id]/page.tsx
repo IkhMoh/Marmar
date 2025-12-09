@@ -4,7 +4,7 @@ import React from "react";
 import UserCardProfile from "@/components/server/UserCardProfile";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Heart, MessageCircle } from "lucide-react";
-import { SendDialog } from "@/components/server/SendDialog";
+import { SendDialog } from "@/components/client/SendDialog";
 import { SaveDialog } from "@/components/server/SaveDialog";
 import UserCardComment from "@/components/server/UserCardComment";
 
