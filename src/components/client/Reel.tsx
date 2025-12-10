@@ -71,7 +71,7 @@ export default function Reel() {
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="/images/posts/Volando.mp4"
+          src="/images/posts/6.mp4"
           loop
           playsInline
           muted={muted}

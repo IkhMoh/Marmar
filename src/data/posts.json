@@ -16,6 +16,22 @@
     "time_ago": "48m"
   },
   {
+    "id": 2,
+    "title": "Nature",
+    "body": "Beautiful mountain view!Beautiful mountain view!Beautiful mountain view!Beautiful mountain view!Beautiful mountain view!Beautiful mountain view!Beautiful mountain view!",
+    "author": {
+      "id": 101,
+      "username": "amine_bouzid",
+      "name": "Amine Bouzid",
+      "profile_image": "amine_bouzid.jpg"
+    },
+    "image": ["6.mp4"],
+    "type": "video",
+    "created_at": "2025-08-10T12:00:00Z",
+    "comments_count": 3,
+    "time_ago": "48m"
+  },
+  {
     "id": 5,
     "title": "Travel",
     "body": "Exploring the desert dunes 🏜️",
