@@ -18,28 +18,34 @@ import { NotificationSheet } from "../server/NotificationSheet";
 import { usePathname } from "next/navigation";
 import MoreSettingsPanel from "../server/MoreSettingsPanel";
 import MetaPanel from "../server/MetaPanel";
+import OpenSwitchPanel from "./OpenSwitchPanel";
 
 const SideBar = () => {
-  const [openMoreSettingsPanel, setOpenMoreSettingsPanel] = useState(false);
-  const [openMetaPanel, setOpenMetaPanel] = useState(false);
+  const [openPanel, setOpenPanel] = useState<
+    "Meta" | "Settings" | "Switch" | null
+  >(null);
+
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
-        setOpenMetaPanel(false);
-        setOpenMoreSettingsPanel(false);
+        setOpenPanel(null);
       }
     }
 
-    if (openMetaPanel || openMoreSettingsPanel) {
+    if (
+      openPanel === "Meta" ||
+      openPanel === "Settings" ||
+      openPanel === "Switch"
+    ) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [openMetaPanel, openMoreSettingsPanel]);
+  }, [openPanel]);
 
   const pathname = usePathname();
 
@@ -197,16 +203,16 @@ const SideBar = () => {
               className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer w-full ${
                 isCollapsed ? " justify-center" : ""
               }`}
-              onClick={() => setOpenMoreSettingsPanel(true)}
+              onClick={() => setOpenPanel("Settings")}
             >
               {" "}
               <AlignJustify
                 size={25}
-                strokeWidth={openMoreSettingsPanel ? 3 : 2}
+                strokeWidth={openPanel === "Settings" ? 3 : 2}
               />
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} ${
-                  openMoreSettingsPanel ? "font-extrabold" : ""
+                  openPanel === "Settings" ? "font-extrabold" : ""
                 } pl-4`}
               >
                 More
@@ -218,7 +224,7 @@ const SideBar = () => {
               className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
-              onClick={() => setOpenMetaPanel(true)}
+              onClick={() => setOpenPanel("Meta")}
             >
               {" "}
               <svg
@@ -243,7 +249,7 @@ const SideBar = () => {
               </svg>
               <p
                 className={`${isCollapsed ? "hidden" : "hidden lg:block"} ${
-                  openMetaPanel ? "font-extrabold" : ""
+                  openPanel === "Meta" ? "font-extrabold" : ""
                 } pl-4`}
               >
                 Also from Meta
@@ -251,15 +257,21 @@ const SideBar = () => {
             </div>
           </div>
         </div>
-        {openMoreSettingsPanel && (
+
+        {openPanel === "Settings" && (
           <div ref={panelRef}>
             {" "}
-            <MoreSettingsPanel />
+            <MoreSettingsPanel onSwitchPanel={() => setOpenPanel("Switch")} />
           </div>
         )}
-        {openMetaPanel && (
+        {openPanel === "Meta" && (
           <div ref={panelRef}>
             <MetaPanel />
+          </div>
+        )}
+        {openPanel === "Switch" && (
+          <div ref={panelRef}>
+            <OpenSwitchPanel onBack={() => setOpenPanel("Settings")} />
           </div>
         )}
         {/* settings ==*/}

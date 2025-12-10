@@ -10,7 +10,10 @@ import {
   Users,
 } from "lucide-react";
 
-const MoreSettingsPanel = () => {
+interface MoreSettingsPanelProps {
+  onSwitchPanel: () => void;
+}
+const MoreSettingsPanel = ({onSwitchPanel}: MoreSettingsPanelProps) => {
   return (
     <Card className="p-0 w-[266px] h-fit fixed  bottom-30 left-2 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
       <CardContent className="bg-gray-100 p-0">
@@ -29,7 +32,7 @@ const MoreSettingsPanel = () => {
             <p>Saved</p>
           </div>
 
-          <div className="hover:bg-gray-100 px-5 py-3 rounded-lg flex items-center space-x-2">
+          <div className="hover:bg-gray-100 px-5 py-3 rounded-lg flex items-center space-x-2" onClick={onSwitchPanel}>
             <Sun size={20} />
             <p>Switch appearance</p>
           </div>

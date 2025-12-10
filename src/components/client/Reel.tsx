@@ -1,11 +1,5 @@
 "use client";
-import {
-  
-  Heart,
-  MessageCircle,
-  Volume2,
-  VolumeOff,
-} from "lucide-react";
+import { Heart, MessageCircle, Volume2, VolumeOff } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SendDialog } from "./SendDialog";
 import { SaveDialog } from "../server/SaveDialog";
@@ -18,6 +12,23 @@ export default function Reel() {
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
   const [openCommentPanel, setOpenCommentPanel] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+        setOpenCommentPanel(false);
+       }
+    }
+
+    if (openCommentPanel) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openCommentPanel]);
 
   // mute/unmute
   const toggleMute = (e?: React.MouseEvent) => {
@@ -147,7 +158,9 @@ export default function Reel() {
         </div>
       </div>
       {openCommentPanel && (
-        <CommentPanel onClose={() => setOpenCommentPanel(false)} />
+        <div ref={panelRef}>
+          <CommentPanel onClose={() => setOpenCommentPanel(false)} />
+        </div>
       )}
     </div>
   );
