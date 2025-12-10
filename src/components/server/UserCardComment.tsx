@@ -11,19 +11,25 @@ const UserCardComment = () => {
     <div className="w-full h-it">
       <div className="flex justify-between items-center w-full px-1">
         {" "}
-        <Link href={username} className="flex h-fit w-fit px-1 space-x-3">
-          <Avatar className="w-11 h-11">
-            <AvatarImage
-              src={"/images/avatars/" + profile_image}
-              alt={username}
-              className="object-cover object-center rounded-full"
-            />
+        <div className="flex h-fit w-fit px-1 space-x-3">
+          <Link href={username}>
+            <Avatar className="w-11 h-11">
+              <AvatarImage
+                src={"/images/avatars/" + profile_image}
+                alt={username}
+                className="object-cover object-center rounded-full"
+              />
 
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </Link>
+
           <div>
             <div className="h-fit">
-              <span className="font-semibold text-sm ">{username} </span>
+              <Link href={username}>
+                <span className="font-semibold text-sm ">{username} </span>
+              </Link>
+
               <span className="text-sm">Maybe bro playing some games</span>
             </div>
             <div className="w-fit h-fit space-x-3">
@@ -37,7 +43,7 @@ const UserCardComment = () => {
               </button>
             </div>
           </div>
-        </Link>
+        </div>
         <Heart
           size={12}
           className="transition-transform duration-200 hover:scale-110"
