@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import React from "react";
 import { Card, CardContent } from "../ui/card";
+import UserCardComment from "@/components/server/UserCardComment";
 
 interface CommentPanelProps {
   onClose: () => void;
@@ -8,20 +9,44 @@ interface CommentPanelProps {
 
 const CommentPanel = ({ onClose }: CommentPanelProps) => {
   return (
-    <Card className="w-[360px] h-[521px] absolute bottom-25 right-5 z-50 shadow-2xl rounded-xl border bg-white overflow-hidden transition-transform duration-200 hover:scale-[1.01]">
-      <CardContent className="p-0 relative h-full flex flex-col">
-        {/* Header */}
-        <div className="flex justify-between items-center px-5 py-3 border-b bg-gray-50">
-          <h2 className="font-bold text-lg text-gray-800">New Message</h2>
-          <button
-            onClick={onClose}
-            className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 transition-colors"
-          >
-            <X strokeWidth={1.5} size={20} className="text-gray-600" />
-          </button>
-        </div>
-      </CardContent>
-    </Card>
+    <Card className="w-[343px] max-h-[450px] h-fit p-0 absolute bottom-25 right-7 z-50 shadow-2xl rounded-xl border overflow-hidden">
+  <CardContent className="px-2 py-2 relative h-full flex flex-col min-h-0">
+
+    {/* HEADER */}
+    <div className="flex items-center py-2 relative">
+      <button
+        onClick={onClose}
+        className="absolute left-5 flex items-center justify-center w-8 h-8 rounded-full transition-colors"
+      >
+        <X strokeWidth={1.5} size={22} />
+      </button>
+      <h2 className="w-full text-center font-bold text-lg">Comments</h2>
+    </div>
+
+    {/* comments (scroll area) */}
+    <section className="flex-1 overflow-y-auto px-4 py-2 space-y-2 min-h-0">
+      <UserCardComment />
+      <UserCardComment />
+      <UserCardComment />
+      <UserCardComment />
+      <UserCardComment />
+      <UserCardComment />
+      <UserCardComment />
+    </section>
+
+    {/* input (fixed bottom) */}
+    <section className="border-t border-gray-200 px-3 py-2 flex items-center gap-2">
+      <input
+        type="text"
+        placeholder="Add a comment..."
+        className="flex-1 outline-none text-sm"
+      />
+      <button className="text-blue-500 text-sm font-semibold">Post</button>
+    </section>
+
+  </CardContent>
+</Card>
+
   );
 };
 
