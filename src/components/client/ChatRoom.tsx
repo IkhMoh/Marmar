@@ -63,7 +63,7 @@ export default function ChatRoom() {
     });
 
   return (
-    <div className="flex flex-col h-screen w-full bg-white">
+    <div className="flex flex-col h-screen w-full">
       {/* ======== HEADER  ======== */}
       <div className="p-3 border-b flex items-center justify-between">
         <div className="flex items-center gap-3">

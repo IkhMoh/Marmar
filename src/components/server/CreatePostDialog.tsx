@@ -20,7 +20,7 @@ const CreatePostDialog = ({
       ref={dialogRef}
       role="dialog"
       aria-modal="true"
-      className="sm:max-w-[425px] w-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-50 p-6 rounded-xl shadow-xl"
+      className="sm:max-w-[425px] w-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 p-6 rounded-xl shadow-xl"
     >
       <h2 className="text-lg font-semibold text-gray-800">Edit Profile</h2>
   

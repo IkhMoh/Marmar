@@ -16,7 +16,7 @@ const NewMessagePanel = ({ onClose, onBack }: NewMessagePanelProps) => {
   return (
     // todo : real data user
 
-    <Card className="p-0 w-[360px] h-[521px] fixed bottom-6 right-8 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
+    <Card className="p-0 w-[360px] h-[521px] fixed bottom-6 right-8 z-50 shadow-lg rounded-xl border overflow-hidden">
       <CardContent className="p-0 relative h-full">
         {/* Header */}
         <div className="flex justify-between items-center px-4 py-3 border-b">

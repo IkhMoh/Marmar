@@ -15,9 +15,9 @@ interface MoreSettingsPanelProps {
 }
 const MoreSettingsPanel = ({onSwitchPanel}: MoreSettingsPanelProps) => {
   return (
-    <Card className="p-0 w-[266px] h-fit fixed  bottom-30 left-2 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
-      <CardContent className="bg-gray-100 p-0">
-        <div className="w-full h-full bg-white pt-2 p-2">
+    <Card className="p-0 w-[266px] h-fit fixed  bottom-30 left-2 z-50 shadow-lg rounded-xl border overflow-hidden">
+      <CardContent className="p-0">
+        <div className="w-full h-full pt-2 p-2">
           <div className="hover:bg-gray-100 text-sm  px-5 py-3 rounded-lg flex space-x-2">
             <Bolt size={20} />
             <p>Settings</p>
@@ -42,7 +42,7 @@ const MoreSettingsPanel = ({onSwitchPanel}: MoreSettingsPanelProps) => {
             <p>Report a problem</p>
           </div>
         </div>
-        <div className="mt-1.5 bg-white p-2">
+        <div className="mt-1.5 p-2">
           <div className="hover:bg-gray-100 px-5 py-3 rounded-lg flex items-center space-x-2">
             <Users size={20} />
 

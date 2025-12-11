@@ -4,9 +4,9 @@ import { BrainCircuit, MessageSquare, Hash, Circle } from "lucide-react";
 
 const MetaPanel = () => {
   return (
-    <Card className="p-0 w-[266px] h-fit fixed  bottom-18 left-2 z-50 shadow-lg rounded-xl border bg-white overflow-hidden">
+    <Card className="p-0 w-[266px] h-fit fixed  bottom-18 left-2 z-50 shadow-lg rounded-xl border overflow-hidden">
       <CardContent className="bg-gray-100 p-0">
-        <div className="w-full h-full bg-white pt-2 p-2 text-md font-medium">
+        <div className="w-full h-full pt-2 p-2 text-md font-medium">
           {/* Meta AI */}
           <div className="hover:bg-gray-100 px-5 py-3 rounded-lg flex items-center space-x-2">
             <Circle size={24} strokeWidth={3} />
