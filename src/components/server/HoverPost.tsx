@@ -40,7 +40,7 @@ const HoverPost = ({ fullName, username, profile_image }: MinimalUser) => {
           </Link>
         </HoverCardTrigger>
 
-        <HoverCardContent className="w-96 h-80 flex flex-col justify-between">
+        <HoverCardContent className="w-96 h-80 flex flex-col justify-between dark:bg-neutral-900">
           <div className="flex  px-1 ">
             <Avatar className=" w-16 h-16 mt-1 flex">
               <AvatarImage

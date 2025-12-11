@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,6 +17,12 @@ import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 
 export function SendDialog() {
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+  }, []);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -24,21 +31,24 @@ export function SendDialog() {
           className="transition-transform duration-200 hover:scale-110"
         />
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md ">
+
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Share link</DialogTitle>
           <DialogDescription>
             Anyone who has this link will be able to view this.
           </DialogDescription>
         </DialogHeader>
+
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input id="link" defaultValue={window.location.href} readOnly />
+            <Input id="link" value={currentUrl} readOnly />
           </div>
         </div>
+
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button type="button" variant="secondary">

@@ -28,7 +28,7 @@ export default function PostModal({
       onClick={close}
     >
       <div
-        className="bg-white shadow-xl max-w-7xl min-w-5xl w-fit h-[92vh] overflow-hidden flex"
+        className=" shadow-xl max-w-7xl min-w-5xl w-fit h-[92vh] overflow-hidden flex"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left Media */}

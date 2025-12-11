@@ -98,7 +98,7 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
             <div
               key={idx}
               className={`h-[3px] flex-1 rounded-full ${
-                idx === currentIndex ? "bg-white" : "bg-white/30"
+                idx === currentIndex ? "" : ""
               }`}
             ></div>
           ))}
