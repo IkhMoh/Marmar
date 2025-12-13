@@ -31,7 +31,7 @@ const CreateDialog = ({ isCollapsed }: CreateDialogProps) => {
   return (
     <div ref={panelRef} className="w-full">
       <div
-        className={`flex items-center p-3 hover:bg-[#efefef] rounded-md cursor-pointer ${
+        className={`flex items-center p-3 hover:bg-[#efefef] dark:hover:bg-neutral-600  rounded-md cursor-pointer ${
           isCollapsed ? "w-fit" : "w-full"
         }`}
         onClick={() => setOpenCreateDialog((prev) => !prev)}
