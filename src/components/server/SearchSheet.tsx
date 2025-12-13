@@ -25,7 +25,7 @@ export function SheetDemo({ onOpen, onClose, isCollapsed }: SheetDemoProps) {
   return (
     <Popover onOpenChange={handleOpenChange}>
       <PopoverTrigger
-        className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+        className={`flex items-center  p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600  rounded-md cursor-pointer ${
           isCollapsed ? "w-fit" : "w-full"
         }`}
       >

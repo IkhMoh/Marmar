@@ -88,7 +88,7 @@ const SideBar = () => {
 
           {/* Icon When Collapsed */}
           <div
-            className={`flex justify-center w-full pt-9  hover:bg-[#efefef] rounded-md cursor-pointer
+            className={`flex justify-center w-full pt-9  hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer
        ${isCollapsed ? "block" : "xl:hidden lg:block hidden"}
     `}
           >
@@ -101,7 +101,7 @@ const SideBar = () => {
         <div className="flex  items-center h-[573px] md:justify-normal md:flex-col space-y-2 w-full font-medium pt-9">
           <Link href={"/"} className="w-full">
             <div
-              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex items-center  p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
             >
@@ -124,7 +124,7 @@ const SideBar = () => {
           <Link href={"/explore"} className="w-full">
             {" "}
             <div
-              className={` flex p-3 hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={` flex p-3 hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               } `}
             >
@@ -138,7 +138,7 @@ const SideBar = () => {
           </Link>
           <Link href={"/reels"} className="w-full">
             <div
-              className={`flex p-3  hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex p-3  hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
             >
@@ -154,7 +154,7 @@ const SideBar = () => {
 
           <Link href={"/direct"} className="w-full">
             <div
-              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex items-center  p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
             >
@@ -181,7 +181,7 @@ const SideBar = () => {
           <CreateDialog isCollapsed={isCollapsed} />
           <Link href={"/profile"} className="w-full">
             <div
-              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
             >
@@ -200,7 +200,7 @@ const SideBar = () => {
         <div className="md:space-y-2 w-full  font-medium">
           <div className="md:block hidden ">
             <button
-              className={`flex p-3   hover:bg-[#efefef] rounded-md cursor-pointer w-full ${
+              className={`flex p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer w-full ${
                 isCollapsed ? " justify-center" : ""
               }`}
               onClick={() => setOpenPanel("Settings")}
@@ -221,7 +221,7 @@ const SideBar = () => {
           </div>{" "}
           <div className="hidden lg:block w-full">
             <div
-              className={`flex items-center  p-3   hover:bg-[#efefef] rounded-md cursor-pointer ${
+              className={`flex items-center  p-3   hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer ${
                 isCollapsed ? " justify-center" : ""
               }`}
               onClick={() => setOpenPanel("Meta")}
