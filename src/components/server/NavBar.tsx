@@ -1,8 +1,5 @@
-import { Heart, Instagram } from "lucide-react";
-import Link from "next/link";
-import React from "react";
-import { Input } from "../ui/input";
-
+  import React from "react";
+ 
 const NavBar = () => {
   return (
     <div className="md:hidden block  fixed left-0 right-0 top-0 bg-red-500 h-[60px] w-full ">
