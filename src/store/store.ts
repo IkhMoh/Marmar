@@ -1,21 +1,18 @@
 // store/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import { api } from "@/services/tarmeezacademyApi";
 import postsReducer from "./slice/postsSlice";
 import videoReducer from "./slice/videoSlice";
 
-export const store = configureStore({
-  reducer: {
-    posts: postsReducer,
-    video: videoReducer,
+export const makeStore = () => {
+  return configureStore({
+    reducer: {
+      posts: postsReducer,
+      video: videoReducer,
+    },
+  });
+};
+// todo:clean
 
-    [api.reducerPath]: api.reducer,
-  },
-
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware),
-});
-
-// أنواع التايب سكريبت
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type AppStore = ReturnType<typeof makeStore>;
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"];

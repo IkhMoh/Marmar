@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { createContext, useEffect, useState } from "react";
 
@@ -7,7 +7,11 @@ export const ThemeContext = createContext({
   isDark: false,
 });
 
-export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+export default function ThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {

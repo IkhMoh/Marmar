@@ -19,7 +19,7 @@ export type Post = {
   title?: string;
   body?: string;
   type: "image" | "video";
-  image: string[];
+  image: string;
   author: {
     id: number;
     username: string;

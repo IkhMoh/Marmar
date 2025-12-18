@@ -1,15 +1,35 @@
-"use client";
-import React from "react";
-import { useGetMergedPostsQuery } from "@/services/postsApi";
-import Feed from "./Feed";
+import Feed from "../server/Feed";
 
-const FeedClient = () => {
-  const { data: posts = [], isLoading, isError } = useGetMergedPostsQuery();
+async function getPosts() {
+  const res = await fetch("https://tarmeezacademy.com/api/v1/posts", {
+    cache: "no-store",
+  });
 
-  if (isLoading) return <p className="text-gray-400">Loading...</p>;
-  if (isError) return <p className="text-red-500">Failed to load posts</p>;
-  console.log(posts);
-  return <Feed posts={posts} />;
-};
+  if (!res.ok) throw new Error("Failed to fetch posts");
 
-export default FeedClient;
+  return res.json();
+}
+
+// async function getPostsFromAPI1() {
+//   const res = await fetch('https://api1.com/posts', { cache: 'no-store' })
+//   return res.json()
+// }
+
+// async function getPostsFromAPI2() {
+//   const res = await fetch('https://api2.com/posts', { cache: 'no-store' })
+//   return res.json()
+// }
+export default async function FeedClient() {
+  const posts = await getPosts();
+  // const [api1, api2] = await Promise.all([
+  //   getPostsFromAPI1(),
+  //   getPostsFromAPI2(),
+  // ])
+
+  // const mergedPosts = [
+  //   ...api1.data,
+  //   ...api2.data,
+  // ]
+
+  return <Feed posts={posts.data} />;
+}
