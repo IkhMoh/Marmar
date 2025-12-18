@@ -7,6 +7,7 @@ import { MinimalUser } from "@/types/user";
 const DynamicSuggestionsPanel = async () => {
   const users: MinimalUser[] = await getUsers();
   console.log(users);
+  
   return (
     <div className="w-[383px] h-screen  hidden lg:block">
       <div className="pl-16 h-full w-full pt-9">

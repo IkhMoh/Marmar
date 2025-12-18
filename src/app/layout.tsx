@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Handlee } from "next/font/google";
 import "./globals.css";
-import Providers from "@/components/client/Provider";
 import { ReactNode } from "react";
+import StoreProvider from "@/components/client/StoreProvider";
+import ThemeProvider from "@/components/client/ThemeProvider";
 
 const handlee = Handlee({
   subsets: ["latin"],
@@ -36,10 +37,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${handlee.variable} antialiased`}
       >
-        <Providers>
-          {children}
-          {modal}
-        </Providers>
+        <StoreProvider>
+          <ThemeProvider>
+            {children}
+            {modal}
+          </ThemeProvider>
+        </StoreProvider>
       </body>
     </html>
   );

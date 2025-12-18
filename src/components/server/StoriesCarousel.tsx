@@ -6,9 +6,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 // import Autoplay from "embla-carousel-autoplay";
-import Storie from "./Storie";
 import { Story } from "@/types/stories";
 import { getStories } from "@/lib/stories/getStories";
+import Storie from "./Storie";
 
 export async function StoriesCarousel() {
   const data: Story[] = await getStories();

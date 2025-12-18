@@ -95,7 +95,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
-
+  console.log(post);
   return (
     <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-fit pb-4">
       {/* Header */}
@@ -121,11 +121,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             >
               <video
                 ref={videoRef}
-                src={
-                  post.image[0].startsWith("http")
-                    ? post.image[0]
-                    : `/images/posts/${post.image[0]}`
-                }
+                src={post.image}
                 loop
                 playsInline
                 muted={muted}
@@ -168,11 +164,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             <div className="relative w-full h-[468px] bg-black overflow-hidden rounded-[3px]">
               {" "}
               <Image
-                src={
-                  post.image[0].startsWith("http")
-                    ? post.image[0]
-                    : `/images/posts/${post.image[0]}`
-                }
+                src={post.image}
                 alt={post.title || "Post image"}
                 fill
                 className="object-cover w-full h-full"
