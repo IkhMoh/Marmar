@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Handlee } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
-import StoreProvider from "@/components/client/StoreProvider";
-import ThemeProvider from "@/components/client/ThemeProvider";
+import StoreProvider from "@/providers/StoreProvider";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const handlee = Handlee({
   subsets: ["latin"],

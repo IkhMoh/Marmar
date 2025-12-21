@@ -10,7 +10,7 @@ import { SaveDialog } from "../server/SaveDialog";
 import { SendDialog } from "./SendDialog";
 
 import { toggleMute } from "@/store/slice/videoSlice";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import { MenuDialog } from "../server/MenuDialog";
 import HoverPost from "../server/HoverPost";

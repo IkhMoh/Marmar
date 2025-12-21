@@ -1,6 +1,6 @@
 // store/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import postsReducer from "./slice/postsSlice";
+import postsReducer from "../features/posts/store/postSlice";
 import videoReducer from "./slice/videoSlice";
 
 export const makeStore = () => {
