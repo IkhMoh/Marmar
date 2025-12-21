@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { Volume2, VolumeOff } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleMute } from "@/store/slice/videoSlice";
 import Image from "next/image";
 import { Story } from "@/types/stories";
@@ -20,7 +20,6 @@ interface StoriesProps {
 }
 
 export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
-  
   const videoRefs = useRef<HTMLVideoElement[]>([]);
 
   const [videoPaused, setVideoPaused] = useState<{ [key: number]: boolean }>(
@@ -102,7 +101,7 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
               }`}
             ></div>
           ))}
-        </div> 
+        </div>
         <div className="w-full bg-amber-400">
           <Carousel
             plugins={[plugin.current]}

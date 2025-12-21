@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/components/client/ThemeProvider";
+import { ThemeContext } from "@/providers/ThemeProvider";
 import { ChevronLeft, Sun } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 
