@@ -1,4 +1,4 @@
-import StorieDitilse from "@/components/client/StorieDitilse";
+import StorieDitilse from "@/features/stories/components/StorieDitilse";
 import { getStories } from "@/lib/stories/getStories";
 import React from "react";
 import { Story } from "@/types/stories";

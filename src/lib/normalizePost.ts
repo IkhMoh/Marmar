@@ -1,4 +1,4 @@
-import { Post } from "@/types/post"
+import { Post } from "@/features/posts/types"
 
 // lib/normalizePost.ts
 export function normalizePost(post: Post) {

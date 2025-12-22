@@ -1,4 +1,4 @@
-import ChatSidebar from "@/components/server/ChatSidebar";
+import ChatSidebar from "@/components/server/layout/ChatSidebar";
 import { ChevronDown, SquarePen } from "lucide-react";
 import React from "react";
 
