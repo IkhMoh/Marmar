@@ -1,4 +1,4 @@
-import Reel from "@/components/client/Reel";
+import Reel from "@/components/client/layout/Reel";
 import React from "react";
 
 const Page = () => {
@@ -23,9 +23,6 @@ const Page = () => {
       <section className="snap-center  h-screen flex items-start pt-1 justify-center overflow-hidden  -mb-8">
         <Reel />
       </section>
-    
-      
-     
     </div>
   );
 };

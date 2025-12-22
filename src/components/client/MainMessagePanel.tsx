@@ -3,7 +3,7 @@ import { Expand, SquarePen, X } from "lucide-react";
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import Link from "next/link";
-import ChatUserItemPanel from "../server/ChatUserItemPanel";
+import ChatUserItemPanel from "../../features/users/components/ChatUserItemPanel";
 
 interface MainMessagePanelProps {
   onClose: () => void;

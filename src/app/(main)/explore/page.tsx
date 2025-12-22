@@ -1,6 +1,6 @@
 import React from "react";
 // import { getMergedPosts } from "@/lib/posts/getMergedPosts";
-import PostExplore from "@/components/client/PostExplore";
+import PostExplore from "@/features/posts/components/PostExplore";
 import { Post } from "@/features/posts/types";
 
 // helper لتقسيم المصفوفة إلى chunks من 5 عناصر

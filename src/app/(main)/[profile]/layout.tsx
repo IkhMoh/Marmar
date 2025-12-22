@@ -1,5 +1,5 @@
+import Profile from "@/features/users/components/Profile";
 import React from "react";
-import Profile from "@/components/server/Profile";
 
 interface LayoutProps {
   children: React.ReactNode;
