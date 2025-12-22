@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Post } from "@/types/post";
 import EmojiPicker from "emoji-picker-react";
 
 import { Heart, MessageCircle, Smile, Volume2, VolumeOff } from "lucide-react";
@@ -14,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import { MenuDialog } from "../server/MenuDialog";
 import HoverPost from "../server/HoverPost";
+import { Post } from "@/features/posts/types";
 
 interface PostCardProps {
   post: Post;

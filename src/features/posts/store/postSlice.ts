@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Post } from "@/types/post";
+import { Post } from "../types";
 
 interface PostsState {
   items: Post[];
