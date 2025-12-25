@@ -26,7 +26,7 @@ const PostDetails = ({ post }: { post: Post }) => {
                   className=" object-cover w-full h-full"
                 />
               ) : (
-                <p>Media for Post {post.id}</p>
+                <p>{post.id}</p>
               )}
             </div>
           </section>
