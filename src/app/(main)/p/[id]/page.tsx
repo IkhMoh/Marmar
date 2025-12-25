@@ -1,107 +1,34 @@
-"use client";
-
+import PostDetails from "@/features/posts/components/PostDetails";
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Heart, MessageCircle } from "lucide-react";
-import { SendDialog } from "@/components/client/SendDialog";
-import { SaveDialog } from "@/components/server/SaveDialog";
-import UserCardComment from "@/features/users/components/UserCardComment";
-import UserCardProfile from "@/features/users/components/UserCardProfile";
+import { Post } from "@/features/posts/types";
 
-export default function PostPage({
+// 1. Create the fetch function
+async function getSinglePost(id: string) {
+  const res = await fetch(`https://tarmeezacademy.com/api/v1/posts/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) throw new Error("Post not found");
+
+  const response = await res.json();
+  return response.data; // The API returns { data: { ...post } }
+}
+
+export default async function PostPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const username = "ikhlef_mohamed";
-  const profile_image = "ikhlef";
-  const { id } = React.use(params);
+  // 2. Await the params to get the ID
+  const { id } = await params;
+
+  // 3. Fetch the actual post data using that ID
+  const post: Post = await getSinglePost(id);
 
   return (
-    <div className=" w-full flex pl-[244px] ">
-      <div className="w-full px-32">
-        <div className="flex h-[600px] pt-12">
-          {/* todo : leal data */}
-          {/* left Panel */}
-          <section className="w-2/3 rounded-xl flex items-center justify-center ">
-            <div className="flex-1 h-full bg-black/20">
-              <div className="w-full h-full flex items-center justify-center">
-                <p className="text-white">Media for Post {id}</p>
-              </div>
-            </div>
-          </section>
-          {/* Right Panel */}
-          <section className="w-1/3 flex flex-col">
-            {/* Top Header User */}
-            <section className="px-2 py-3 rounded-b-md border-b border-gray-200">
-              <UserCardProfile />
-            </section>
-
-            {/* POST CONTENT SCROLL */}
-            <section className="flex-1 overflow-y-auto px-3 py-4 space-y-2">
-              <div className="flex gap-2">
-                <Avatar className="w-10 h-10  ">
-                  <AvatarImage
-                    src={"/images/avatars/" + profile_image}
-                    alt={username}
-                    className="object-cover object-center rounded-full"
-                  />
-
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <div>
-                  <div className="text-sm">
-                    <h1 className="font-semibold mr-1">{username}</h1>
-                    Tamron for sony 70-180mm f/2.8 en excellent état Prix :
-                    148.000DA Prix : 14,8 millions 0670288883 viber /whatsapp
-                    0796753939 Whatsapp 0559404515 Instagram📸 :
-                    Eternel_audiovisuel Facebook 🌍: Matériel photographique
-                    Algeria Localisation Gps : Eternel store 👌محلنا يوفر احسن
-                    اسعار للكاميرات 📸 بضمان شهر بعد الشراء باب الزوار الجزائر
-                    العاصمة و التوصيل متوفر الى 58 ولاية 1d
-                  </div>
-                </div>
-              </div>
-              <UserCardComment />
-              <UserCardComment />
-              <UserCardComment />
-            </section>
-
-            <section className="border-t border-gray-200 px-3 ">
-              <div className="flex justify-between my-1 py-2">
-                <div className="flex space-x-4">
-                  <Heart
-                    size={26}
-                    className="transition-transform duration-200 hover:scale-110"
-                  />
-                  <MessageCircle
-                    size={26}
-                    className="transition-transform duration-200 hover:scale-110"
-                  />
-                  <SendDialog />
-                </div>
-                <SaveDialog />
-              </div>
-
-              {/* likes and views */}
-              <p className="text-sm font-semibold mt-2">3 likes</p>
-              <p className="text-[11px] text-gray-500 mt-1">4 hours ago</p>
-            </section>
-
-            {/* COMMENT INPUT */}
-            <section className="border-t border-gray-200 px-3 py-2 flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="Add a comment..."
-                className="flex-1 outline-none text-sm"
-              />
-              <button className="text-blue-500 text-sm font-semibold">
-                Post
-              </button>
-            </section>
-          </section>
-        </div>
-      </div>
+    <div className="w-screen  pl-[244px]">
+      {/* 4. Pass the fetched post to your component */}
+      <PostDetails post={post} />
     </div>
   );
 }

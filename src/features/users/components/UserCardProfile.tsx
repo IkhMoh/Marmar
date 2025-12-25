@@ -1,12 +1,13 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { MenuDialog } from "./MenuDialog";
+import { MenuDialog } from "@/components/client/MenuDialog";
 
-const UserCardProfile = () => {
-  const username = "ikhlef_mohamed";
-  const profile_image = "ikhlef";
-
+interface User  {
+  username:string;
+  profile_image?:string;
+}
+const UserCardProfile = ({ username, profile_image }:User) => {
   return (
     <div className="w-full h-it">
       <div className="flex justify-between  px-1">
@@ -22,7 +23,9 @@ const UserCardProfile = () => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
-          <h2 className="font-bold text-sm ml-2 flex items-center">{username}</h2>
+          <h2 className="font-bold text-sm ml-2 flex items-center">
+            {username}
+          </h2>
         </Link>
         <MenuDialog />
       </div>
