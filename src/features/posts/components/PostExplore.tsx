@@ -12,8 +12,8 @@ interface PostCardProps {
 
 const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
   const isVideo = post.type === "video";
-  // the older code
   //
+  // the older code
   // const src =
   //   post.image && post.image.length > 0
   //     ? post.image[0].startsWith("http")
@@ -39,8 +39,7 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
 
   return (
     <Link href={`/p/${post.id}`}>
-      {" "}
-      <div
+       <div
         className={`group relative w-full h-full overflow-hidden cursor-pointer   rounded-[3px] ${variantClass}`}
       >
         {/* الـميديا */}
