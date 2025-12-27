@@ -11,9 +11,20 @@ function chunkArray<T>(array: T[], size: number): T[][] {
   }
   return chunks;
 }
+async function getPosts() {
+  const res = await fetch("https://tarmeezacademy.com/api/v1/posts", {
+    cache: "no-store",
+  });
 
+  if (!res.ok) throw new Error("Failed to fetch posts");
+
+  const response = await res.json();
+  // The posts are nested inside the 'data' property
+  return response.data;
+}
 const Page = async () => {
-  const posts: Post[] = await getMergedPosts();
+  const posts: Post[] = await getPosts();
+
   const groups = chunkArray(posts, 5);
 
   return (
@@ -40,51 +51,51 @@ const Page = async () => {
           }
 
           // إذا فيه فيديو → نحطه في العمود الطويل
-          return (
-            <div
-              key={gi}
-              className="grid grid-cols-3 "
-              style={{ gridAutoRows: "319px" }}
-            >
-              {gi % 2 === 0 ? (
-                <>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[0]} variant="square" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[1]} variant="square" />
-                  </div>
-                  <div className="col-span-1 row-span-2 w-[319px] h-[638px]">
-                    <PostExplore post={tallPost} variant="tall" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[3]} variant="square" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[4]} variant="square" />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="col-span-1 row-span-2 w-[319px] h-[638px]">
-                    <PostExplore post={tallPost} variant="tall" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[1]} variant="square" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[2]} variant="square" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[3]} variant="square" />
-                  </div>
-                  <div className="w-[319px] h-[319px]">
-                    <PostExplore post={group[4]} variant="square" />
-                  </div>
-                </>
-              )}
-            </div>
-          );
+          // return (
+          //   <div
+          //     key={gi}
+          //     className="grid grid-cols-3 "
+          //     style={{ gridAutoRows: "319px" }}
+          //   >
+          //     {gi % 2 === 0 ? (
+          //       <>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[0]} variant="square" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[1]} variant="square" />
+          //         </div>
+          //         <div className="col-span-1 row-span-2 w-[319px] h-[638px]">
+          //           <PostExplore post={tallPost} variant="tall" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[3]} variant="square" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[4]} variant="square" />
+          //         </div>
+          //       </>
+          //     ) : (
+          //       <>
+          //         <div className="col-span-1 row-span-2 w-[319px] h-[638px]">
+          //           <PostExplore post={tallPost} variant="tall" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[1]} variant="square" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[2]} variant="square" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[3]} variant="square" />
+          //         </div>
+          //         <div className="w-[319px] h-[319px]">
+          //           <PostExplore post={group[4]} variant="square" />
+          //         </div>
+          //       </>
+          //     )}
+          //   </div>
+          // );
         })}
       </div>
     </div>
