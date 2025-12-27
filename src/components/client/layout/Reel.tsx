@@ -74,7 +74,7 @@ export default function Reel() {
       observer.disconnect();
     };
   }, []);
-
+// todo
   return (
     <div className=" flex  w-fit h-[710px]">
       <div className="relative w-[386px] h-[710px]">

@@ -17,12 +17,12 @@ const PostDetails = ({ post }: { post: Post }) => {
           {/* left Panel */}
           <section className="w-2/3 rounded-xl flex items-center justify-center">
             <div className="flex-1 h-full flex items-center justify-center">
-              {post.image ? (
+              {typeof post.image === "string" && post.image.trim() !== "" ? (
                 <Image
                   src={post.image}
                   alt={`Media for Post ${post.id}`}
-                  width={1000} 
-                  height={800} 
+                  width={1000}
+                  height={800}
                   className=" object-cover w-full h-full"
                 />
               ) : (
@@ -61,9 +61,13 @@ const PostDetails = ({ post }: { post: Post }) => {
                   </div>
                 </div>
               </div>
-              <UserCardComment />
-              <UserCardComment />
-              <UserCardComment />
+              {post.comments && post.comments.length > 0 ? (
+                post.comments.map((comment) => (
+                  <UserCardComment key={comment.id} comment={comment} />
+                ))
+              ) : (
+                <p>No comments yet.</p>
+              )}
             </section>
 
             <section className="border-t border-gray-200 px-3 ">

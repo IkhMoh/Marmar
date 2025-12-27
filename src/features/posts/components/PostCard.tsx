@@ -95,7 +95,6 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
-  console.log(post);
   return (
     <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-fit pb-4">
       {/* Header */}
