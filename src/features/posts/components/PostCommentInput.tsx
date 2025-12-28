@@ -32,7 +32,7 @@ export default function PostCommentInput({ postId }: { postId: number }) {
     setComment((prev) => prev + emoji);
   };
   return (
-    <div className="text-sm text-gray-700 mt-2 flex min-h-6 h-fit relative border-t pt-2 dark:border-zinc-800">
+    <div className="text-sm text-gray-700 mt-2 flex min-h-6 h-fit relative border-t pt-2 dark:border-zinc-800 px-3 py-2">
       <textarea
         className="min-h-4 h-fit w-full border-none outline-none resize-none overflow-y-hidden leading-none p-0 bg-transparent dark:text-white"
         placeholder={isPending ? "Posting..." : "Add a comment..."}

@@ -1,22 +1,14 @@
-import PostDetailsModel from "@/features/posts/components/PostDetailsModel";
-import { Post } from "@/features/posts/types";
+import { PostDetailsModel, getPostById, Post } from "@/features/posts";
+
 import React from "react";
 
-async function getSinglePost(id: string) {
-  const res = await fetch(`https://tarmeezacademy.com/api/v1/posts/${id}`);
-
-  if (!res.ok) throw new Error("Post not found");
-
-  const response = await res.json();
-  return response.data; 
-}
 export default async function PostModal({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
   const { id } = await params;
-  const post: Post = await getSinglePost(id);
+  const post: Post = await getPostById(id);
 
   return (
     <div>
