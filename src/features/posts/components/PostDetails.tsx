@@ -7,6 +7,7 @@ import UserCardComment from "@/features/users/components/UserCardComment";
 import UserCardProfile from "@/features/users/components/UserCardProfile";
 import { Post } from "../types";
 import Image from "next/image";
+import PostCommentInput from "./PostCommentInput";
 
 const PostDetails = ({ post }: { post: Post }) => {
   return (
@@ -96,7 +97,7 @@ const PostDetails = ({ post }: { post: Post }) => {
             </section>
 
             {/* COMMENT INPUT */}
-            <section className="border-t border-gray-200 px-3 py-2 flex items-center gap-2">
+            {/* <section className="border-t border-gray-200 px-3 py-2 flex items-center gap-2">
               <input
                 type="text"
                 placeholder="Add a comment..."
@@ -105,7 +106,8 @@ const PostDetails = ({ post }: { post: Post }) => {
               <button className="text-blue-500 text-sm font-semibold">
                 Post
               </button>
-            </section>
+            </section> */}
+            <PostCommentInput postId={post.id} />
           </section>
         </div>
       </div>

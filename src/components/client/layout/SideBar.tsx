@@ -88,7 +88,7 @@ const SideBar = () => {
 
           {/* Icon When Collapsed */}
           <div
-            className={`flex justify-center w-full pt-9  hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer
+            className={`flex justify-center w-full mt-6 py-3  hover:bg-[#efefef] dark:hover:bg-neutral-600 rounded-md cursor-pointer
        ${isCollapsed ? "block" : "xl:hidden lg:block hidden"}
     `}
           >

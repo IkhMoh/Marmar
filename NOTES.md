@@ -1,20 +1,35 @@
-# 📓 Marmar Tech Stack & Architecture
+# 📝 Development Logs
 
-## 🏗️ Folder Structure Strategy
-We use **Feature-based Architecture**. Each feature (Posts, Stories, Auth) is self-contained inside `src/features/`.
-- `components/`: Pure UI components for this feature.
-- `services/`: API calls and logic (to keep components clean).
-- `store/`: Redux slices for local state management.
+---
 
-## 🔴 State Management (Redux Toolkit)
-- **Insight on Hooks**: We use `useAppDispatch` and `useAppSelector` from `@/store/hooks` for full TypeScript safety.
-- **Store Setup**: The store is created via `makeStore` to support Next.js SSR requirements.
+## 📅 December 28, 2025
+**Time:** 09:00 – 11:30 AM
 
-## 📡 Data Fetching Strategy
-- **Server Components**: Used for initial data fetching (e.g., getting posts on Home Page) for better SEO and performance.
-- **Redux**: Used for interactive state (e.g., toggling likes, updating comments without page refresh).
+### 🚀 Major Refactor
+- Migrated "Boss" PostCard to Server Component
+- Sliced Post UI into:
+  - PostVideo
+  - PostImage
+  - PostContent
+- Moved data fetching to `services/`
 
-## 📝 Future Tasks (TODO)
-- [ ] Connect `postSlice.ts` to the main store.
-- [ ] Implement Optimistic Updates for the Like button.
-- [ ] Set up DB connection in `lib/db.ts`.
+### ✨ New Features
+- Server Actions: `submitComment` with `use server`
+- Reusable EmojiSelector for Posts & Chat
+- Click Outside detection for EmojiPicker
+
+### 🔧 Fixes & Optimizations
+- Unified Post View by ID
+- Decoupled State from main Feed
+
+### 💡 Summary
+- Clean Architecture followed
+- EmojiSelector reduced code duplication ~40%
+- Boss component easier to maintain
+
+---
+
+## 📅 December 29, 2025
+
+### 🚀 Tasks Done
+<!-- - [ ] Placeholder for tomorrow's work -->
