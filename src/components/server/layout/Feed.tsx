@@ -1,32 +1,38 @@
 import React from "react";
-import PostCard from "@/features/posts/components/PostCard";
-import { Post } from "@/features/posts/types";
-async function getPosts() {
-  const res = await fetch("https://tarmeezacademy.com/api/v1/posts", {
-    cache: "no-store",
-  });
+import { getPosts, Post, PostCard } from "@/features/posts";
 
-  if (!res.ok) throw new Error("Failed to fetch posts");
-
-  const response = await res.json();
-  // The posts are nested inside the 'data' property
-  return response.data;
-}
 const Feed = async () => {
-  const posts: Post[] = await getPosts();
+  // Fetch real posts from our service
+  const apiPosts = await getPosts();
 
-  // async function getPostsFromAPI1() {
-  //   const res = await fetch('https://api1.com/posts', { cache: 'no-store' })
-  //   return res.json()
-  // }
+  // Your Fake Video Post for testing
+  const fakeVideoPost: Post = {
+    id: 99999,
+    title: "Testing Local Video",
+    body: "This is a video coming from my public folder! Testing the line-clamp and expand logic here...",
+    type: "video",
+    image: "/images/posts/6.mp4",
+    author: {
+      id: 9102,
+      username: "VideoTester",
+      name: "Local Tester",
+      profile_image:
+        "https://tarmeezacademy.com/images/posts/9h8IIZCYtQM5BO4.jpg",
+    },
+    created_at: "Just now",
+    comments_count: 5,
+    comments: [],
+    tags: [],
+    from_api: false,
+    time_ago: "Just now",
+    likes: 0,
+  };
 
-  // async function getPostsFromAPI2() {
-  //   const res = await fetch('https://api2.com/posts', { cache: 'no-store' })
-  //   return res.json()
-  // }
+  const allPosts = [fakeVideoPost, ...apiPosts];
+
   return (
-    <div className="flex flex-col items-center">
-      {posts.map((post) => (
+    <div className="flex flex-col items-center w-full gap-4">
+      {allPosts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
     </div>

@@ -33,4 +33,5 @@ export type Post = {
   from_api: boolean;
   time_ago: string;
   likes: number;
+  tags: [],
 };

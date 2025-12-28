@@ -1,38 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   Phone,
   Video,
   Image as ImageIcon,
   Mic,
   Send,
-  Smile,
   Sticker,
 } from "lucide-react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import EmojiPicker from "emoji-picker-react";
+import EmojiSelector from "../EmojiSelector";
+// Import your new shared component
 
 export default function ChatRoom() {
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const emojiRef = useRef<HTMLDivElement>(null);
-
-  // ==== CLICK OUTSIDE HANDLER ====
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (emojiRef.current && !emojiRef.current.contains(e.target as Node)) {
-        setShowEmojiPicker(false);
-      }
-    }
-
-    if (showEmojiPicker) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showEmojiPicker]);
-
   const [messages, setMessages] = useState([
     { fromMe: false, text: "Hello", date: new Date() },
     { fromMe: true, text: "Hi there!", date: new Date() },
@@ -50,10 +32,13 @@ export default function ChatRoom() {
 
   const sendMessage = () => {
     if (!input.trim()) return;
-
     setMessages([...messages, { fromMe: true, text: input, date: new Date() }]);
-
     setInput("");
+  };
+
+  // Logic to handle emoji selection from the new component
+  const addEmoji = (emoji: string) => {
+    setInput((prev) => prev + emoji);
   };
 
   const formatDate = (d: Date) =>
@@ -63,8 +48,8 @@ export default function ChatRoom() {
     });
 
   return (
-    <div className="flex flex-col h-screen w-full">
-      {/* ======== HEADER  ======== */}
+    <div className="flex flex-col h-screen w-full bg-white dark:bg-zinc-950">
+      {/* ======== HEADER ======== */}
       <div className="p-3 border-b flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Avatar className="w-10 h-10">
@@ -74,15 +59,20 @@ export default function ChatRoom() {
           <span className="font-bold">PC THINK PRO</span>
         </div>
 
-        <div className="flex gap-3">
-          <Video className="cursor-pointer" />
-          <Phone className="cursor-pointer" />
+        <div className="flex gap-4">
+          <Video
+            className="cursor-pointer text-gray-600 hover:text-blue-600"
+            size={22}
+          />
+          <Phone
+            className="cursor-pointer text-gray-600 hover:text-blue-600"
+            size={22}
+          />
         </div>
       </div>
 
       {/* ======== CHAT MESSAGES SCROLLABLE ======== */}
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
-        {/* === PROFILE SECTION INSIDE CHAT (SCROLLABLE) === */}
         <div className="flex flex-col items-center border-b pb-6">
           <Image
             src="/images/avatars/pcthink.jpg"
@@ -92,12 +82,11 @@ export default function ChatRoom() {
             className="rounded-full object-cover"
           />
           <h2 className="font-bold text-xl mt-2">PC THINK PRO</h2>
-          <button className="text-sm mt-1 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-lg">
+          <button className="text-sm mt-1 bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-lg dark:bg-zinc-800">
             View profile
           </button>
         </div>
 
-        {/* ======== CHAT MESSAGES ======== */}
         {messages.map((msg, i) => (
           <div key={i} className="flex flex-col">
             <div
@@ -107,14 +96,12 @@ export default function ChatRoom() {
                 className={`max-w-xs px-3 py-2 rounded-xl text-sm ${
                   msg.fromMe
                     ? "bg-blue-500 text-white"
-                    : "bg-gray-200 text-gray-900"
+                    : "bg-gray-200 text-gray-900 dark:bg-zinc-800 dark:text-gray-100"
                 }`}
               >
                 {msg.text}
               </div>
             </div>
-
-            {/* DATE IN CENTER */}
             <div className="text-center text-xs text-gray-400 mt-1">
               {formatDate(msg.date)}
             </div>
@@ -122,42 +109,35 @@ export default function ChatRoom() {
         ))}
       </div>
 
-      {/* ======== INPUT BAR  ======== */}
-      <div className="p-3 border-t flex items-center gap-2">
-        <Smile
-          onClick={() => setShowEmojiPicker((prev) => !prev)}
-          className="cursor-pointer"
-        />
+      {/* ======== INPUT BAR ======== */}
+      <div className="p-3 border-t flex items-center gap-2 relative">
+        {/* REUSABLE COMPONENT USED HERE */}
+        <EmojiSelector onEmojiSelect={addEmoji} iconSize={24} />
+
         <input
           type="text"
           placeholder="Message..."
-          className="flex-1 border rounded-full px-4 py-2 outline-none"
+          className="flex-1 border rounded-full px-4 py-2 outline-none dark:bg-zinc-900 dark:border-zinc-800"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-        {!input && (
-          <>
-            <Mic className="cursor-pointer" />
-            <ImageIcon className="cursor-pointer" />
-            <Sticker className="cursor-pointer" />
-          </>
-        )}
-        {input && (
+
+        {!input ? (
+          <div className="flex gap-3 text-gray-500">
+            <Mic className="cursor-pointer hover:text-blue-600" size={22} />
+            <ImageIcon
+              className="cursor-pointer hover:text-blue-600"
+              size={22}
+            />
+            <Sticker className="cursor-pointer hover:text-blue-600" size={22} />
+          </div>
+        ) : (
           <Send
             onClick={sendMessage}
-            className="cursor-pointer text-blue-600"
+            className="cursor-pointer text-blue-600 hover:scale-110 transition-transform"
+            size={24}
           />
-        )}{" "}
-        {showEmojiPicker && (
-          <div ref={emojiRef} className="absolute bottom-12 z-50">
-            <EmojiPicker
-              className="transition-transform duration-200"
-              onEmojiClick={(emojiData) => {
-                setInput((prev) => prev + emojiData.emoji);
-              }}
-            />
-          </div>
         )}
       </div>
     </div>
