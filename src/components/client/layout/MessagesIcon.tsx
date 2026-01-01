@@ -20,7 +20,7 @@ export default function MessagesIcon() {
     <>
       <div
         onClick={() => setOpenPanel("main")}
-        className="fixed bottom-8 right-9 flex items-center space-x-2 px-5 py-5 rounded-full  shadow-md hover:opacity-90 transition z-40 cursor-pointer"
+        className="fixed bottom-8 right-9 flex items-center space-x-2 px-5 py-5 rounded-full  shadow-md hover:opacity-90 transition z-40 cursor-pointer dark:bg-[#222429] dark:hover:bg-[#37383D]"
       >
         <Send size={25} className="cursor-pointer" />
 

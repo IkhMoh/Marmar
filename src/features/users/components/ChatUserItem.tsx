@@ -25,7 +25,7 @@ export default function ChatUserItem({
   return (
     <Link
       href={href}
-      className="flex justify-between items-center h-[72px] gap-3 px-6 py-2 hover:bg-neutral-100 transition"
+      className="flex justify-between items-center h-[72px] gap-3 px-6 py-2 hover:bg-neutral-100 dark:hover:bg-gray-900 transition"
     >
       {/* LEFT SIDE */}
       <div className="flex items-center gap-3 min-w-0">

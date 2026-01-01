@@ -67,7 +67,7 @@ const SideBar = () => {
     <div
       className={`z-50 fixed left-0 top-0 bottom-0 h-full transition-all duration-300 
       ${isCollapsed ? "w-[72px]" : "w-[244px]"} 
-       border-r border-gray-200`}
+       border-r border-gray-300 dark:border-neutral-800`}
     >
       <div
         className={`flex  md:flex-col w-full h-full  transition-all duration-500 ease-in-out px-3${

@@ -33,7 +33,7 @@ const CreatePostDialog = ({
               id="name-1"
               name="name"
               defaultValue="Pedro Duarte"
-              className="bg-gray-50 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
 
@@ -43,7 +43,7 @@ const CreatePostDialog = ({
               id="username-1"
               name="username"
               defaultValue="@peduarte"
-              className="bg-gray-50 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
         </div>

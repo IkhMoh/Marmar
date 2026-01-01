@@ -14,11 +14,11 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.15 0 0);
+  --background: #ffffff;
+  --foreground: #0a0f12;
 
   --card: oklch(0.98 0 0);
-  --card-foreground: oklch(0.15 0 0);
+  --card-foreground: #0a0f12;
 
   --border: oklch(0.9 0 0); /* subtle instagram border */
 
@@ -27,8 +27,8 @@
 }
 
 .dark {
-  --background: oklch(0.15 0 0);
-  --foreground: oklch(0.98 0 0);
+  --background: #0a0f12;
+  --foreground: #ffffff;
 
   --card: oklch(0.22 0 0);
   --card-foreground: oklch(0.98 0 0);
