@@ -10,7 +10,7 @@ export default function DirectLayout({
   return (
     <div className="h-screen w-full pl-[72px] flex flex-row ">
       <div className="h-screen w-[565px]">
-        <div className="h-screen overflow-y-hidden">
+        <div className="h-screen overflow-y-hidden pt-8">
           <div className="w-full py-1 flex justify-between  px-6 ">
             <div className="text-xl font-extrabold flex ">
               <span>ikhlef_mohamed_lamin </span>

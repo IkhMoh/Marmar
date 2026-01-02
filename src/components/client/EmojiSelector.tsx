@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import { Smile } from "lucide-react";
 import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
@@ -49,7 +48,7 @@ export default function EmojiSelector({
       >
         <Smile
           size={iconSize}
-          className="text-gray-500 transition-transform duration-200 hover:scale-110 hover:text-yellow-500"
+          className="transition-transform duration-200 hover:scale-110 "
         />
       </button>
 

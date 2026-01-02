@@ -16,7 +16,7 @@ interface PostCardProps {
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
-    <div className="border-b rounded-lg mb-4 dark:bg-gray-800 w-[468px] h-fit pb-4">
+    <div className="border-b rounded-lg mb-4  w-[468px] h-fit pb-4">
       {/* Header */}
       <PostHeader author={post.author} />
 
@@ -58,7 +58,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <PostContent body={post.body} />
 
         <Link href={`/p/${post.id}`}>
-          <div className="text-sm text-gray-700 mt-2">
+          <div className="text-sm text-slate-500 dark:text-gray-400 mt-2">
             View all <span className="font-bold">{post.comments_count}</span>{" "}
             comments
           </div>

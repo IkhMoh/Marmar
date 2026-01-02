@@ -21,7 +21,7 @@ const CreateMenuPanel: React.FC<CreateMenuPanelProps> = ({
       className="p-0 w-52 h-fit fixed shadow-lg rounded-xl border overflow-hidden cursor-pointer transition-transform hover:scale-105 hover:shadow-2xl"
     >
       <CardContent className="p-2">
-        <div className="flex justify-between items-center px-3 py-2 text-md font-medium hover:bg-gray-100 rounded-lg">
+        <div className="flex justify-between items-center px-3 py-2 text-md font-medium hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-lg">
           <span>Posts</span>
           <ImageDown className="" />
         </div>
