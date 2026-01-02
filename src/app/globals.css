@@ -51,8 +51,11 @@
     @apply shadow-sm dark:shadow-none;
   }
 
-  body {
+ body {
     @apply bg-background text-foreground;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
   }
 }
 
