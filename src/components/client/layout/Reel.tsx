@@ -74,7 +74,7 @@ export default function Reel() {
       observer.disconnect();
     };
   }, []);
-// todo
+  // todo
   return (
     <div className=" flex  w-fit h-[710px]">
       <div className="relative w-[386px] h-[710px]">
@@ -92,9 +92,9 @@ export default function Reel() {
         />
         <button
           onClick={toggleMute}
-          className="absolute bottom-3 right-3 bg-black/50 text-white p-2 rounded-full"
+          className="absolute top-4 right-2 bg-black/50 text-white p-2 rounded-full"
         >
-          {muted ? <VolumeOff size={18} /> : <Volume2 size={18} />}
+          {muted ? <VolumeOff size={20}  /> : <Volume2 size={20} />}
         </button>
         {paused && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -116,9 +116,10 @@ export default function Reel() {
             </svg>
           </div>
         )}
-        {/* 
-      todo
-      */}
+        <section className="absolute bottom-3 h-fit max-h-full w-full bg-red-300/40">
+         
+          vf
+        </section>
       </div>
       <div className="w-20  h-full">
         <div className="w-full  h-full  flex  justify-end items-center">

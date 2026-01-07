@@ -162,7 +162,7 @@ const SideBar = () => {
               <div className="relative">
                 <MessageCircleMore size={25} />
                 <Badge className="absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs px-1 py-0">
-                  9+
+                  4+
                 </Badge>
               </div>
               <p
