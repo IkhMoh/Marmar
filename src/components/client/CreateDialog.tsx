@@ -1,6 +1,6 @@
 "use client";
 
-import { SquarePlus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import CreatePostDialog from "./CreatePostDialog";
@@ -21,7 +21,7 @@ const CreateDialog = ({ isCollapsed }: CreateDialogProps) => {
       if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
         setOpenCreateDialog(false);
       }
-      if (dialogRef.current && !dialogRef.current.contains(e.target as Node)) {
+      if (dialogRef.current && e.target === dialogRef.current) {
         setOpenCreatePostDialog(false);
       }
     };
@@ -38,7 +38,7 @@ const CreateDialog = ({ isCollapsed }: CreateDialogProps) => {
         }`}
         onClick={() => setOpenCreateDialog((prev) => !prev)}
       >
-        <SquarePlus size={25} />
+        <Plus size={26} />
         <p className={`${isCollapsed ? "hidden" : "hidden lg:block"} pl-4`}>
           Create
         </p>
