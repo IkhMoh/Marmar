@@ -1,5 +1,5 @@
 "use client";
-import { Heart, MessageCircle, Volume2, VolumeOff } from "lucide-react";
+import { Heart, MessageCircle, Music, Volume2, VolumeOff } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SendDialog } from "../SendDialog";
 import { SaveDialog } from "../../server/SaveDialog";
@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { MenuDialog } from "../MenuDialog";
 import CommentPanel from "../../../features/comments/components/CommentPanel";
+import UserCardReel from "@/features/users/components/UserCardReel";
+import PostContent from "@/features/posts/components/PostContent.client";
 export default function Reel() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -75,18 +77,20 @@ export default function Reel() {
     };
   }, []);
   // todo
+  const username = "John_Doe";
+  const profile_image = "https://via.placeholder.com/150";
+  const body = " praesentium earum.";
   return (
     <div className=" flex  w-fit h-[710px]">
-      <div className="relative w-[386px] h-[710px]">
-        {" "}
+      <div className="relative w-[386px] h-[710px] bg-black shadow-2xl  ">
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="/images/posts/6.mp4"
+          src="/images/posts/1.mp4"
           loop
           playsInline
           muted={muted}
-          className="h-full w-full "
+          className="h-full w-full"
           onPause={() => setPaused(true)}
           onPlay={() => setPaused(false)}
         />
@@ -94,7 +98,7 @@ export default function Reel() {
           onClick={toggleMute}
           className="absolute top-4 right-2 bg-black/50 text-white p-2 rounded-full"
         >
-          {muted ? <VolumeOff size={20}  /> : <Volume2 size={20} />}
+          {muted ? <VolumeOff size={18} /> : <Volume2 size={18} />}
         </button>
         {paused && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -116,17 +120,24 @@ export default function Reel() {
             </svg>
           </div>
         )}
-        <section className="absolute bottom-3 h-fit max-h-full w-full bg-red-300/40">
-         
-          vf
+        <section className="absolute bottom-3 p-5 space-y-2 h-fit max-h-11/12  w-full bg-transparent">
+          <UserCardReel username={username} profile_image={profile_image} />
+          <section className="text-white text-sm">
+            <PostContent body={body} className="text-white font-medium" />
+          </section>
+          <button className="text-white  flex items-center space-x-2 pl-2 py-2 pr-16 bg-transparent/30">
+            <Music size={18} />
+            <p className="text-xs">{username}</p>
+            <p className="text-xs">Original audio</p>
+          </button>
         </section>
       </div>
       <div className="w-20  h-full">
         <div className="w-full  h-full  flex  justify-end items-center">
           {" "}
           <div className="w-full  h-full flex flex-col items-center justify-end space-y-6 pb-2 ">
-            <div className=" flex flex-col space-y-8">
-              <div className=" flex flex-col items-center space-y-8">
+            <div className=" flex flex-col space-y-6">
+              <div className=" flex flex-col items-center space-y-6">
                 {" "}
                 <div className="flex flex-col items-center space-y1">
                   <Heart size={25} />

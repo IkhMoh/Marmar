@@ -9,9 +9,9 @@ const Feed = async () => {
   const fakeVideoPost: Post = {
     id: 99999,
     title: "Testing Local Video",
-    body: "This is a video coming from my public folder! Testing the line-clamp and expand logic here...",
+    body: "This is a video coming from my public folder! Testing the line-clamp and expand logic here...This is a video coming from my public folder! Testing the line-clamp and expand logic here...This is a video coming from my public folder! Testing the line-clamp and expand logic here...This is a video coming from my public folder! Testing the line-clamp and expand logic here...",
     type: "video",
-    image: "/images/posts/6.mp4",
+    image: "/images/posts/1.mp4",
     author: {
       id: 9102,
       username: "VideoTester",
@@ -27,8 +27,20 @@ const Feed = async () => {
     time_ago: "Just now",
     likes: 0,
   };
-
-  const allPosts = [fakeVideoPost, ...apiPosts];
+  const localMedia = [
+    "/images/posts/1.mp4",
+    "/images/posts/2.mp4",
+    "/images/posts/3.mp4",
+    "/images/posts/6.mp4",
+   ];
+  
+  const localPosts: Post[] = localMedia.map((media, index) => ({
+    ...fakeVideoPost,
+    id: fakeVideoPost.id + index,
+    image: media,
+  }));
+  
+  const allPosts = [...localPosts, ...apiPosts];
 
   return (
     <div className="flex flex-col items-center w-full gap-4">
