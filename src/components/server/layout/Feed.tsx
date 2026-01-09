@@ -1,6 +1,6 @@
 import React from "react";
 import { getPosts, Post, PostCard } from "@/features/posts";
-
+ 
 const Feed = async () => {
   // Fetch real posts from our service
   const apiPosts = await getPosts();
@@ -32,22 +32,22 @@ const Feed = async () => {
     "/images/posts/2.mp4",
     "/images/posts/3.mp4",
     "/images/posts/6.mp4",
-   ];
-  
+  ];
+
   const localPosts: Post[] = localMedia.map((media, index) => ({
     ...fakeVideoPost,
     id: fakeVideoPost.id + index,
     image: media,
   }));
-  
+
   const allPosts = [...localPosts, ...apiPosts];
 
   return (
     <div className="flex flex-col items-center w-full gap-4">
-      {allPosts.map((post) => (
-        <PostCard key={post.id} post={post} />
-      ))}
-    </div>
+         {allPosts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+     </div>
   );
 };
 
