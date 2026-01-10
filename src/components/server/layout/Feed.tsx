@@ -1,10 +1,13 @@
 import React from "react";
 import { getPosts, Post, PostCard } from "@/features/posts";
- 
+import EmptyState from "@/components/client/EmptyState";
+
 const Feed = async () => {
   // Fetch real posts from our service
   const apiPosts = await getPosts();
-
+  if (apiPosts.length === 0) {
+    return <EmptyState />; 
+  }
   // Your Fake Video Post for testing
   const fakeVideoPost: Post = {
     id: 99999,
@@ -44,10 +47,10 @@ const Feed = async () => {
 
   return (
     <div className="flex flex-col items-center w-full gap-4">
-         {allPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-     </div>
+      {allPosts.map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
   );
 };
 

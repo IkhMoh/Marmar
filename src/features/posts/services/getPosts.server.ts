@@ -2,15 +2,16 @@ import { Post } from "../types";
 
 
 export async function getPosts(): Promise<Post[]> {
-  const res = await fetch("https://tarmeezacademy.com/api/v1/posts", {
-    cache: "no-store", // Best for social media feeds to get latest data
-  });
+  try {
+    const res = await fetch("https://tarmeezacademy.com/api/v1/posts", {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch posts from server");
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    return data.data;
+  } catch {
+    return [];
   }
-
-  const response = await res.json();
-  
-  return response.data;
 }
