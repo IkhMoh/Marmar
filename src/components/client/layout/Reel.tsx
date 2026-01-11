@@ -86,7 +86,7 @@ export default function Reel() {
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="/images/posts/1.mp4"
+          src="/images/posts/2.mp4"
           loop
           playsInline
           muted={muted}
@@ -125,8 +125,10 @@ export default function Reel() {
           <section className="text-white text-sm">
             <PostContent body={body} className="text-white font-medium" />
           </section>
-          <button className="text-white  flex items-center space-x-2 pl-2 py-2 pr-16 bg-transparent/30">
-            <Music size={18} />
+          <button
+            className="text-white  flex items-center space-x-2 pl-2 py-1.5 pr-20 bg-white/20 backdrop-blur-md rounded-2xl"
+          >
+            <Music size={16} />
             <p className="text-xs">{username}</p>
             <p className="text-xs">Original audio</p>
           </button>
