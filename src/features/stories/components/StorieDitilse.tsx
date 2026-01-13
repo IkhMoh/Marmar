@@ -8,21 +8,21 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Pause, Play, Volume2, VolumeOff } from "lucide-react";
+import { Pause, Play, Volume2, VolumeOff, X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleMute } from "@/store/slice/videoSlice";
 import Image from "next/image";
 import { Story } from "@/types/stories";
-import PostContent from "@/features/posts/components/PostContent.client";
 import UserCardStorie from "@/features/users/components/UserCardStorie";
-import { MenuDialog } from "@/components/client/MenuDialog";
-
+import Link from "next/link";
+ 
 interface StoriesProps {
   user: Story;
 }
 
 export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
+ 
   const videoRefs = useRef<HTMLVideoElement[]>([]);
 
   const [videoPaused, setVideoPaused] = useState<{ [key: number]: boolean }>(
@@ -92,7 +92,15 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex justify-center">
+    <div className="h-screen w-screen flex justify-between bg-neutral-900">
+      {/* logo */}
+      <Link
+        href={"/"}
+        className="flex space-x-1 items-center justify-center mt-2 ml-2 h-fit"
+      >
+        <div className="font-bold text-3xl font-handlee text-white">Marmar</div>
+      </Link>
+      {/* logo ====*/}
       <div className="w-[394px] mt-2">
         {/*  Progress bar  */}
         <div className="flex gap-1 px-2 mb-2 ">
@@ -216,6 +224,11 @@ export const CarouselPlugin: React.FC<StoriesProps> = ({ user }) => {
           <div className="bg-red-100 h-full">{user.id}</div>
         </div>
       </div>
+      {/* button back */}
+      <Link href={"/"} className="mt-5 mr-5" >
+        <X color="white" size={32} />
+      </Link>
+      {/* button back ====*/}
     </div>
   );
 };
