@@ -3,6 +3,9 @@ import fs from "fs";
 import { Story } from "@/types/stories";
 
 export async function getStories(): Promise<Story[]> {
+  // todo clean
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
   const filePath = path.join(process.cwd(), "src/data/stories.json");
   const rawData = fs.readFileSync(filePath, "utf-8");
 
