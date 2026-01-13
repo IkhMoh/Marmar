@@ -3,6 +3,8 @@ import fs from "fs";
 import { MinimalUser } from "@/types/user";
 
 export async function getUsers(): Promise<MinimalUser[]> {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   const filePath = path.join(process.cwd(), "src/data/suggestions.json");
   const rawData = fs.readFileSync(filePath, "utf-8");
 
