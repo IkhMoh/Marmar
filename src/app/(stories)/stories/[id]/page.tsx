@@ -4,9 +4,8 @@ import React from "react";
 import { Story } from "@/types/stories";
 const page = async () => {
   const stories: Story[] = await getStories();
-  console.log(stories);
-  return (
-    <div className="flex max-h-lvh bg-transparent overflow-y-hidden">
+   return (
+    <div className="flex max-h-lvh  overflow-y-hidden">
       {/* <StorieDitilse stories={stories} /> */}
       {stories.map((user) => (
         <div key={user.id}>
