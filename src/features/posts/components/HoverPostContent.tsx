@@ -1,7 +1,5 @@
-// HoverPostContent.tsx
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { HoverCardContent } from "@/components/ui/hover-card";
 import { UserPlus } from "lucide-react";
 
 interface HoverPostContentProps {
@@ -10,7 +8,6 @@ interface HoverPostContentProps {
   fullName?: string;
 }
 
-// simulate delay for Server Component
 async function getHoverData(username: string) {
   await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
   return {
