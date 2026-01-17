@@ -13,7 +13,7 @@ export function normalizeTarmeezPost(post: Post): Post {
             type: "image",
           },
         ]
-      : [],
+      : [], 
 
     author: {
       id: post.id,
