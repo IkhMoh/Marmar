@@ -9,7 +9,7 @@ interface HoverPostContentProps {
 }
 
 async function getHoverData(username: string) {
-  await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return {
     posts: 12224,
     followers: "252K",

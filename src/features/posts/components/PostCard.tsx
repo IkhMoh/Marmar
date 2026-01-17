@@ -16,21 +16,23 @@ interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  return (
+   return (
     <div className=" rounded-lg mb-4  w-[468px] h-fit pb-4">
       {/* Header */}
       <PostHeader author={post.author} />
 
       {/* Inside PostCard.tsx */}
       <div className="w-full relative h-fit">
-        {post.image.length > 0 && (
-          <>
-            {post.type === "video" ? (
-              <PostVideo src={post.image} />
-            ) : (
-              <PostImage src={post.image} alt={post.title || "Post content"} />
-            )}
-          </>
+        {post?.media?.map((item, index) =>
+          item.type === "video" ? (
+            <PostVideo key={index} src={item.url} />
+          ) : (
+            <PostImage
+              key={index}
+              src={item.url}
+              alt={post.title || "Post content"}
+            />
+          )
         )}
       </div>
 

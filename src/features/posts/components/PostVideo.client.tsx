@@ -70,6 +70,9 @@ export default function PostVideo({ src }: PostVideoProps) {
     };
   }, []);
 
+  if (!src || typeof src !== "string") {
+    return null; 
+  }
   return (
     <div
       className="relative w-full h-[600px] bg-black overflow-hidden rounded-[3px] cursor-pointer"

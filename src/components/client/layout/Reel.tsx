@@ -86,7 +86,7 @@ export default function Reel() {
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="/images/posts/2.mp4"
+          src="https://res.cloudinary.com/djlcyjyfh/video/upload/v1768632257/marmer/ecwah7juo6p77w0qdsa8.mp4"
           loop
           playsInline
           muted={muted}
