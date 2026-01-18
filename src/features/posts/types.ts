@@ -24,6 +24,7 @@ export type Post = {
   body?: string;
   image?: string;
   media: MediaItem[];
+  likes:number;
   author: {
     id: number;
     username: string;

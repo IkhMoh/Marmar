@@ -29,7 +29,7 @@ export default function HoverPost({
         >
           <Avatar className="w-11 h-11">
             <AvatarImage
-              src={"/images/avatars/" + profile_image}
+              src={profile_image}
               alt={username}
               className="object-cover object-center rounded-full"
             />

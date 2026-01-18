@@ -1,35 +1,26 @@
-export type RawPost = {
-    id: number;
-    title?: string;
-    body?: string;
-    type?: "image" | "video";
-    image: string | { url: string } | (string | { url: string })[];
-    author: {
-      id: number;
-      username: string;
-      name?: string;
-      profile_image?: string;
-    };
-    comments_count?: number;
-    created_at?: string;
-    from_api?: string;
-  };
-  export type Post = {
-    id: number;
-    title?: string;
-    body?: string;
-    type: "image" | "video";
-    image: string;
-    author: {
-      id: number;
-      username: string;
-      name?: string;
-      profile_image?: string;
-    };
-    comments_count?: number;
-    created_at?: string;
-    from_api: boolean;
-    time_ago: string;
-    likes: number;
-  };
-  
+export type Media = {
+  url: string;
+  type: "image" | "video";
+};
+
+export type Post = {
+  media: Media[];
+};
+
+export type User = {
+  id: number;
+  username: string;
+  profile_image: string;
+  fullName: string;
+  bio: string;
+  followers: number;
+  following: number;
+  followersInfo: string[];
+  posts: Post[];
+};
+
+export type MinimalUser = {
+  username: string;
+  profile_image: string;
+  fullName: string;
+};

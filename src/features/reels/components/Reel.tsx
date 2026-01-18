@@ -1,15 +1,19 @@
 "use client";
 import { Heart, MessageCircle, Music, Volume2, VolumeOff } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { SendDialog } from "../SendDialog";
-import { SaveDialog } from "../../server/SaveDialog";
+import { SendDialog } from "../../../components/client/SendDialog";
+import { SaveDialog } from "../../../components/server/SaveDialog";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { MenuDialog } from "../MenuDialog";
-import CommentPanel from "../../../features/comments/components/CommentPanel";
+import { MenuDialog } from "../../../components/client/MenuDialog";
+import CommentPanel from "../../comments/components/CommentPanel";
 import UserCardReel from "@/features/users/components/UserCardReel";
 import PostContent from "@/features/posts/components/PostContent.client";
-export default function Reel() {
+import { Reel } from "../types";
+interface ReelCardProps {
+  reel: Reel;
+}
+export default function ReelCard({ reel }: ReelCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
@@ -77,16 +81,16 @@ export default function Reel() {
     };
   }, []);
   // todo
-  const username = "John_Doe";
-  const profile_image = "https://via.placeholder.com/150";
-  const body = " praesentium earum.";
+  const url =
+    "https://res.cloudinary.com/djlcyjyfh/video/upload/v1768632257/marmer/vcwfss3ncpgxe8x7ncxf.mp4";
+  console.log(reel);
   return (
     <div className=" flex  w-fit h-[710px]">
       <div className="relative w-[386px] h-[710px] bg-black shadow-2xl  ">
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src="https://res.cloudinary.com/djlcyjyfh/video/upload/v1768632257/marmer/ecwah7juo6p77w0qdsa8.mp4"
+          src={url}
           loop
           playsInline
           muted={muted}
@@ -121,15 +125,13 @@ export default function Reel() {
           </div>
         )}
         <section className="absolute bottom-3 p-5 space-y-2 h-fit max-h-11/12  w-full bg-transparent">
-          <UserCardReel username={username} profile_image={profile_image} />
+          <UserCardReel author={reel.author} />
           <section className="text-white text-sm">
-            <PostContent body={body} className="text-white font-medium" />
+            <PostContent body={reel.body} className="text-white font-medium" />
           </section>
-          <button
-            className="text-white  flex items-center space-x-2 pl-2 py-1.5 pr-20 bg-white/20 backdrop-blur-md rounded-2xl"
-          >
+          <button className="text-white  flex items-center space-x-2 pl-2 py-1.5 pr-20 bg-white/20 backdrop-blur-md rounded-2xl">
             <Music size={16} />
-            <p className="text-xs">{username}</p>
+            <p className="text-xs">{reel.author.username}</p>
             <p className="text-xs">Original audio</p>
           </button>
         </section>
@@ -143,7 +145,7 @@ export default function Reel() {
                 {" "}
                 <div className="flex flex-col items-center space-y1">
                   <Heart size={25} />
-                  <p className="text-xs">23.7k</p>
+                  <p className="text-xs">{reel.likes_count}</p>
                 </div>
                 <Link
                   href="#"
@@ -151,7 +153,7 @@ export default function Reel() {
                   onClick={() => setOpenCommentPanel(true)}
                 >
                   <MessageCircle size={25} />
-                  <p className="text-xs">300</p>
+                  <p className="text-xs">{reel.comments_count}</p>
                 </Link>
                 <SendDialog />
                 <SaveDialog />
@@ -160,11 +162,11 @@ export default function Reel() {
 
               <Avatar className="w-7 h-7 rounded-md bg-red-700">
                 <AvatarImage
-                  src={`public/images/avatars/profile_image`}
+                  src={reel.author.profile_image}
                   // alt={post.author.username}
                 />
                 <AvatarFallback>
-                  {/* {post.author.username[0].toUpperCase()} */}
+                  {reel.author.username[0].toUpperCase()}
                 </AvatarFallback>
               </Avatar>
             </div>

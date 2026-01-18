@@ -30,7 +30,7 @@ export default async function HoverPostContent({
     <div className="flex  px-1 ">
       <Avatar className="w-16 h-16 mt-1 flex">
         <AvatarImage
-          src={"/images/avatars/" + profile_image}
+          src={profile_image}
           alt={username}
           className="object-cover object-center rounded-full"
         />
