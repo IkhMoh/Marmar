@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "username": "sebastian_laverde",
+    "profile_image": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
+    "fullName": "Sebastian Laverde",
+    "bio": "Nature lover 🌿",
+    "followers": 180,
+    "following": 220,
+    "followersInfo": [],
+    "posts": [
+      {
+        "id": 1,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/sebastian1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+
+    "username": "oussama_lahkdari",
+    "profile_image": "2150697292.jpg",
+    "fullName": "Oussama Lakhdari",
+    "bio": "💙.🤍",
+    "followers": 192,
+    "following": 1646,
+    "followersInfo": ["amine_bouzid", "sarah_ali", "khaled_mansour"],
+    "posts": [
+      {
+        "id": 2,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/oussama1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/oussama2.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+
+    "username": "ahmed_salem",
+    "profile_image": "5938.jpg",
+    "fullName": "Ahmed Salem",
+    "bio": "Coffee addict ☕",
+    "followers": 290,
+    "following": 100,
+    "followersInfo": ["khaled_mansour", "amine_bouzid"],
+    "posts": [
+      {
+        "id": 3,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/ahmed2.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/ahmed3.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+
+    "username": "samir_khalil",
+    "profile_image": "2151478203.jpg",
+    "fullName": "Samir Khalil",
+    "bio": "Entrepreneur 🚀",
+    "followers": 320,
+    "following": 230,
+    "followersInfo": ["oussama_lahkdari", "amine_bouzid"],
+    "stories": [],
+    "posts": [
+      {
+        "id": 4,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/samir1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+
+    "username": "lukasz_konieczka",
+    "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
+    "fullName": "Lukasz Konieczka",
+    "bio": "Traveler ✈️",
+    "followers": 210,
+    "following": 195,
+    "followersInfo": [],
+    "posts": [
+      {
+        "id": 5,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz2.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz3.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+
+    "username": "jonathan_cooper",
+    "profile_image": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
+    "fullName": "Jonathan Cooper",
+    "bio": "Coffee addict ☕",
+    "followers": 250,
+    "following": 230,
+    "followersInfo": [],
+    "stories": [],
+    "posts": [
+      {
+        "id": 6,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/jonathan1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+
+    "username": "alisha_limbu",
+    "profile_image": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
+    "fullName": "Alisha Limbu",
+    "bio": "Photographer 📸",
+    "followers": 150,
+    "following": 200,
+    "followersInfo": [],
+    "posts": [
+      {
+        "id": 7,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/alisha1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/alisha2.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+]
