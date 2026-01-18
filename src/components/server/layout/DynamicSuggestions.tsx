@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "../../ui/button";
-import { getUsers } from "@/lib/Users/getUsers";
+import { getSuggestions } from "@/features/users/services/getSuggestions";
 import AccountCard from "../../../features/users/components/AccountCard";
-import { MinimalUser } from "@/types/user";
 import UserCard from "@/features/users/components/UserCard";
+import { User } from "@/features/users/types";
 const DynamicSuggestions = async () => {
-  const users: MinimalUser[] = await getUsers();
-
+  const users: User[] = await getSuggestions();
+  
+  console.log(users);
   return (
     <div className="w-[383px] h-screen  hidden lg:block">
       <div className="pl-16 h-full w-full pt-9">
@@ -23,9 +24,9 @@ const DynamicSuggestions = async () => {
             </div>
           </div>
           <div className="pt-2 h-full w-full space-y-3 px-1">
-            {users.map((user: MinimalUser, index: number) => (
+            {users?.map((user: User) => (
               <UserCard
-                key={index}
+                key={user.id}
                 username={user.username}
                 profile_image={user.profile_image}
                 fullName={user.fullName}

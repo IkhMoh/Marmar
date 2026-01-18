@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "username": "sebastian_laverde",
     "profile_image": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
     "fullName": "Sebastian Laverde",
@@ -20,6 +21,8 @@
     ]
   },
   {
+    "id": 2,
+
     "username": "oussama_lahkdari",
     "profile_image": "2150697292.jpg",
     "fullName": "Oussama Lakhdari",
@@ -44,6 +47,8 @@
     ]
   },
   {
+    "id": 3,
+
     "username": "ahmed_salem",
     "profile_image": "5938.jpg",
     "fullName": "Ahmed Salem",
@@ -53,7 +58,7 @@
     "followersInfo": ["khaled_mansour", "amine_bouzid"],
     "posts": [
       {
-        "id": 4,
+        "id": 3,
         "media": [
           {
             "url": "https://res.cloudinary.com/demo/image/upload/v1/ahmed2.jpg",
@@ -68,6 +73,8 @@
     ]
   },
   {
+    "id": 4,
+
     "username": "samir_khalil",
     "profile_image": "2151478203.jpg",
     "fullName": "Samir Khalil",
@@ -78,7 +85,7 @@
     "stories": [],
     "posts": [
       {
-        "id": 5,
+        "id": 4,
         "media": [
           {
             "url": "https://res.cloudinary.com/demo/image/upload/v1/samir1.jpg",
@@ -89,6 +96,8 @@
     ]
   },
   {
+    "id": 5,
+
     "username": "lukasz_konieczka",
     "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
     "fullName": "Lukasz Konieczka",
@@ -98,7 +107,7 @@
     "followersInfo": [],
     "posts": [
       {
-        "id": 6,
+        "id": 5,
         "media": [
           {
             "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz1.jpg",
@@ -117,6 +126,8 @@
     ]
   },
   {
+    "id": 6,
+
     "username": "jonathan_cooper",
     "profile_image": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
     "fullName": "Jonathan Cooper",
@@ -127,7 +138,7 @@
     "stories": [],
     "posts": [
       {
-        "id": 7,
+        "id": 6,
         "media": [
           {
             "url": "https://res.cloudinary.com/demo/image/upload/v1/jonathan1.jpg",
@@ -138,6 +149,8 @@
     ]
   },
   {
+    "id": 7,
+
     "username": "alisha_limbu",
     "profile_image": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
     "fullName": "Alisha Limbu",
@@ -147,7 +160,7 @@
     "followersInfo": [],
     "posts": [
       {
-        "id": 8,
+        "id": 7,
         "media": [
           {
             "url": "https://res.cloudinary.com/demo/image/upload/v1/alisha1.jpg",

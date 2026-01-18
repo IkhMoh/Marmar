@@ -81,12 +81,9 @@ export default function ReelCard({ reel }: ReelCardProps) {
     };
   }, []);
   // todo
-  const username = "John_Doe";
-  const profile_image = "https://via.placeholder.com/150";
-  const body = " praesentium earum.";
   const url =
     "https://res.cloudinary.com/djlcyjyfh/video/upload/v1768632257/marmer/vcwfss3ncpgxe8x7ncxf.mp4";
-    console.log(reel)
+  console.log(reel);
   return (
     <div className=" flex  w-fit h-[710px]">
       <div className="relative w-[386px] h-[710px] bg-black shadow-2xl  ">
@@ -128,7 +125,7 @@ export default function ReelCard({ reel }: ReelCardProps) {
           </div>
         )}
         <section className="absolute bottom-3 p-5 space-y-2 h-fit max-h-11/12  w-full bg-transparent">
-          <UserCardReel author={reel.author}  />
+          <UserCardReel author={reel.author} />
           <section className="text-white text-sm">
             <PostContent body={reel.body} className="text-white font-medium" />
           </section>

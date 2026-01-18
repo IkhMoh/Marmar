@@ -1,7 +1,7 @@
 import React from "react";
-import { MinimalUser } from "@/types/user";
 import HoverPost from "@/features/posts/components/HoverPost";
 import { Button } from "@/components/ui/button";
+import { MinimalUser } from "../types";
 
 const UserCard: React.FC<MinimalUser> = ({
   username,
