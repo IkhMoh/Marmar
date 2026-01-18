@@ -7,8 +7,17 @@
     "followers": 180,
     "following": 220,
     "followersInfo": [],
-    "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 1,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/sebastian1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
   {
     "username": "oussama_lahkdari",
@@ -18,8 +27,21 @@
     "followers": 192,
     "following": 1646,
     "followersInfo": ["amine_bouzid", "sarah_ali", "khaled_mansour"],
-    "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 2,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/oussama1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/oussama2.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
   {
     "username": "ahmed_salem",
@@ -29,8 +51,21 @@
     "followers": 290,
     "following": 100,
     "followersInfo": ["khaled_mansour", "amine_bouzid"],
-    "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 4,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/ahmed2.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/ahmed3.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
   {
     "username": "samir_khalil",
@@ -41,9 +76,18 @@
     "following": 230,
     "followersInfo": ["oussama_lahkdari", "amine_bouzid"],
     "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 5,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/samir1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
-
   {
     "username": "lukasz_konieczka",
     "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
@@ -52,8 +96,25 @@
     "followers": 210,
     "following": 195,
     "followersInfo": [],
-    "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 6,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz2.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/lukasz3.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
   {
     "username": "jonathan_cooper",
@@ -64,7 +125,17 @@
     "following": 230,
     "followersInfo": [],
     "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 7,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/jonathan1.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   },
   {
     "username": "alisha_limbu",
@@ -74,7 +145,20 @@
     "followers": 150,
     "following": 200,
     "followersInfo": [],
-    "stories": [],
-    "posts": []
+    "posts": [
+      {
+        "id": 8,
+        "media": [
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/alisha1.jpg",
+            "type": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/demo/image/upload/v1/alisha2.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
   }
 ]
