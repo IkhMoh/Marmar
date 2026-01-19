@@ -21,7 +21,7 @@ const UserCardComment = ({ comment }: { comment: Comment }) => {
                 className="object-cover object-center rounded-full"
               />
 
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>{comment.author.username[0].toUpperCase()}</AvatarFallback>
             </Avatar>
           </Link>
 

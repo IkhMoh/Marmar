@@ -5,10 +5,9 @@ import AccountCard from "../../../features/users/components/AccountCard";
 import UserCard from "@/features/users/components/UserCard";
 import { User } from "@/features/users/types";
 const DynamicSuggestions = async () => {
-  const users: User[] = await getSuggestions();
+  const users = await getSuggestions();
   
-  console.log(users);
-  return (
+   return (
     <div className="w-[383px] h-screen  hidden lg:block">
       <div className="pl-16 h-full w-full pt-9">
         <div className="">
@@ -27,9 +26,7 @@ const DynamicSuggestions = async () => {
             {users?.map((user: User) => (
               <UserCard
                 key={user.id}
-                username={user.username}
-                profile_image={user.profile_image}
-                fullName={user.fullName}
+                user={user}
               />
             ))}
           </div>

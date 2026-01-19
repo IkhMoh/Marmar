@@ -54,7 +54,10 @@ export default function ChatRoom() {
         <div className="flex items-center gap-3">
           <Avatar className="w-10 h-10">
             <AvatarImage src="/images/avatars/pcthink.jpg" />
-            <AvatarFallback>PC</AvatarFallback>
+            <AvatarFallback>
+              PC
+              {/* {reel.author.username[0].toUpperCase()} */}
+            </AvatarFallback>
           </Avatar>
           <span className="font-bold">PC THINK PRO</span>
         </div>

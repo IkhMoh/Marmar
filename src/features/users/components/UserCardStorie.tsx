@@ -19,7 +19,7 @@ const UserCardStorie = ({ username, profile_image }: User) => {
               className="object-cover object-center rounded-full"
             />
 
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>
           </Avatar>
 
           <h2 className="font-bold text-sm ml-2 flex items-center text-white">
