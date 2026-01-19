@@ -15,12 +15,12 @@ const UserCardProfile = ({ username, profile_image }:User) => {
         <Link href={username} className="flex justify-between  px-1">
           <Avatar className="w-11 h-11  ">
             <AvatarImage
-              src={"/images/avatars/" + profile_image}
+              src={profile_image}
               alt={username}
               className="object-cover object-center rounded-full"
             />
 
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>
           </Avatar>
 
           <h2 className="font-bold text-sm ml-2 flex items-center">

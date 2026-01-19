@@ -11,7 +11,10 @@ const AccountCard = () => {
       <div className="flex justify-between  px-1">
         <Avatar className="w-11 h-11  ">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback>
+            CN
+            {/* {reel.author.username[0].toUpperCase()} */}
+          </AvatarFallback>
         </Avatar>
 
         <div className="  w-full px-3 -space-y-1">

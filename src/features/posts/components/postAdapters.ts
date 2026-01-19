@@ -1,4 +1,5 @@
 import { MediaItem, Post } from "../types";
+
 /* ========= Tarmeez ========= */
 export function normalizeTarmeezPost(post: Post): Post {
   return {
@@ -6,6 +7,7 @@ export function normalizeTarmeezPost(post: Post): Post {
     title: post.title,
     body: post.body,
     created_at: post.created_at,
+
     media: post.image
       ? [
           {
@@ -13,20 +15,28 @@ export function normalizeTarmeezPost(post: Post): Post {
             type: "image",
           },
         ]
-      : [], 
+      : [],
 
     author: {
-      id: post.id,
+      id: post.author?.id ?? post.id,
       username: post.author?.username ?? "unknown",
       name: post.author?.name ?? post.author?.username ?? "Unknown User",
       profile_image:
         typeof post.author?.profile_image === "string"
           ? post.author.profile_image
           : "https://ui-avatars.com/api/?name=User",
+
+      bio: post.author?.bio,
+      followers: post.author?.followers,
+      following: post.author?.following,
+      all_posts: post.author?.all_posts,
+      posts: post.author?.posts ?? [],
     },
+
     comments: post.comments ?? [],
     comments_count: post.comments?.length ?? 0,
     tags: post.tags ?? [],
+    
   };
 }
 
@@ -45,12 +55,19 @@ export function normalizeMarmerPost(post: Post): Post {
       : [],
 
     author: {
-      id: post.id,
+      id: post.author?.id ?? post.id,
       username: post.author?.username ?? "unknown",
       name: post.author?.name ?? "Unknown User",
       profile_image:
         post.author?.profile_image ?? "https://ui-avatars.com/api/?name=User",
+
+      bio: post.author?.bio,
+      followers: post.author?.followers,
+      following: post.author?.following,
+      all_posts: post.author?.all_posts,
+      posts: post.author?.posts ?? [],
     },
+
     comments: post.comments ?? [],
     comments_count: post.comments?.length ?? 0,
     tags: post.tags ?? [],

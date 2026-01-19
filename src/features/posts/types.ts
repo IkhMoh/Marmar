@@ -18,21 +18,38 @@ export type MediaItem = {
   url: string;
   type: "image" | "video";
 };
+type Media = {
+  url: string;
+  type: "image" | "video";
+};
+
+type AuthorPost = {
+  id: number;
+  media: Media[];
+};
 export type Post = {
   id: number;
+  username?: string;
+  time_ago?: number;
   title?: string;
   body?: string;
   image?: string;
-  media: MediaItem[];
-  likes:number;
+  media?: MediaItem[];
+  likes?: number;
   author: {
     id: number;
     username: string;
     name?: string;
     profile_image?: string;
+    bio?: string;
+    followers?: number;
+    following?: number;
+    all_posts?: number;
+    posts?: AuthorPost[];
   };
   comments_count?: number;
   comments: Comment[];
   created_at?: string;
   tags: [];
+  
 };

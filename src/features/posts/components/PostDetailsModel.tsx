@@ -61,7 +61,7 @@ const PostDetailsModel = ({ post }: { post: Post }) => {
                   className="object-cover object-center rounded-full"
                 />
 
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>{post.author.username[0].toUpperCase()}</AvatarFallback>
               </Avatar>
               <div>
                 <div className="text-sm">

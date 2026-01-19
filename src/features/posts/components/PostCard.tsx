@@ -16,7 +16,8 @@ interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-   return (
+  console.log(post);
+  return (
     <div className=" rounded-lg mb-4  w-[468px] h-fit pb-4">
       {/* Header */}
       <PostHeader author={post.author} />

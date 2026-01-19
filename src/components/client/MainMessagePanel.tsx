@@ -12,7 +12,7 @@ interface MainMessagePanelProps {
 const directUsers = [
   {
     username: "PC_THINK_PRO",
-    fullName: "Think Pro Apple Store",
+    name: "Think Pro Apple Store",
     profile_image: "pcthink.jpg",
     href: "/direct/t/pcthinkpro",
     lastMessageTime: "10m",
@@ -21,7 +21,7 @@ const directUsers = [
   },
   {
     username: "vav_store",
-    fullName: "Vav Tech Store",
+    name: "Vav Tech Store",
     profile_image: "vav.jpg",
     href: "/direct/t/vavstore",
     lastMessageTime: "45m",
@@ -30,7 +30,7 @@ const directUsers = [
   },
   {
     username: "apple_zone",
-    fullName: "Apple Zone DZ",
+    name: "Apple Zone DZ",
     profile_image: "applez.jpg",
     href: "/direct/t/applezone",
     lastMessageTime: "1h",
@@ -39,7 +39,7 @@ const directUsers = [
   },
   {
     username: "fix_it",
-    fullName: "Fix It Repair",
+    name: "Fix It Repair",
     profile_image: "fixit.png",
     href: "/direct/t/fixit",
     lastMessageTime: "2h",
@@ -48,7 +48,7 @@ const directUsers = [
   },
   {
     username: "koffee_shop",
-    fullName: "Koffee Shop",
+    name: "Koffee Shop",
     profile_image: "coffee.jpg",
     href: "/direct/t/koffeeshop",
     lastMessageTime: "3h",
@@ -57,7 +57,7 @@ const directUsers = [
   },
   {
     username: "tech_house",
-    fullName: "Tech House DZ",
+    name: "Tech House DZ",
     profile_image: "techhouse.png",
     href: "/direct/t/techhouse",
     lastMessageTime: "5h",
@@ -66,7 +66,7 @@ const directUsers = [
   },
   {
     username: "buy_sell",
-    fullName: "Buy & Sell Market",
+    name: "Buy & Sell Market",
     profile_image: "buysell.png",
     href: "/direct/t/buysell",
     lastMessageTime: "7h",
@@ -75,7 +75,7 @@ const directUsers = [
   },
   {
     username: "mobile_shop",
-    fullName: "Mobile Shop DZ",
+    name: "Mobile Shop DZ",
     profile_image: "mobilestore.jpg",
     href: "/direct/t/mobileshop",
     lastMessageTime: "10h",
@@ -84,7 +84,7 @@ const directUsers = [
   },
   {
     username: "pro_laptop",
-    fullName: "Pro Laptop Store",
+    name: "Pro Laptop Store",
     profile_image: "laptop.jpg",
     href: "/direct/t/prolaptop",
     lastMessageTime: "1d",
@@ -93,7 +93,7 @@ const directUsers = [
   },
   {
     username: "dz_pc",
-    fullName: "DZ PC Parts",
+    name: "DZ PC Parts",
     profile_image: "dzpc.jpg",
     href: "/direct/t/dzpc",
     lastMessageTime: "2d",
@@ -102,7 +102,7 @@ const directUsers = [
   },
   {
     username: "gaming_world",
-    fullName: "Gaming World",
+    name: "Gaming World",
     profile_image: "gaming.jpg",
     href: "/direct/t/gamingworld",
     lastMessageTime: "3d",
@@ -111,7 +111,7 @@ const directUsers = [
   },
   {
     username: "tech_dz",
-    fullName: "Tech DZ Market",
+    name: "Tech DZ Market",
     profile_image: "techdz.png",
     href: "/direct/t/techdz",
     lastMessageTime: "4d",
@@ -120,7 +120,7 @@ const directUsers = [
   },
   {
     username: "phone_repair",
-    fullName: "Phone Repair DZ",
+    name: "Phone Repair DZ",
     profile_image: "phonerepair.jpg",
     href: "/direct/t/phonerepair",
     lastMessageTime: "5d",
@@ -129,7 +129,7 @@ const directUsers = [
   },
   {
     username: "devices_dz",
-    fullName: "Devices DZ",
+    name: "Devices DZ",
     profile_image: "devices.jpg",
     href: "/direct/t/devicesdz",
     lastMessageTime: "1w",
@@ -138,7 +138,7 @@ const directUsers = [
   },
   {
     username: "mac_parts",
-    fullName: "Mac Parts DZ",
+    name: "Mac Parts DZ",
     profile_image: "macparts.jpg",
     href: "/direct/t/macparts",
     lastMessageTime: "1y",

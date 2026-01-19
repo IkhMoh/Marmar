@@ -3,7 +3,7 @@
     "id": 1,
     "username": "sebastian_laverde",
     "profile_image": "sebastian-laverde-wHOOHJwWMZc-unsplash.jpg",
-    "fullName": "Sebastian Laverde",
+    "name": "Sebastian Laverde",
     "bio": "Nature lover 🌿",
     "followers": 180,
     "following": 220,
@@ -25,7 +25,7 @@
 
     "username": "oussama_lahkdari",
     "profile_image": "2150697292.jpg",
-    "fullName": "Oussama Lakhdari",
+    "name": "Oussama Lakhdari",
     "bio": "💙.🤍",
     "followers": 192,
     "following": 1646,
@@ -51,7 +51,7 @@
 
     "username": "ahmed_salem",
     "profile_image": "5938.jpg",
-    "fullName": "Ahmed Salem",
+    "name": "Ahmed Salem",
     "bio": "Coffee addict ☕",
     "followers": 290,
     "following": 100,
@@ -77,7 +77,7 @@
 
     "username": "samir_khalil",
     "profile_image": "2151478203.jpg",
-    "fullName": "Samir Khalil",
+    "name": "Samir Khalil",
     "bio": "Entrepreneur 🚀",
     "followers": 320,
     "following": 230,
@@ -100,7 +100,7 @@
 
     "username": "lukasz_konieczka",
     "profile_image": "lukasz-konieczka-d7wf9X5BaVA-unsplash.jpg",
-    "fullName": "Lukasz Konieczka",
+    "name": "Lukasz Konieczka",
     "bio": "Traveler ✈️",
     "followers": 210,
     "following": 195,
@@ -130,7 +130,7 @@
 
     "username": "jonathan_cooper",
     "profile_image": "jonathan-cooper-fT79ub9HGLg-unsplash.jpg",
-    "fullName": "Jonathan Cooper",
+    "name": "Jonathan Cooper",
     "bio": "Coffee addict ☕",
     "followers": 250,
     "following": 230,
@@ -153,7 +153,7 @@
 
     "username": "alisha_limbu",
     "profile_image": "alisha-limbu-2LxcsQVV_Vk-unsplash.jpg",
-    "fullName": "Alisha Limbu",
+    "name": "Alisha Limbu",
     "bio": "Photographer 📸",
     "followers": 150,
     "following": 200,

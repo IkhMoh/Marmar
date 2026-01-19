@@ -15,7 +15,7 @@ const Profile = ({ username }: { username: string }) => {
               src={"/images/avatars/" + "2150697292.jpg"}
               className="object-cover object-center rounded-full"
             />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>
           </Avatar>
         </div>
         <div className="w-2/3">

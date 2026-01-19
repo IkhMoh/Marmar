@@ -1,21 +1,17 @@
 import React from "react";
 import HoverPost from "@/features/posts/components/HoverPost";
 import { Button } from "@/components/ui/button";
-import { MinimalUser } from "../types";
+import { User } from "../types";
 
-const UserCard: React.FC<MinimalUser> = ({
-  username,
-  profile_image,
-  fullName,
-}) => {
+interface UserCardProps {
+  user: User;
+}
+
+const UserCard: React.FC<UserCardProps> = ({ user }) => {
   return (
     <div className="w-[319px] h-[44px] ">
       <div className="flex justify-between  px-1">
-        <HoverPost
-          username={username}
-          profile_image={profile_image}
-          fullName={fullName}
-        />
+        <HoverPost user={user} />
 
         <div className="flex items-center">
           <Button variant="link" className="text-blue-600 hover:text-blue-800">
