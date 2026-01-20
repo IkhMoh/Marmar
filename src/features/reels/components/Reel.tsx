@@ -163,7 +163,7 @@ export default function ReelCard({ reel }: ReelCardProps) {
               <Avatar className="w-7 h-7 rounded-md bg-red-700">
                 <AvatarImage
                   src={reel.author.profile_image}
-                  // alt={post.author.username}
+                // alt={post.author.username}
                 />
                 <AvatarFallback>
                   {reel.author.username[0].toUpperCase()}

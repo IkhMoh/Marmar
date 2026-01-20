@@ -11,5 +11,5 @@ export async function getReels(): Promise<Reel[]> {
   }
 
   const json = await res.json();
-  return json.data;
+  return await new Promise<Reel[]>(resolve => setTimeout(() => resolve(json.data), 2500));
 }
