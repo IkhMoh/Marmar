@@ -32,7 +32,7 @@ const Page = async () => {
       {" "}
       <div className="flex flex-col justify-center mx-[63.5px] px-5">
         {groups.map((group, gi) => {
-          const tallPost = group.find((p) => p.type === "video");
+          const tallPost = group.find((p) => p.media?.[0]?.type === "video");
 
           if (!tallPost) {
             return (
