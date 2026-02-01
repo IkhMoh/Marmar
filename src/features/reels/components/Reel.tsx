@@ -80,17 +80,14 @@ export default function ReelCard({ reel }: ReelCardProps) {
       observer.disconnect();
     };
   }, []);
-  // todo
-  const url =
-    "https://res.cloudinary.com/djlcyjyfh/video/upload/v1768632257/marmer/vcwfss3ncpgxe8x7ncxf.mp4";
-  console.log(reel);
+ 
   return (
     <div className=" flex  w-fit h-[710px]">
       <div className="relative w-[386px] h-[710px] bg-black shadow-2xl  ">
         <video
           onClick={handleTogglePlay}
           ref={videoRef}
-          src={url}
+          src={reel.media[0].url}
           loop
           playsInline
           muted={muted}
