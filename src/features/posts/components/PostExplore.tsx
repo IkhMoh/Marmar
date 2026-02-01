@@ -11,7 +11,7 @@ interface PostCardProps {
 }
 
 const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
-  const isVideo = post.type === "video";
+  const isVideo = post.media?.[0]?.type === "video";
   //
   // the older code
   // const src =
