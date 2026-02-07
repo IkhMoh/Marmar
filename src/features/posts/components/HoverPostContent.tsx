@@ -53,7 +53,7 @@ export default function HoverPostContent({ user }: UserCardProps) {
                 src={item.url}
                 width={12}
                 height={12}
-                alt=""
+                alt="posts images"
                 className="w-full h-24 object-cover"
               />
             ))
