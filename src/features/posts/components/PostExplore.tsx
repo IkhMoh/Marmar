@@ -12,37 +12,38 @@ interface PostCardProps {
 
 const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
   const isVideo = post.media?.[0]?.type === "video";
-  //
-  // the older code
-  // const src =
-  //   post.image && post.image.length > 0
-  //     ? post.image[0].startsWith("http")
-  //       ? post.image[0]
-  //       : `/images/posts/${post.image[0]}`
-  //     : null;
-  //
-  const src =
-    typeof post.image === "string" && post.image.trim() !== ""
-      ? post.image.startsWith("http")
+
+  const getSource = () => {
+    // Priority 1: Check the media array (Reels API)
+    if (post.media?.[0]?.url) {
+      return post.media[0].url;
+    }
+
+    // Priority 2: Check the image string (Posts API)
+    if (typeof post.image === "string" && post.image.trim() !== "") {
+      return post.image.startsWith("http")
         ? post.image
-        : `/images/posts/${post.image}`
-      : null;
+        : `/images/posts/${post.image}`;
+    }
+
+    return null;
+  };
+  const src = getSource();
 
   const variantClass =
     variant === "square"
       ? "aspect-square"
       : variant === "tall"
-      ? "row-span-2 aspect-[2/3]"
-      : "col-span-2 aspect-[3/2]";
+        ? "row-span-2 aspect-[2/3]"
+        : "col-span-2 aspect-[3/2]";
 
   if (!src) return null;
 
   return (
     <Link href={`/p/${post.id}`}>
-       <div
+      <div
         className={`group relative w-full h-full overflow-hidden cursor-pointer   rounded-[3px] ${variantClass}`}
       >
-        {/* الـميديا */}
         {isVideo ? (
           <video
             src={src}
@@ -51,6 +52,7 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
             loop
             playsInline
           />
+
         ) : (
           <Image
             src={src}
@@ -60,7 +62,6 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
           />
         )}
 
-        {/* أيقونة النوع فوق يمين */}
         <div className="absolute top-2 right-2  p-1  ">
           {isVideo ? (
             <Film size={26} stroke="white" />
@@ -77,7 +78,7 @@ const PostExplore: React.FC<PostCardProps> = ({ post, variant = "square" }) => {
         >
           <div className="flex items-center gap-2   text-lg font-semibold">
             <MessageCircle size={28} stroke="white" fill="white" />
-            <span>{post.comments_count ?? 0}</span>
+            <span>{post.comments_count ?? 0 }</span>
           </div>
         </div>
       </div>
