@@ -1,6 +1,7 @@
 import { PostDetailsModel, getPostById, Post } from "@/features/posts";
+import PostDetailsSkeleton from "@/features/posts/components/PostDetailsSkeleton";
 
-import React from "react";
+import React, { Suspense } from "react";
 
 export default async function PostModal({
   params,
@@ -12,7 +13,10 @@ export default async function PostModal({
 
   return (
     <div>
-      <PostDetailsModel post={post} />
+      <Suspense fallback={<PostDetailsSkeleton />}>
+
+        <PostDetailsModel post={post} />
+      </Suspense>
     </div>
   );
 }

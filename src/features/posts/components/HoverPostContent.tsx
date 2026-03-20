@@ -28,7 +28,7 @@ export default function HoverPostContent({ user }: UserCardProps) {
             <h2 className="font-bold text-lg -mt-1">{user?.username}</h2>
             <h4 className="text-gray-600 text-md -mt-1">{user?.name}</h4>
           </div>
-          <h2 className="bg-neutral-200 text-md px-2 py-0.5 rounded-2xl w-fit text-center">
+          <h2 className="bg-neutral-200 dark:bg-neutral-800 text-md px-2 py-0.5 rounded-2xl w-fit text-center">
             <span className="font-bold text-lg">@ </span>
             {user?.username}
           </h2>
