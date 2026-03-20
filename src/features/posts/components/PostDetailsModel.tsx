@@ -14,7 +14,6 @@ import PostCommentInput from "./PostCommentInput";
 const PostDetailsModel = ({ post }: { post: Post }) => {
   const router = useRouter();
   const close = () => router.back();
-  console.log(post);
 
   return (
     <div
