@@ -4,7 +4,7 @@ import React from "react";
 const PostModalFeed = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
   const post: Post = await getPostById(id);
-
+  console.log("PostModalFeed:",id)
   return (
     <PostDetailsModel post={post} />
   )

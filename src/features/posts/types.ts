@@ -1,6 +1,6 @@
 import { Comment } from "@/types/comment";
 export type RawPost = {
-  id: number;
+  id: string;
   title?: string;
   body?: string;
   media: MediaItem[];
@@ -28,7 +28,8 @@ type AuthorPost = {
   media: Media[];
 };
 export type Post = {
-  id: number;
+  id: string;
+  source: "tarmeez" | "marmer";
   username?: string;
   time_ago?: number;
   title?: string;

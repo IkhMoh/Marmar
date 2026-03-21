@@ -7,7 +7,7 @@ export function normalizeTarmeezPost(post: Post): Post {
     title: post.title,
     body: post.body,
     created_at: post.created_at,
-
+    source: "tarmeez",
     media: post.image
       ? [
           {
@@ -36,14 +36,14 @@ export function normalizeTarmeezPost(post: Post): Post {
     comments: post.comments ?? [],
     comments_count: post.comments?.length ?? 0,
     tags: post.tags ?? [],
-    
-  };
+   };
 }
 
 /* ========= Marmer ========= */
 export function normalizeMarmerPost(post: Post): Post {
   return {
     id: post.id,
+    source: "marmer",
     title: post.title,
     body: post.body,
     created_at: post.created_at,

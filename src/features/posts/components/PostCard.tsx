@@ -45,7 +45,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               size={26}
               className="transition-transform duration-200 hover:scale-110"
             />
-            <Link href={`/p/${post.id}`}>
+            <Link href={`/p/${post.source === "tarmeez" ? `T${post.id}` : `M${post.id}`}`}>
               <MessageCircle
                 size={26}
                 className="transition-transform duration-200 hover:scale-110"
@@ -68,7 +68,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </div>
         </Link>
 
-        <PostCommentInput postId={post.id} />
+        <PostCommentInput postId={Number(post.id)} />
       </div>
     </div>
   );

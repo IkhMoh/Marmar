@@ -8,13 +8,12 @@ import { SaveDialog } from "@/components/server/SaveDialog";
 import UserCardComment from "@/features/users/components/UserCardComment";
 import UserCardProfile from "@/features/users/components/UserCardProfile";
 import { Post } from "../types";
-import Image from "next/image";
 import PostCommentInput from "./PostCommentInput";
 
 const PostDetailsModel = ({ post }: { post: Post }) => {
   const router = useRouter();
   const close = () => router.back();
-
+console.log(post)
   return (
     <div
       className="fixed inset-0 z-50  flex items-center justify-center"
@@ -26,7 +25,7 @@ const PostDetailsModel = ({ post }: { post: Post }) => {
       >
         <div className="flex-1 ">
           <div className="flex-1 h-full flex items-center justify-center">
-            {typeof post.image === "string" && post.image.trim() !== "" ? (
+            {/* {typeof post.image === "string" && post.image.trim() !== "" ? (
               <Image
                 src={post.image}
                 alt={`Media for Post ${post.id}`}
@@ -36,7 +35,9 @@ const PostDetailsModel = ({ post }: { post: Post }) => {
               />
             ) : (
               <p>Post ID: {post.id}</p>
-            )}
+            )} */}
+            <p>Post ID: {post.id}</p>
+
           </div>
         </div>
 
@@ -116,7 +117,7 @@ const PostDetailsModel = ({ post }: { post: Post }) => {
               Post
             </button>
           </section> */}
-          <PostCommentInput postId={post.id} />
+          <PostCommentInput postId={Number(post.id)} />
         </div>
       </div>
     </div>
