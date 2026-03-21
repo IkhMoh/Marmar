@@ -107,7 +107,7 @@ const PostDetails = ({ post }: { post: Post }) => {
                 Post
               </button>
             </section> */}
-            <PostCommentInput postId={post.id} />
+            <PostCommentInput postId={Number(post.id)} />
           </section>
         </div>
       </div>

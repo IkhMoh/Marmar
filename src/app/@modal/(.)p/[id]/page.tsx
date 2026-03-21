@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 
 export default async function PostModal({ params }: { params: { id: string } }) {
   const { id } = await params;
-
+  console.log("page:",id)
   return (
     <div>
       <Suspense fallback={<PostDetailsSkeleton />}>
