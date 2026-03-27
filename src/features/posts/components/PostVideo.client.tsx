@@ -9,11 +9,14 @@ import { toggleMute } from "@/store/slice/videoSlice";
 interface PostVideoProps {
   src: string;
 }
-
-export default function PostVideo({ src }: PostVideoProps) {
+interface PostVideoProps {
+  src: string;
+  autoPlay?: boolean;
+}
+export default function PostVideo({ src, autoPlay = false }: PostVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
-
+  const isModalOpen = useAppSelector((state) => state.video.isModalOpen);
   const muted = useAppSelector((state) => state.video.muted);
   const dispatch = useAppDispatch();
 
@@ -44,8 +47,8 @@ export default function PostVideo({ src }: PostVideoProps) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            v.play().catch(() => {});
+          if (entry.isIntersecting && (!isModalOpen || autoPlay)) {
+            v.play().catch(() => { });
           } else {
             v.pause();
           }
@@ -68,14 +71,20 @@ export default function PostVideo({ src }: PostVideoProps) {
       observer.disconnect();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, []);
+  }, [isModalOpen, autoPlay]); useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
 
+    if (autoPlay) {
+      v.play().catch(() => { });
+    }
+  }, [autoPlay]);
   if (!src || typeof src !== "string") {
-    return null; 
+    return null;
   }
   return (
     <div
-      className="relative w-full h-[600px] bg-black overflow-hidden rounded-[3px] cursor-pointer"
+      className="relative w-full h-full bg-black overflow-hidden rounded-[3px] cursor-pointer"
       onClick={handleTogglePlay}
     >
       <video

@@ -6,33 +6,36 @@ import { SaveDialog } from "@/components/server/SaveDialog";
 import UserCardComment from "@/features/users/components/UserCardComment";
 import UserCardProfile from "@/features/users/components/UserCardProfile";
 import { Post } from "../types";
-import Image from "next/image";
 import PostCommentInput from "./PostCommentInput";
+import PostImage from "./PostImage.client";
+import PostVideo from "./PostVideo.client";
 
 const PostDetails = ({ post }: { post: Post }) => {
+  console.log(typeof post.image, post.image)
   return (
     <div>
       <div className="w-full px-32 bg-white">
-        <div className="flex h-[600px] mt-8 border-black/20 border">
+        <div className="flex h-[600px] w-full mt-8 border-black/20 border">
           {/* todo : leal data */}
           {/* left Panel */}
-          <section className="w-2/3 rounded-xl flex items-center justify-center">
+          <section className="w-3/5 rounded-xl flex items-center justify-center">
             <div className="flex-1 h-full flex items-center justify-center">
-              {typeof post.image === "string" && post.image.trim() !== "" ? (
-                <Image
-                  src={post.image}
-                  alt={`Media for Post ${post.id}`}
-                  width={1000}
-                  height={800}
-                  className=" object-cover w-full h-full"
-                />
-              ) : (
-                <p>{post.id}</p>
+
+              {post?.media?.map((item, index) =>
+                item.type === "video" ? (
+                  <PostVideo key={index} src={item.url} />
+                ) : (
+                  <PostImage
+                    key={index}
+                    src={item.url}
+                    alt={post.title || `Media for Post ${post.id}`}
+                  />
+                )
               )}
             </div>
           </section>
           {/* Right Panel */}
-          <section className="w-1/3 flex flex-col">
+          <section className="w-2/5 flex flex-col">
             {/* Top Header User */}
             <section className="px-2 py-3 rounded-b-md border-b border-gray-200">
               <UserCardProfile

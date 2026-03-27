@@ -4,7 +4,6 @@ export type RawPost = {
   title?: string;
   body?: string;
   media: MediaItem[];
-  image?: string;
   author: {
     id: number;
     username: string;
@@ -28,13 +27,13 @@ type AuthorPost = {
   media: Media[];
 };
 export type Post = {
+  image: any;
   id: string;
   source: "tarmeez" | "marmer";
   username?: string;
   time_ago?: number;
   title?: string;
   body?: string;
-  image?: string;
   media?: MediaItem[];
   likes?: number;
   author: {

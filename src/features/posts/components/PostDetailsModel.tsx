@@ -9,12 +9,17 @@ import UserCardComment from "@/features/users/components/UserCardComment";
 import UserCardProfile from "@/features/users/components/UserCardProfile";
 import { Post } from "../types";
 import PostCommentInput from "./PostCommentInput";
-
+import PostImage from "./PostImage.client";
+import PostVideo from "./PostVideo.client";
+import { useAppDispatch } from "@/store/hooks";
+import { closeModal } from "@/store/slice/videoSlice";
 const PostDetailsModel = ({ post }: { post: Post }) => {
+  const dispatch = useAppDispatch();
   const router = useRouter();
-  const close = () => router.back();
-console.log(post)
-  return (
+  const close = () => {
+    dispatch(closeModal());
+    router.back();
+  };  return (
     <div
       className="fixed inset-0 z-50  flex items-center justify-center"
       onClick={close}
@@ -25,19 +30,17 @@ console.log(post)
       >
         <div className="flex-1 ">
           <div className="flex-1 h-full flex items-center justify-center">
-            {/* {typeof post.image === "string" && post.image.trim() !== "" ? (
-              <Image
-                src={post.image}
-                alt={`Media for Post ${post.id}`}
-                width={1000}
-                height={800}
-                className="object-cover w-full h-full"
-              />
-            ) : (
-              <p>Post ID: {post.id}</p>
-            )} */}
-            <p>Post ID: {post.id}</p>
-
+            {post?.media?.map((item, index) =>
+              item.type === "video" ? (
+                <PostVideo key={index} src={item.url} autoPlay />
+              ) : (
+                <PostImage
+                  key={index}
+                  src={item.url}
+                  alt={post.title || "Post content"}
+                />
+              )
+            )}
           </div>
         </div>
 
