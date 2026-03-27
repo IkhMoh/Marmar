@@ -12,7 +12,7 @@ export default function PostImage({ src, alt }: PostImageProps) {
     return null; 
   }
   return (
-    <div className="relative w-full h-[468px] bg-black overflow-hidden rounded-[3px]">
+    <div className="relative w-full h-full bg-black overflow-hidden rounded-[3px]">
       <Image
         src={src}
         alt={alt}

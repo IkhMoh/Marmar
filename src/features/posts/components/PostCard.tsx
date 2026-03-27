@@ -10,13 +10,16 @@ import PostVideo from "./PostVideo.client";
 import PostImage from "./PostImage.client";
 import PostContent from "./PostContent.client";
 import PostCommentInput from "./PostCommentInput";
+import { openModal } from "@/store/slice/videoSlice";
+import { useAppDispatch } from "@/store/hooks";
+
 
 interface PostCardProps {
   post: Post;
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  console.log(post);
+  const dispatch = useAppDispatch();
   return (
     <div className=" rounded-lg mb-4  w-[468px] h-fit pb-4">
       {/* Header */}
@@ -26,13 +29,15 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       <div className="w-full relative h-fit">
         {post?.media?.map((item, index) =>
           item.type === "video" ? (
-            <PostVideo key={index} src={item.url} />
+            <div key={index} className="h-[600px]">
+              <PostVideo src={item.url} />
+            </div>
           ) : (
-            <PostImage
-              key={index}
-              src={item.url}
-              alt={post.title || "Post content"}
-            />
+            <div key={index} className="h-[468px]">
+              <PostImage
+                src={item.url}
+                alt={post.title || "Post content"}
+              /></div>
           )
         )}
       </div>
@@ -45,7 +50,10 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               size={26}
               className="transition-transform duration-200 hover:scale-110"
             />
-            <Link href={`/p/${post.source === "tarmeez" ? `T${post.id}` : `M${post.id}`}`}>
+            <Link
+              href={`/p/${post.source === "tarmeez" ? `T${post.id}` : `M${post.id}`}`}
+              onClick={() => dispatch(openModal())}
+            >
               <MessageCircle
                 size={26}
                 className="transition-transform duration-200 hover:scale-110"
